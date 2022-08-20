@@ -195,6 +195,5 @@
               </ul>
         </li>
       <li>
-    {% endfor %}
   </ul>
 </nav>

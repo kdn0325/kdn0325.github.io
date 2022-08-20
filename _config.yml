@@ -16,11 +16,11 @@ minimal_mistakes_skin    : "dark" # "default"  "air", "aqua", "contrast", "dirt"
 
 # Site Settings
 locale                   : "ko-KR"
-title                    : "ABEL FRONTELIO : 개발노트"
+title                    : "ABEL FRONTELIO : 개발 노트"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Abel"
-description              : "개발 & 이슈 블로그."
+description              : "Developer & Issue."
 url                      : "https://kdn0325.github.io/"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -42,7 +42,7 @@ comments:
     colorscheme          : # "light" (default), "dark"
   utterances:
     theme                : "github-dark" # "github-light" (default), 
-    issue_term           : # "pathname" (default)
+    issue_term           : "pathname" # "pathname" (default)
   giscus:
     repo_id              : # Shown during giscus setup at https://giscus.app
     category_name        : # Full text name of the category
@@ -290,4 +290,5 @@ defaults:
       comments: true
       share: true
       related: true
+      mathjax: true
       sidebar_main: true

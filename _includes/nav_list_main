@@ -179,7 +179,7 @@
               <ul>
                   {% for category in site.categories %}
                       {% if category[0] == "Blog" %}
-                          <li><a href="/categories/blog" class=""> 블로그 제작({{category[1].size}})</a></li>
+                          <li><a href="/categories/blog" class=""> Jekyll Blog({{category[1].size}})</a></li>
                       {% endif %}
                   {% endfor %}
               </ul>

@@ -11,28 +11,28 @@
         <span class="nav__sub-title">Front-end</span>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "Cpp" %}
+                    {% if category[0] == "Html" %}
                         <li><a href="/categories/html" class="">HTML({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "STL" %}
+                    {% if category[0] == "Css" %}
                         <li><a href="/categories/css" class="">CSS ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "STL" %}
+                    {% if category[0] == "Cssprocessors" %}
                         <li><a href="/categories/cssprocessors" class="">CSS Preprocessors ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "STL" %}
+                    {% if category[0] == "Cssframeworks" %}
                         <li><a href="/categories/cssframeworks" class="">CSS Frameworks ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
@@ -46,7 +46,7 @@
             </ul>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "Build Tools" %}
+                    {% if category[0] == "BuildTools" %}
                         <li><a href="/categories/buildtools" class="">Build Tools ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
@@ -67,7 +67,7 @@
             </ul>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "React Native" %}
+                    {% if category[0] == "React-Native" %}
                         <li><a href="/categories/rn" class="">React Native ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
@@ -105,7 +105,7 @@
               </ul>
               <ul>
                   {% for category in site.categories %}
-                      {% if category[0] == "testing" %}
+                      {% if category[0] == "Testing" %}
                           <li><a href="/categories/testing" class="">테스트({{category[1].size}})</a></li>
                       {% endif %}
                   {% endfor %}
@@ -133,7 +133,7 @@
           <span class="nav__sub-title">CS</span>
               <ul>
                   {% for category in site.categories %}
-                      {% if category[0] == "algorithm" %}
+                      {% if category[0] == "Algorithm" %}
                           <li><a href="/categories/algorithm" class="">알고리즘({{category[1].size}})</a></li>
                       {% endif %}
                   {% endfor %}
@@ -171,7 +171,7 @@
               </ul>
               <ul>
                   {% for category in site.categories %}
-                      {% if category[0] == "vscode" %}
+                      {% if category[0] == "Vscode" %}
                           <li><a href="/categories/git" class=""> 비주얼 스튜디오({{category[1].size}})</a></li>
                       {% endif %}
                   {% endfor %}

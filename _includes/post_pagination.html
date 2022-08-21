@@ -1,14 +1,36 @@
-{% if page.previous or page.next %}
-  <nav class="pagination">
-    {% if page.previous %}
-      <a href="{{ page.previous.url | relative_url }}" class="pagination--pager" title="{{ page.previous.title | markdownify | strip_html }}">{{ site.data.ui-text[site.locale].pagination_previous | default: "Previous" }}</a>
+<!--첫 번째 문단-->
+{% assign cat = page.categories[0] %}
+<!-- cat 변수에 이 페이지의 카테고리 문자열을 저장한다. -->
+{% assign cat_list = site.categories[cat] %}
+<!-- cat_list 변수에 내 블로그 사이트 전체 내에서 cat 카테고리 (즉, 현재의 포스트의 카테고리)에 속하는 모든 포스트들이 담긴 리스트를 담는다.
+site는 사이트 전체를 의미한다. -->
+{% for post in cat_list %}
+<!-- cat_list에서 for문을 돌려 같은 카테고리 내의 포스트들을 순회했을 떄 현재 페이지(page)와 동일한 포스트를 발견한다면 그 포스트의 이전 포스트(이전 인덱스에 위치), 다음 포스트(다음 인덱스에 위치)를 알 수 있게 된다. -->
+  {% if post.url == page.url %}
+  	{% assign prevIndex = forloop.index0 | minus: 1 %}
+  	{% assign nextIndex = forloop.index0 | plus: 1 %}
+  	{% if forloop.first == false %}
+  	  {% assign next_post = cat_list[prevIndex] %}
+  	{% endif %}
+  	{% if forloop.last == false %}
+  	  {% assign prev_post = cat_list[nextIndex] %}
+  	{% endif %}
+  	{% break %}
+  {% endif %}
+{% endfor %}
+
+<!--두 번째 문단-->
+{% if prev_post or next_post %}
+  <nav class="pagination_prev_next">
+    {% if prev_post %}
+      <a href="{{ prev_post.url }}" class="pagination_prev_next--pager"><span class="prev_next">이전 글  &nbsp</span>{{ prev_post.title }}</a>
     {% else %}
-      <a href="#" class="pagination--pager disabled">{{ site.data.ui-text[site.locale].pagination_previous | default: "Previous" }}</a>
+      <a href="#" class="pagination_prev_next--pager disabled">첫 번째 글입니다</a>
     {% endif %}
-    {% if page.next %}
-      <a href="{{ page.next.url | relative_url }}" class="pagination--pager" title="{{ page.next.title | markdownify | strip_html }}">{{ site.data.ui-text[site.locale].pagination_next | default: "Next" }}</a>
+    {% if next_post %}
+      <a href="{{ next_post.url }}" class="pagination_prev_next--pager"><span class="prev_next">다음 글  &nbsp  </span>{{ next_post.title }}</a>
     {% else %}
-      <a href="#" class="pagination--pager disabled">{{ site.data.ui-text[site.locale].pagination_next | default: "Next" }}</a>
+      <a href="#" class="pagination_prev_next--pager disabled">가장 최근 글입니다</a>
     {% endif %}
   </nav>
 {% endif %}

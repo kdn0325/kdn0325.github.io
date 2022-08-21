@@ -105,13 +105,6 @@
               </ul>
               <ul>
                   {% for category in site.categories %}
-                      {% if category[0] == "Testing" %}
-                          <li><a href="/categories/testing" class="">테스트({{category[1].size}})</a></li>
-                      {% endif %}
-                  {% endfor %}
-              </ul>
-              <ul>
-                  {% for category in site.categories %}
                       {% if category[0] == "CI/CD" %}
                           <li><a href="/categories/ci&cd" class="">CI/CD ({{category[1].size}})</a></li>
                       {% endif %}
@@ -172,7 +165,7 @@
               <ul>
                   {% for category in site.categories %}
                       {% if category[0] == "Vscode" %}
-                          <li><a href="/categories/git" class=""> 비주얼 스튜디오({{category[1].size}})</a></li>
+                          <li><a href="/categories/vscode" class=""> 비주얼 스튜디오({{category[1].size}})</a></li>
                       {% endif %}
                   {% endfor %}
               </ul>

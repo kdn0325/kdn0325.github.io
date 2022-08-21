@@ -1,5 +1,5 @@
 ---
-title: "React"
+title: "React 기록"
 layout: archive
 permalink: categories/react
 author_profile: true

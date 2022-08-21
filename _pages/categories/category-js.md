@@ -1,5 +1,5 @@
 ---
-title: "Javascript"
+title: "Javascript 기록"
 layout: archive
 permalink: categories/js
 author_profile: true

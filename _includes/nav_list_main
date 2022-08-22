@@ -140,7 +140,7 @@
               </ul>
               <ul>
                   {% for category in site.categories %}
-                      {% if category[0] == "DataStructure" %}
+                      {% if category[0] == "Cs" %}
                           <li><a href="/categories/cs" class="">CS({{category[1].size}})</a></li>
                       {% endif %}
                   {% endfor %}

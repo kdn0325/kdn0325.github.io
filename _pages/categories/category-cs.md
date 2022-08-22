@@ -1,12 +1,12 @@
 ---
-title: "Jekyll/Github 블로그 R&D"
+title: "컴퓨터 공학"
 layout: archive
-permalink: categories/blog
+permalink: categories/cs
 author_profile: true
 sidebar_main: true
 ---
 
 ***
 
-{% assign posts = site.categories.Blog %}
+{% assign posts = site.categories.Cs %}
 {% for post in posts %} {% include archive-single2.html type=page.entries_layout %} {% endfor %}

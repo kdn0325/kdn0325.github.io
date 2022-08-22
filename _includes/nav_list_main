@@ -123,7 +123,7 @@
               </ul>
         </li>
         <li>
-          <span class="nav__sub-title">CS</span>
+          <span class="nav__sub-title">컴퓨터 공학</span>
               <ul>
                   {% for category in site.categories %}
                       {% if category[0] == "Algorithm" %}

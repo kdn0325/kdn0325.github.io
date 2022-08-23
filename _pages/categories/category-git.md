@@ -1,7 +1,7 @@
 ---
-title: "Jekyll/Github 블로그 R&D"
+title: "Git"
 layout: archive
-permalink: categories/blog
+permalink: categories/git
 author_profile: true
 sidebar_main: true
 ---

@@ -1,5 +1,5 @@
 ---
-title: "typescript"
+title: "Typescript"
 layout: archive
 permalink: categories/ts
 author_profile: true

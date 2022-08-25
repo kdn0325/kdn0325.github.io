@@ -1,5 +1,5 @@
 ---
-title: "React"
+title: "React.js"
 layout: archive
 permalink: categories/react
 author_profile: true

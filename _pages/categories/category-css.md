@@ -1,5 +1,5 @@
 ---
-title: "Jekyll/Github 블로그 R&D"
+title: "CSS - Cascading Style Sheet"
 layout: archive
 permalink: categories/css
 author_profile: true

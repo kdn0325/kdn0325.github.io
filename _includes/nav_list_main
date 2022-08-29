@@ -8,6 +8,30 @@
         <span>전체 글 수{{sum}}개<span>
       </li>
       <li>
+        <span class="nav__sub-title">Programming Language</span>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Javascript" %}
+                        <li><a href="/categories/js" class="">Javscript ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Typescript" %}
+                        <li><a href="/categories/ts" class="">Typescript ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Python" %}
+                        <li><a href="/categories/python" class="">Python({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </li>
+      <li>
         <span class="nav__sub-title">Front-end</span>
             <ul>
                 {% for category in site.categories %}
@@ -39,13 +63,6 @@
             </ul>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "Javascript" %}
-                        <li><a href="/categories/js" class="">Javscript ({{category[1].size}})</a></li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-            <ul>
-                {% for category in site.categories %}
                     {% if category[0] == "BuildTools" %}
                         <li><a href="/categories/buildtools" class="">Build Tools ({{category[1].size}})</a></li>
                     {% endif %}
@@ -62,13 +79,6 @@
                 {% for category in site.categories %}
                     {% if category[0] == "Next" %}
                         <li><a href="/categories/next" class="">Next.js ({{category[1].size}})</a></li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-            <ul>
-                {% for category in site.categories %}
-                    {% if category[0] == "Typescript" %}
-                        <li><a href="/categories/ts" class="">Typescript ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
@@ -91,15 +101,15 @@
           <span class="nav__sub-title">Back-end</span>
               <ul>
                   {% for category in site.categories %}
-                      {% if category[0] == "Python" %}
-                          <li><a href="/categories/python" class="">Python({{category[1].size}})</a></li>
+                      {% if category[0] == "Node" %}
+                          <li><a href="/categories/node" class="">Node.js ({{category[1].size}})</a></li>
                       {% endif %}
                   {% endfor %}
               </ul>
               <ul>
                   {% for category in site.categories %}
-                      {% if category[0] == "Node" %}
-                          <li><a href="/categories/node" class="">Node.js ({{category[1].size}})</a></li>
+                      {% if category[0] == "Django" %}
+                          <li><a href="/categories/django" class="">Django ({{category[1].size}})</a></li>
                       {% endif %}
                   {% endfor %}
               </ul>

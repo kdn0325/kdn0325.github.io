@@ -35,14 +35,14 @@
         <span class="nav__sub-title">Front-end</span>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "Html" %}
+                    {% if category[0] == "HTML" %}
                         <li><a href="/categories/html" class="">HTML({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "Css" %}
+                    {% if category[0] == "CSS" %}
                         <li><a href="/categories/css" class="">CSS ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}

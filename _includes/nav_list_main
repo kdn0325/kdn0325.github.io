@@ -49,15 +49,8 @@
             </ul>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "Cssprocessors" %}
-                        <li><a href="/categories/cssprocessors" class="">CSS Preprocessors ({{category[1].size}})</a></li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-            <ul>
-                {% for category in site.categories %}
-                    {% if category[0] == "Cssframeworks" %}
-                        <li><a href="/categories/cssframeworks" class="">CSS Frameworks ({{category[1].size}})</a></li>
+                    {% if category[0] == "CSSFrameworks" %}
+                        <li><a href="/categories/CSSFrameworks" class="">CSS Frameworks ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
@@ -89,13 +82,6 @@
                     {% endif %}
                 {% endfor %}
             </ul>
-            <ul>
-                {% for category in site.categories %}
-                    {% if category[0] == "Testing" %}
-                        <li><a href="/categories/testing" class="">Testing ({{category[1].size}})</a></li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
         </li>
         <li>
           <span class="nav__sub-title">Back-end</span>
@@ -113,17 +99,14 @@
                       {% endif %}
                   {% endfor %}
               </ul>
+          </li>
+        <li>
+        <li>
+          <span class="nav__sub-title">DB</span>
               <ul>
                   {% for category in site.categories %}
-                      {% if category[0] == "DataBase" %}
-                          <li><a href="/categories/db" class="">데이터베이스 ({{category[1].size}})</a></li>
-                      {% endif %}
-                  {% endfor %}
-              </ul>
-              <ul>
-                  {% for category in site.categories %}
-                      {% if category[0] == "CI/CD" %}
-                          <li><a href="/categories/ci&cd" class="">CI/CD ({{category[1].size}})</a></li>
+                      {% if category[0] == "MySQL" %}
+                          <li><a href="/categories/MySQL" class="">MySQL ({{category[1].size}})</a></li>
                       {% endif %}
                   {% endfor %}
               </ul>
@@ -157,7 +140,7 @@
               </ul>
               <ul>
                   {% for category in site.categories %}
-                      {% if category[0] == "Cs" %}
+                      {% if category[0] == "ComputerScience" %}
                           <li><a href="/categories/cs" class="">CS({{category[1].size}})</a></li>
                       {% endif %}
                   {% endfor %}
@@ -172,6 +155,20 @@
                       {% endif %}
                   {% endfor %}
               </ul>
+              <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "CI/CD" %}
+                        <li><a href="/categories/ci&cd" class="">CI/CD ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Testing" %}
+                        <li><a href="/categories/testing" class="">Testing ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
               <ul>
                   {% for category in site.categories %}
                       {% if category[0] == "Docker" %}

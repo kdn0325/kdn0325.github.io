@@ -140,8 +140,8 @@
               </ul>
               <ul>
                   {% for category in site.categories %}
-                      {% if category[0] == "ComputerScience" %}
-                          <li><a href="/categories/cs" class="">CS({{category[1].size}})</a></li>
+                      {% if category[0] == "computerscience" %}
+                          <li><a href="/categories/computerscience" class="">CS({{category[1].size}})</a></li>
                       {% endif %}
                   {% endfor %}
               </ul>

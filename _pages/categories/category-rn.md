@@ -1,5 +1,5 @@
 ---
-title: "Jekyll/Github 블로그 R&D"
+title: "React Native"
 layout: archive
 permalink: categories/rn
 author_profile: true

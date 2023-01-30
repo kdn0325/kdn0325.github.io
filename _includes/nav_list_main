@@ -105,7 +105,7 @@
           <span class="nav__sub-title">DB</span>
               <ul>
                   {% for category in site.categories %}
-                      {% if category[0] == "MySQL" %}
+                      {% if category[0] == "mysql" %}
                           <li><a href="/categories/MySQL" class="">MySQL ({{category[1].size}})</a></li>
                       {% endif %}
                   {% endfor %}
@@ -126,7 +126,7 @@
           <span class="nav__sub-title">컴퓨터 공학</span>
               <ul>
                   {% for category in site.categories %}
-                      {% if category[0] == "Algorithm" %}
+                      {% if category[0] == "algorithm" %}
                           <li><a href="/categories/algorithm" class="">알고리즘({{category[1].size}})</a></li>
                       {% endif %}
                   {% endfor %}
@@ -134,7 +134,7 @@
               <ul>
                   {% for category in site.categories %}
                       {% if category[0] == "codingtest" %}
-                          <li><a href="/categories/coding-test" class="">Coding Test({{category[1].size}})</a></li>
+                          <li><a href="/categories/codingtest" class="">Coding Test({{category[1].size}})</a></li>
                       {% endif %}
                   {% endfor %}
               </ul>

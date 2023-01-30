@@ -133,6 +133,13 @@
               </ul>
               <ul>
                   {% for category in site.categories %}
+                      {% if category[0] == "codingtest" %}
+                          <li><a href="/categories/coding-test" class="">Coding Test({{category[1].size}})</a></li>
+                      {% endif %}
+                  {% endfor %}
+              </ul>
+              <ul>
+                  {% for category in site.categories %}
                       {% if category[0] == "DataStructure" %}
                           <li><a href="/categories/data-structure" class="">자료구조({{category[1].size}})</a></li>
                       {% endif %}

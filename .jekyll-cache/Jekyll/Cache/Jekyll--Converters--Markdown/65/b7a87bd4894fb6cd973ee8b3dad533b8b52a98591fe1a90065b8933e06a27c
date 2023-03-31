@@ -1,0 +1,67 @@
+I"5	<hr />
+
+<h3 id="문제-설명">문제 설명</h3>
+
+<p>문자열 배열 <code class="language-plaintext highlighter-rouge">strlist</code>가 매개변수로 주어집니다. <code class="language-plaintext highlighter-rouge">strlist</code> 각 원소의 길이를 담은 배열을 retrun하도록 solution 함수를 완성해주세요..</p>
+
+<hr />
+
+<h3 id="제한사항">제한사항</h3>
+
+<ul>
+  <li>1 ≤ <code class="language-plaintext highlighter-rouge">strlist</code> 원소의 길이 ≤ 100</li>
+  <li><code class="language-plaintext highlighter-rouge">strlist</code>는 알파벳 소문자, 대문자, 특수문자로 구성되어 있습니다.</li>
+</ul>
+
+<hr />
+
+<h3 id="입출력-예">입출력 예</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>strlist</th>
+      <th>result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>[“We”, “are”, “the”, “world!”]</td>
+      <td>[2, 3, 3, 6]</td>
+    </tr>
+    <tr>
+      <td>[“I”, “Love”, “Programmers.”]</td>
+      <td>[1, 4, 12]</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h3 id="입출력-설명">입출력 설명</h3>
+
+<p>입출력 예 #1</p>
+
+<ul>
+  <li>[“We”, “are”, “the”, “world!”]의 각 원소의 길이인 [2, 3, 3, 6]을 return합니다.</li>
+</ul>
+
+<p>입출력 예 #2</p>
+
+<ul>
+  <li>[“I”, “Love”, “Programmers.”]의 각 원소의 길이인 [1, 4, 12]을 return합니다.</li>
+</ul>
+
+<hr />
+
+<h3 id="나의-풀이">나의 풀이</h3>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">strlist</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">answer</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="nx">answer</span> <span class="o">=</span> <span class="nx">strlist</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">item</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">(</span>
+        <span class="nx">item</span><span class="p">.</span><span class="nx">length</span>
+    <span class="p">))</span>
+    <span class="k">return</span> <span class="nx">answer</span>
+<span class="p">}</span>
+</code></pre></div></div>
+:ET

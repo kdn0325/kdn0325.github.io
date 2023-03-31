@@ -1,0 +1,23 @@
+I"�<h2 id="git-branch-전략">Git Branch 전략</h2>
+
+<h4 id="master">master</h4>
+
+<p>제품으로 출시될 수 있는 브랜치(Production)</p>
+
+<h4 id="develop">develop</h4>
+
+<p>다음 출시 버전을 개발하는 브랜치</p>
+
+<h4 id="feature">feature</h4>
+
+<p>기능을 개발하는 브랜치</p>
+
+<h4 id="release">release</h4>
+
+<p>이번 출시 버전을 준비하는 브랜치</p>
+
+<h4 id="hotfix">hotfix</h4>
+
+<p>출시 버전에서 발생한 버그를 수정 하는 브랜치</p>
+
+:ET

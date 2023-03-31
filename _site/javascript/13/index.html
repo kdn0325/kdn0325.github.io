@@ -1,0 +1,1771 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>#13 배열 (2) - ABEL FRONTELIO : 개발 노트</title>
+<meta name="description" content="1.  sort">
+
+
+  <meta name="author" content="Abel🤭">
+  
+  <meta property="article:author" content="Abel🤭">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="ABEL FRONTELIO : 개발 노트">
+<meta property="og:title" content="#13 배열 (2)">
+<meta property="og:url" content="http://localhost:4000/javascript/13/">
+
+
+  <meta property="og:description" content="1.  sort">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2023-03-28T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2023-03-28T00:00:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/javascript/13/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Abel",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="ABEL FRONTELIO : 개발 노트 Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+<!-- end custom head snippets -->
+
+
+  </head>
+
+  <body class="layout--archive">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          ABEL FRONTELIO : 개발 노트
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/index.html">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#javascript" itemprop="item"><span itemprop="name">Javascript</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">#13 배열 (2)</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Abel🤭</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>FRONTELIO - Software Developer.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+        
+          
+            <li><a href="mailto:dn10003@email.com" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/kdn0325" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+
+  
+    
+
+<nav class="nav__list">
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items" id="category_tag_menu">
+      <li>
+        <span>전체 글 수77개<span>
+      </li>
+      <li>
+        <span class="nav__sub-title">Programming Language</span>
+            <ul>
+                
+                    
+                
+                    
+                        <li><a href="/categories/js" class="">Javscript (16)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/ts" class="">Typescript (10)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+        </li>
+      <li>
+        <span class="nav__sub-title">Front-end</span>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/html" class="">HTML(1)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/css" class="">CSS (2)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/react" class="">React (13)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/next" class="">Next.js (3)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/rn" class="">React Native (1)</a></li>
+                    
+                
+                    
+                
+            </ul>
+        </li>
+        <li>
+          <span class="nav__sub-title">Back-end</span>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+          </li>
+        <li>
+        <li>
+          <span class="nav__sub-title">DB</span>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+          </li>
+        <li>
+        <li>
+          <span class="nav__sub-title">OS</span>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+        </li>
+        <li>
+          <span class="nav__sub-title">컴퓨터 공학</span>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                          <li><a href="/categories/codingtest" class="">Coding Test(26)</a></li>
+                      
+                  
+              </ul>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                          <li><a href="/categories/computerscience" class="">CS(1)</a></li>
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+        </li>
+        <li>
+          <span class="nav__sub-title">etc</span>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                          <li><a href="/categories/git" class="">Git(2)</a></li>
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+              <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+              <ul>
+                  
+                      
+                          <li><a href="/categories/blog" class=""> Jekyll Blog(1)</a></li>
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+        </li>
+        <li>
+          <span class="nav__sub-title">Review</span>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                          <li><a href="/categories/refer" class="">Reference(1)</a></li>
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+        </li>
+      <li>
+  </ul>
+</nav>
+
+  
+
+  </div>
+
+
+  <div class="archive">
+    
+      <h1 id="page-title" class="page__title">#13 배열 (2)</h1>
+    
+    <h2 id="1--sort">1.  sort</h2>
+
+<p>배열의 요소를 적절한 위치에 정렬한 후 그 배열을 반환합니다. 정렬은 stable sort가 아닐 수 있습니다. 기본 정렬 순서는 문자열의 유니코드 코드 포인트를 따릅니다.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>[Array.prototype.sort() - JavaScript</td>
+      <td>MDN](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>1): sort 기본</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">1</span><span class="p">.</span> <span class="nx">sort</span> <span class="nx">기본</span>
+
+<span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">90</span><span class="p">];</span>
+    <span class="nx">data</span><span class="p">.</span><span class="nx">sort</span><span class="p">();</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span> <span class="c1">// 문자열 유니코드로 정렬</span>
+<span class="p">}</span>
+
+<span class="o">=&gt;</span><span class="nx">결과값</span>  
+
+<span class="p">[</span><span class="nx">Running</span><span class="p">]</span> <span class="nx">node</span> <span class="dl">"</span><span class="s2">/workspaces/codespaces-blank/index.js</span><span class="dl">"</span>
+<span class="p">[</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">90</span> <span class="p">]</span>
+
+<span class="p">[</span><span class="nx">Done</span><span class="p">]</span> <span class="nx">exited</span> <span class="kd">with</span> <span class="nx">code</span><span class="o">=</span><span class="mi">0</span> <span class="k">in</span> <span class="mf">0.059</span> <span class="nx">seconds</span>
+
+<span class="o">----------------------------------------------------------------------------</span>
+
+<span class="mi">2</span><span class="p">.</span> <span class="nx">sort</span> <span class="nx">자릿수</span> <span class="nx">정렬</span>
+
+<span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span><span class="mi">150</span><span class="p">,</span><span class="mi">120</span><span class="p">,</span><span class="mi">610</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">90</span><span class="p">];</span>
+    <span class="nx">data1</span><span class="p">.</span><span class="nx">sort</span><span class="p">();</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span> <span class="c1">// 이렇게 하면 자릿수대로 분류를 하기때문에 정렬이 되지않는다</span>
+<span class="p">}</span>
+
+<span class="o">=&gt;</span><span class="nx">결과값</span>
+
+<span class="p">[</span><span class="nx">Running</span><span class="p">]</span> <span class="nx">node</span> <span class="dl">"</span><span class="s2">/workspaces/codespaces-blank/index.js</span><span class="dl">"</span>
+<span class="p">[</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">120</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">610</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">90</span> <span class="p">]</span>
+
+<span class="p">[</span><span class="nx">Done</span><span class="p">]</span> <span class="nx">exited</span> <span class="kd">with</span> <span class="nx">code</span><span class="o">=</span><span class="mi">0</span> <span class="k">in</span> <span class="mf">0.056</span> <span class="nx">seconds</span>
+
+<span class="o">----------------------------------------------------------------------------</span>
+
+<span class="mi">3</span><span class="p">.</span> <span class="nx">오름차순</span> <span class="nx">해결</span> <span class="nx">방법</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="p">{</span>
+    <span class="c1">// 오름 차순 정렬</span>
+    <span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span><span class="mi">150</span><span class="p">,</span><span class="mi">120</span><span class="p">,</span><span class="mi">610</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">90</span><span class="p">];</span>
+    <span class="nx">data</span><span class="p">.</span><span class="nx">sort</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">){</span>
+      <span class="k">if</span><span class="p">(</span><span class="nx">a</span><span class="o">&gt;</span><span class="nx">b</span><span class="p">){</span>
+        <span class="k">return</span> <span class="mi">1</span>
+      <span class="p">}</span><span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nx">a</span><span class="o">&lt;</span><span class="nx">b</span><span class="p">){</span>
+        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+      <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+        <span class="c1">//a,b가 같았을때</span>
+        <span class="k">return</span> <span class="mi">0</span>
+      <span class="p">}</span>
+    <span class="p">});</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="o">=&gt;</span><span class="nx">결과값</span>
+
+<span class="p">[</span><span class="nx">Running</span><span class="p">]</span> <span class="nx">node</span> <span class="dl">"</span><span class="s2">/workspaces/codespaces-blank/index.js</span><span class="dl">"</span>
+<span class="p">[</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">120</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">610</span> <span class="p">]</span>
+
+<span class="p">[</span><span class="nx">Done</span><span class="p">]</span> <span class="nx">exited</span> <span class="kd">with</span> <span class="nx">code</span><span class="o">=</span><span class="mi">0</span> <span class="k">in</span> <span class="mf">0.054</span> <span class="nx">seconds</span>
+
+<span class="o">----------------------------------------------------------------------------</span>
+
+<span class="mi">3</span><span class="o">-</span><span class="mi">1</span><span class="p">.</span> <span class="nx">오름차순</span> <span class="nx">해결</span> <span class="nx">방법</span> <span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span><span class="mi">150</span><span class="p">,</span><span class="mi">120</span><span class="p">,</span><span class="mi">610</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">90</span><span class="p">];</span>
+    <span class="nx">data</span><span class="p">.</span><span class="nx">sort</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">)</span><span class="o">=&gt;</span><span class="nx">a</span><span class="o">-</span><span class="nx">b</span><span class="p">);</span> <span class="c1">// 결과값이 하나 일때 return 생략</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="o">=&gt;</span><span class="nx">결과값</span>
+
+<span class="p">[</span><span class="nx">Running</span><span class="p">]</span> <span class="nx">node</span> <span class="dl">"</span><span class="s2">/workspaces/codespaces-blank/index.js</span><span class="dl">"</span>
+<span class="p">[</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">120</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">610</span> <span class="p">]</span>
+
+<span class="p">[</span><span class="nx">Done</span><span class="p">]</span> <span class="nx">exited</span> <span class="kd">with</span> <span class="nx">code</span><span class="o">=</span><span class="mi">0</span> <span class="k">in</span> <span class="mf">0.052</span> <span class="nx">seconds</span>
+
+<span class="o">----------------------------------------------------------------------------</span>
+
+<span class="mi">4</span><span class="p">.</span> <span class="nx">내림</span> <span class="nx">차순</span> <span class="nx">해결</span>
+
+<span class="p">{</span>
+    <span class="c1">// 내림 차순 정렬</span>
+    <span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span><span class="mi">150</span><span class="p">,</span><span class="mi">120</span><span class="p">,</span><span class="mi">610</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">90</span><span class="p">];</span>
+    <span class="nx">data</span><span class="p">.</span><span class="nx">sort</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">){</span>
+      <span class="k">if</span><span class="p">(</span><span class="nx">a</span><span class="o">&gt;</span><span class="nx">b</span><span class="p">){</span>
+        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+      <span class="p">}</span><span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nx">a</span><span class="o">&lt;</span><span class="nx">b</span><span class="p">){</span>
+        <span class="k">return</span> <span class="mi">1</span>
+      <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+        <span class="c1">//a,b가 같았을때</span>
+        <span class="k">return</span> <span class="mi">0</span>
+      <span class="p">}</span>
+    <span class="p">});</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="o">=&gt;</span><span class="nx">결과값</span>
+
+<span class="p">[</span><span class="nx">Running</span><span class="p">]</span> <span class="nx">node</span> <span class="dl">"</span><span class="s2">/workspaces/codespaces-blank/index.js</span><span class="dl">"</span>
+<span class="p">[</span> <span class="mi">610</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">120</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">80</span> <span class="p">]</span>
+
+<span class="p">[</span><span class="nx">Done</span><span class="p">]</span> <span class="nx">exited</span> <span class="kd">with</span> <span class="nx">code</span><span class="o">=</span><span class="mi">0</span> <span class="k">in</span> <span class="mf">0.065</span> <span class="nx">seconds</span>
+
+</code></pre></div></div>
+
+<p>2): sort 활용</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="mi">1</span><span class="p">.</span> <span class="nx">기본</span> <span class="nx">출력</span>
+
+<span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">{</span><span class="na">name</span><span class="p">:</span><span class="dl">'</span><span class="s1">철수</span><span class="dl">'</span><span class="p">,</span><span class="na">age</span><span class="p">:</span><span class="mi">22</span><span class="p">},</span>
+        <span class="p">{</span><span class="na">name</span><span class="p">:</span><span class="dl">'</span><span class="s1">영희</span><span class="dl">'</span><span class="p">,</span><span class="na">age</span><span class="p">:</span><span class="mi">25</span><span class="p">},</span>
+        <span class="p">{</span><span class="na">name</span><span class="p">:</span><span class="dl">'</span><span class="s1">훈이</span><span class="dl">'</span><span class="p">,</span><span class="na">age</span><span class="p">:</span><span class="mi">27</span><span class="p">},</span>
+        <span class="p">{</span><span class="na">name</span><span class="p">:</span><span class="dl">'</span><span class="s1">짱구</span><span class="dl">'</span><span class="p">,</span><span class="na">age</span><span class="p">:</span><span class="mi">26</span><span class="p">},</span>
+        <span class="p">{</span><span class="na">name</span><span class="p">:</span><span class="dl">'</span><span class="s1">유리</span><span class="dl">'</span><span class="p">,</span><span class="na">age</span><span class="p">:</span><span class="mi">21</span><span class="p">},</span>
+        <span class="p">{</span><span class="na">name</span><span class="p">:</span><span class="dl">'</span><span class="s1">맹구</span><span class="dl">'</span><span class="p">,</span><span class="na">age</span><span class="p">:</span><span class="mi">22</span><span class="p">},</span>
+        <span class="p">{</span><span class="na">name</span><span class="p">:</span><span class="dl">'</span><span class="s1">민지</span><span class="dl">'</span><span class="p">,</span><span class="na">age</span><span class="p">:</span><span class="mi">25</span><span class="p">},</span>
+        <span class="p">{</span><span class="na">name</span><span class="p">:</span><span class="dl">'</span><span class="s1">재석</span><span class="dl">'</span><span class="p">,</span><span class="na">age</span><span class="p">:</span><span class="mi">21</span><span class="p">},</span>
+        <span class="p">{</span><span class="na">name</span><span class="p">:</span><span class="dl">'</span><span class="s1">다미</span><span class="dl">'</span><span class="p">,</span><span class="na">age</span><span class="p">:</span><span class="mi">22</span><span class="p">},</span>
+      <span class="p">]</span>
+
+      <span class="nx">obj</span><span class="p">.</span><span class="nx">sort</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">age</span><span class="o">&gt;</span><span class="nx">b</span><span class="p">.</span><span class="nx">age</span><span class="p">){</span>
+          <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="p">}</span><span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">age</span><span class="o">&lt;</span><span class="nx">b</span><span class="p">.</span><span class="nx">age</span><span class="p">){</span>
+          <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+        <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+          <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="p">}</span>
+      <span class="p">})</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">obj</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="o">=&gt;</span> <span class="nx">결과값</span>
+
+<span class="p">[</span><span class="nx">Running</span><span class="p">]</span> <span class="nx">node</span> <span class="dl">"</span><span class="s2">/workspaces/codespaces-blank/index.js</span><span class="dl">"</span>
+<span class="p">[</span>
+  <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">유리</span><span class="dl">'</span><span class="p">,</span> <span class="na">age</span><span class="p">:</span> <span class="mi">21</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">재석</span><span class="dl">'</span><span class="p">,</span> <span class="na">age</span><span class="p">:</span> <span class="mi">21</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">철수</span><span class="dl">'</span><span class="p">,</span> <span class="na">age</span><span class="p">:</span> <span class="mi">22</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">맹구</span><span class="dl">'</span><span class="p">,</span> <span class="na">age</span><span class="p">:</span> <span class="mi">22</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">다미</span><span class="dl">'</span><span class="p">,</span> <span class="na">age</span><span class="p">:</span> <span class="mi">22</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">영희</span><span class="dl">'</span><span class="p">,</span> <span class="na">age</span><span class="p">:</span> <span class="mi">25</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">민지</span><span class="dl">'</span><span class="p">,</span> <span class="na">age</span><span class="p">:</span> <span class="mi">25</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">짱구</span><span class="dl">'</span><span class="p">,</span> <span class="na">age</span><span class="p">:</span> <span class="mi">26</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">훈이</span><span class="dl">'</span><span class="p">,</span> <span class="na">age</span><span class="p">:</span> <span class="mi">27</span> <span class="p">}</span>
+<span class="p">]</span>
+
+<span class="p">[</span><span class="nx">Done</span><span class="p">]</span> <span class="nx">exited</span> <span class="kd">with</span> <span class="nx">code</span><span class="o">=</span><span class="mi">0</span> <span class="k">in</span> <span class="mf">0.068</span> <span class="nx">seconds</span>
+
+<span class="o">----------------------------------------------------------------------------</span>
+
+<span class="mi">2</span><span class="p">.</span> <span class="nx">삼항연산으로</span> <span class="nx">출력</span>
+
+<span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">{</span><span class="na">name</span><span class="p">:</span><span class="dl">'</span><span class="s1">철수</span><span class="dl">'</span><span class="p">,</span><span class="na">age</span><span class="p">:</span><span class="mi">22</span><span class="p">},</span>
+        <span class="p">{</span><span class="na">name</span><span class="p">:</span><span class="dl">'</span><span class="s1">영희</span><span class="dl">'</span><span class="p">,</span><span class="na">age</span><span class="p">:</span><span class="mi">25</span><span class="p">},</span>
+        <span class="p">{</span><span class="na">name</span><span class="p">:</span><span class="dl">'</span><span class="s1">훈이</span><span class="dl">'</span><span class="p">,</span><span class="na">age</span><span class="p">:</span><span class="mi">27</span><span class="p">},</span>
+        <span class="p">{</span><span class="na">name</span><span class="p">:</span><span class="dl">'</span><span class="s1">짱구</span><span class="dl">'</span><span class="p">,</span><span class="na">age</span><span class="p">:</span><span class="mi">26</span><span class="p">},</span>
+        <span class="p">{</span><span class="na">name</span><span class="p">:</span><span class="dl">'</span><span class="s1">유리</span><span class="dl">'</span><span class="p">,</span><span class="na">age</span><span class="p">:</span><span class="mi">21</span><span class="p">},</span>
+        <span class="p">{</span><span class="na">name</span><span class="p">:</span><span class="dl">'</span><span class="s1">맹구</span><span class="dl">'</span><span class="p">,</span><span class="na">age</span><span class="p">:</span><span class="mi">22</span><span class="p">},</span>
+        <span class="p">{</span><span class="na">name</span><span class="p">:</span><span class="dl">'</span><span class="s1">민지</span><span class="dl">'</span><span class="p">,</span><span class="na">age</span><span class="p">:</span><span class="mi">25</span><span class="p">},</span>
+        <span class="p">{</span><span class="na">name</span><span class="p">:</span><span class="dl">'</span><span class="s1">재석</span><span class="dl">'</span><span class="p">,</span><span class="na">age</span><span class="p">:</span><span class="mi">21</span><span class="p">},</span>
+        <span class="p">{</span><span class="na">name</span><span class="p">:</span><span class="dl">'</span><span class="s1">다미</span><span class="dl">'</span><span class="p">,</span><span class="na">age</span><span class="p">:</span><span class="mi">22</span><span class="p">},</span>
+      <span class="p">]</span>
+
+      <span class="nx">obj</span><span class="p">.</span><span class="nx">sort</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
+        <span class="c1">//삼항연산자 조건 ? true : false</span>
+        <span class="k">return</span> <span class="nx">a</span><span class="p">.</span><span class="nx">age</span> <span class="o">&gt;</span> <span class="nx">b</span><span class="p">.</span><span class="nx">age</span> <span class="p">?</span> <span class="mi">1</span> <span class="p">:</span> <span class="nx">a</span><span class="p">.</span><span class="nx">age</span> <span class="o">&lt;</span> <span class="nx">b</span><span class="p">.</span><span class="nx">age</span> <span class="p">?</span> <span class="o">-</span><span class="mi">1</span> <span class="p">:</span> <span class="mi">0</span>
+      <span class="p">});</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">obj</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="o">=&gt;</span> <span class="nx">결과값</span>
+
+<span class="p">[</span><span class="nx">Running</span><span class="p">]</span> <span class="nx">node</span> <span class="dl">"</span><span class="s2">/workspaces/codespaces-blank/index.js</span><span class="dl">"</span>
+<span class="p">[</span>
+  <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">유리</span><span class="dl">'</span><span class="p">,</span> <span class="na">age</span><span class="p">:</span> <span class="mi">21</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">재석</span><span class="dl">'</span><span class="p">,</span> <span class="na">age</span><span class="p">:</span> <span class="mi">21</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">철수</span><span class="dl">'</span><span class="p">,</span> <span class="na">age</span><span class="p">:</span> <span class="mi">22</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">맹구</span><span class="dl">'</span><span class="p">,</span> <span class="na">age</span><span class="p">:</span> <span class="mi">22</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">다미</span><span class="dl">'</span><span class="p">,</span> <span class="na">age</span><span class="p">:</span> <span class="mi">22</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">영희</span><span class="dl">'</span><span class="p">,</span> <span class="na">age</span><span class="p">:</span> <span class="mi">25</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">민지</span><span class="dl">'</span><span class="p">,</span> <span class="na">age</span><span class="p">:</span> <span class="mi">25</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">짱구</span><span class="dl">'</span><span class="p">,</span> <span class="na">age</span><span class="p">:</span> <span class="mi">26</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">훈이</span><span class="dl">'</span><span class="p">,</span> <span class="na">age</span><span class="p">:</span> <span class="mi">27</span> <span class="p">}</span>
+<span class="p">]</span>
+
+<span class="p">[</span><span class="nx">Done</span><span class="p">]</span> <span class="nx">exited</span> <span class="kd">with</span> <span class="nx">code</span><span class="o">=</span><span class="mi">0</span> <span class="k">in</span> <span class="mf">0.068</span> <span class="nx">seconds</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="2--filter">2.  filter</h2>
+
+<p>주어진 함수의 테스트를 통과하는 모든 요소를 모아 새로운 배열로 반환합니다.</p>
+
+<p>조건에 맞는 값을 출력할 때 , 결과가 배열로 출력</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>[Array.prototype.filter() - JavaScript</td>
+      <td>MDN](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>1): filter 기본</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="cm">/* 3의 배수만 출력 */</span>
+
+<span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">40</span><span class="p">];</span>
+    <span class="kd">const</span> <span class="nx">result1</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">element</span><span class="p">,</span><span class="nx">index</span><span class="p">,</span><span class="nx">arr</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
+        <span class="c1">// element 요소값 , index 인덱스번호 , arr 배열값</span>
+        <span class="k">return</span> <span class="nx">element</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span><span class="mi">0</span><span class="p">;</span> 
+      <span class="p">});</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result1</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="o">=&gt;</span> <span class="nx">결과값</span> 
+
+<span class="p">[</span><span class="nx">Running</span><span class="p">]</span> <span class="nx">node</span> <span class="dl">"</span><span class="s2">/workspaces/codespaces-blank/index.js</span><span class="dl">"</span>
+<span class="p">[</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">60</span> <span class="p">]</span>
+<span class="o">==================================</span>
+
+<span class="p">[</span><span class="nx">Done</span><span class="p">]</span> <span class="nx">exited</span> <span class="kd">with</span> <span class="nx">code</span><span class="o">=</span><span class="mi">0</span> <span class="k">in</span> <span class="mf">0.089</span> <span class="nx">seconds</span>
+
+<span class="o">----------------------------------------------------------------------------</span>
+
+<span class="cm">/* filter,indexOf 를 이용해서 김이 들어가있는 값을 출력 */</span>
+
+<span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">강호동</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">유재석</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">이수근</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">김희철</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">이효리</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">김다미</span><span class="dl">'</span><span class="p">]</span>
+    <span class="kd">const</span> <span class="nx">txt</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">김</span><span class="dl">'</span><span class="p">;</span>
+    <span class="c1">//</span>
+
+    <span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">item</span><span class="o">=&gt;</span><span class="nx">item</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">txt</span><span class="p">)</span><span class="o">!=-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="o">=&gt;</span><span class="nx">결과값</span>
+
+<span class="p">[</span><span class="nx">Running</span><span class="p">]</span> <span class="nx">node</span> <span class="dl">"</span><span class="s2">/workspaces/codespaces-blank/index.js</span><span class="dl">"</span>
+<span class="p">[</span> <span class="dl">'</span><span class="s1">김희철</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">김다미</span><span class="dl">'</span> <span class="p">]</span>
+
+<span class="p">[</span><span class="nx">Done</span><span class="p">]</span> <span class="nx">exited</span> <span class="kd">with</span> <span class="nx">code</span><span class="o">=</span><span class="mi">0</span> <span class="k">in</span> <span class="mf">0.053</span> <span class="nx">seconds</span>
+</code></pre></div></div>
+
+<p>2): filter 활용</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/*  영희 삭제하고 나머지만 출력 */</span>
+<span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">{</span><span class="na">name</span><span class="p">:</span><span class="dl">'</span><span class="s1">철수</span><span class="dl">'</span><span class="p">,</span><span class="na">age</span><span class="p">:</span><span class="mi">22</span><span class="p">,</span><span class="na">city</span><span class="p">:</span><span class="dl">'</span><span class="s1">제주</span><span class="dl">'</span><span class="p">},</span>
+        <span class="p">{</span><span class="na">name</span><span class="p">:</span><span class="dl">'</span><span class="s1">영희</span><span class="dl">'</span><span class="p">,</span><span class="na">age</span><span class="p">:</span><span class="mi">25</span><span class="p">,</span><span class="na">city</span><span class="p">:</span><span class="dl">'</span><span class="s1">서울</span><span class="dl">'</span><span class="p">},</span>
+        <span class="p">{</span><span class="na">name</span><span class="p">:</span><span class="dl">'</span><span class="s1">훈이</span><span class="dl">'</span><span class="p">,</span><span class="na">age</span><span class="p">:</span><span class="mi">27</span><span class="p">,</span><span class="na">city</span><span class="p">:</span><span class="dl">'</span><span class="s1">대전</span><span class="dl">'</span><span class="p">},</span>
+        <span class="p">{</span><span class="na">name</span><span class="p">:</span><span class="dl">'</span><span class="s1">짱구</span><span class="dl">'</span><span class="p">,</span><span class="na">age</span><span class="p">:</span><span class="mi">26</span><span class="p">,</span><span class="na">city</span><span class="p">:</span><span class="dl">'</span><span class="s1">대구</span><span class="dl">'</span><span class="p">},</span>
+        <span class="p">{</span><span class="na">name</span><span class="p">:</span><span class="dl">'</span><span class="s1">맹구</span><span class="dl">'</span><span class="p">,</span><span class="na">age</span><span class="p">:</span><span class="mi">22</span><span class="p">,</span><span class="na">city</span><span class="p">:</span><span class="dl">'</span><span class="s1">부산</span><span class="dl">'</span><span class="p">},</span>
+      <span class="p">];</span>
+   
+
+    <span class="kd">const</span> <span class="nx">data4</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">item</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
+        <span class="k">return</span> <span class="nx">item</span><span class="p">.</span><span class="nx">name</span> <span class="o">!=</span> <span class="dl">'</span><span class="s1">영희</span><span class="dl">'</span>
+      <span class="p">});</span>
+      <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">item</span> <span class="k">of</span> <span class="nx">data4</span><span class="p">){</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">item</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span><span class="nx">item</span><span class="p">.</span><span class="nx">age</span><span class="p">,</span><span class="nx">item</span><span class="p">.</span><span class="nx">city</span><span class="p">)</span>
+      <span class="p">};</span>
+<span class="p">}</span>
+
+<span class="o">=&gt;</span> <span class="nx">결과값</span>
+
+<span class="p">[</span><span class="nx">Running</span><span class="p">]</span> <span class="nx">node</span> <span class="dl">"</span><span class="s2">/workspaces/codespaces-blank/index.js</span><span class="dl">"</span>
+<span class="nx">철수</span> <span class="mi">22</span> <span class="nx">제주</span>
+<span class="nx">훈이</span> <span class="mi">27</span> <span class="nx">대전</span>
+<span class="nx">짱구</span> <span class="mi">26</span> <span class="nx">대구</span>
+<span class="nx">맹구</span> <span class="mi">22</span> <span class="nx">부산</span>
+
+<span class="p">[</span><span class="nx">Done</span><span class="p">]</span> <span class="nx">exited</span> <span class="kd">with</span> <span class="nx">code</span><span class="o">=</span><span class="mi">0</span> <span class="k">in</span> <span class="mf">0.056</span> <span class="nx">seconds</span>
+
+<span class="o">----------------------------------------------------------------------------</span>
+
+<span class="cm">/*  이름이 '구'가 들어간 데이터만 출력 */</span>
+<span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">{</span><span class="na">name</span><span class="p">:</span><span class="dl">'</span><span class="s1">철수</span><span class="dl">'</span><span class="p">,</span><span class="na">age</span><span class="p">:</span><span class="mi">22</span><span class="p">,</span><span class="na">city</span><span class="p">:</span><span class="dl">'</span><span class="s1">제주</span><span class="dl">'</span><span class="p">},</span>
+        <span class="p">{</span><span class="na">name</span><span class="p">:</span><span class="dl">'</span><span class="s1">영희</span><span class="dl">'</span><span class="p">,</span><span class="na">age</span><span class="p">:</span><span class="mi">25</span><span class="p">,</span><span class="na">city</span><span class="p">:</span><span class="dl">'</span><span class="s1">서울</span><span class="dl">'</span><span class="p">},</span>
+        <span class="p">{</span><span class="na">name</span><span class="p">:</span><span class="dl">'</span><span class="s1">훈이</span><span class="dl">'</span><span class="p">,</span><span class="na">age</span><span class="p">:</span><span class="mi">27</span><span class="p">,</span><span class="na">city</span><span class="p">:</span><span class="dl">'</span><span class="s1">대전</span><span class="dl">'</span><span class="p">},</span>
+        <span class="p">{</span><span class="na">name</span><span class="p">:</span><span class="dl">'</span><span class="s1">짱구</span><span class="dl">'</span><span class="p">,</span><span class="na">age</span><span class="p">:</span><span class="mi">26</span><span class="p">,</span><span class="na">city</span><span class="p">:</span><span class="dl">'</span><span class="s1">대구</span><span class="dl">'</span><span class="p">},</span>
+        <span class="p">{</span><span class="na">name</span><span class="p">:</span><span class="dl">'</span><span class="s1">맹구</span><span class="dl">'</span><span class="p">,</span><span class="na">age</span><span class="p">:</span><span class="mi">22</span><span class="p">,</span><span class="na">city</span><span class="p">:</span><span class="dl">'</span><span class="s1">부산</span><span class="dl">'</span><span class="p">},</span>
+    <span class="p">];</span>
+    <span class="kd">const</span> <span class="nx">txt</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">구</span><span class="dl">'</span><span class="p">;</span>
+   
+
+    <span class="c1">// includes,forEach 활용</span>
+    <span class="kd">const</span> <span class="nx">data1</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">item</span><span class="o">=&gt;</span><span class="nx">item</span><span class="p">.</span><span class="nx">name</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="nx">txt</span><span class="p">));</span>
+    <span class="c1">// console.log(data1);</span>
+    <span class="nx">data1</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">item</span><span class="o">=&gt;</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">item</span><span class="p">))</span>
+<span class="p">}</span>
+
+<span class="o">=&gt;</span> <span class="nx">결과값</span>
+
+<span class="p">[</span><span class="nx">Running</span><span class="p">]</span> <span class="nx">node</span> <span class="dl">"</span><span class="s2">/workspaces/codespaces-blank/index.js</span><span class="dl">"</span>
+<span class="p">{</span> <span class="nl">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">짱구</span><span class="dl">'</span><span class="p">,</span> <span class="nx">age</span><span class="p">:</span> <span class="mi">26</span><span class="p">,</span> <span class="nx">city</span><span class="p">:</span> <span class="dl">'</span><span class="s1">대구</span><span class="dl">'</span> <span class="p">}</span>
+<span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">맹구</span><span class="dl">'</span><span class="p">,</span> <span class="na">age</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span> <span class="na">city</span><span class="p">:</span> <span class="dl">'</span><span class="s1">부산</span><span class="dl">'</span> <span class="p">}</span>
+
+<span class="p">[</span><span class="nx">Done</span><span class="p">]</span> <span class="nx">exited</span> <span class="kd">with</span> <span class="nx">code</span><span class="o">=</span><span class="mi">0</span> <span class="k">in</span> <span class="mf">0.064</span> <span class="nx">seconds</span>
+
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="3--findfindindex">3.  find,findIndex</h2>
+
+<p>1). find : 주어진 판별 함수를 만족하는 첫 번째 요소의 값을 반환합니다. 그런 요소가 없다면 undefined를 반환합니다.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>[Array.prototype.find() - JavaScript</td>
+      <td>MDN](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/find)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>2). findIndex: <strong>주어진 판별 함수를 만족하는</strong> 배열의 첫 번째 요소에 대한 <strong>인덱스</strong>를 반환합니다. 만족하는 요소가 없으면 -1을 반환</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>[Array.prototype.findIndex() - JavaScript</td>
+      <td>MDN](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex)</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* 40인 데이터 한개만 출력 */</span>
+<span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">50</span><span class="p">];</span>
+    <span class="kd">const</span> <span class="nx">arr3</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">find</span><span class="p">((</span><span class="nx">item</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
+        <span class="k">return</span> <span class="nx">item</span><span class="o">==</span><span class="mi">40</span><span class="p">;</span>
+      <span class="p">})</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr3</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="o">=&gt;</span> <span class="nx">결과값</span>
+
+<span class="p">[</span><span class="nx">Running</span><span class="p">]</span> <span class="nx">node</span> <span class="dl">"</span><span class="s2">/workspaces/codespaces-blank/index.js</span><span class="dl">"</span>
+<span class="mi">40</span>
+
+<span class="p">[</span><span class="nx">Done</span><span class="p">]</span> <span class="nx">exited</span> <span class="kd">with</span> <span class="nx">code</span><span class="o">=</span><span class="mi">0</span> <span class="k">in</span> <span class="mf">0.054</span> <span class="nx">seconds</span>
+
+<span class="o">----------------------------------------------------------------------------</span>
+
+<span class="cm">/* 30인 인덱스번호 출력 */</span>
+<span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">50</span><span class="p">];</span>
+    <span class="kd">const</span> <span class="nx">arr5</span> <span class="o">=</span><span class="nx">arr</span><span class="p">.</span><span class="nx">findIndex</span><span class="p">(</span><span class="nx">item</span><span class="o">=&gt;</span><span class="nx">item</span><span class="o">==</span><span class="mi">30</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr5</span><span class="p">);</span> <span class="c1">// 해당 데이터의 인덱스 번호를 출력</span>
+<span class="p">}</span>
+
+<span class="o">=&gt;</span> <span class="nx">결과값</span>
+
+<span class="p">[</span><span class="nx">Running</span><span class="p">]</span> <span class="nx">node</span> <span class="dl">"</span><span class="s2">/workspaces/codespaces-blank/index.js</span><span class="dl">"</span>
+<span class="mi">2</span>
+
+<span class="p">[</span><span class="nx">Done</span><span class="p">]</span> <span class="nx">exited</span> <span class="kd">with</span> <span class="nx">code</span><span class="o">=</span><span class="mi">0</span> <span class="k">in</span> <span class="mf">0.129</span> <span class="nx">seconds</span>
+
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="4-map">4. map</h2>
+
+<p>배열 내의 모든 요소 각각에 대하여 주어진 함수를 호출한 결과를 모아 새로운 배열을 반환합니다</p>
+
+<p>반환값: 배열의 각 요소에 대해 실행한 <code class="language-plaintext highlighter-rouge">callback</code>의 결과를 모은 새로운 배열.</p>
+
+<p>callback: 새로운 배열 요소를 생성하는 함수. 다음 세 가지 인수를 가집니다.</p>
+
+<p>(1): currentValue: 처리할 현재 요소.</p>
+
+<p>(2): index Optional: 처리할 현재 요소의 인덱스.</p>
+
+<p>(3): array Optional: map()을 호출한 배열.</p>
+
+<p>(4): thisArg Optional: callback을 실행할 때 this로 사용되는 값.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>[Array.prototype.map() - JavaScript</td>
+      <td>MDN](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/map)</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/*  map으로 callback 함수 출력 */</span>
+<span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">60</span><span class="p">];</span>
+    <span class="c1">//map =&gt; react에서 화면에 반복(for문)처럼 출력하기 위해 사용. (새로운 배열 생성)</span>
+    <span class="kd">const</span> <span class="nx">arr1</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">current</span><span class="p">,</span><span class="nx">index</span><span class="p">,</span><span class="nx">array</span><span class="p">){</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">current:</span><span class="dl">'</span><span class="p">,</span><span class="nx">current</span><span class="p">,</span><span class="dl">'</span><span class="s1">index:</span><span class="dl">'</span><span class="p">,</span><span class="nx">index</span><span class="p">,</span><span class="dl">'</span><span class="s1">array:</span><span class="dl">'</span><span class="p">,</span><span class="nx">array</span><span class="p">);</span>
+        <span class="k">return</span> <span class="nx">current</span>
+    <span class="p">})</span>
+<span class="p">}</span>
+
+<span class="o">=&gt;</span> <span class="nx">결과값</span>
+
+<span class="p">[</span><span class="nx">Running</span><span class="p">]</span> <span class="nx">node</span> <span class="dl">"</span><span class="s2">/workspaces/codespaces-blank/index.js</span><span class="dl">"</span>
+<span class="nx">current</span><span class="p">:</span> <span class="mi">10</span> <span class="nx">index</span><span class="p">:</span> <span class="mi">0</span> <span class="nx">array</span><span class="p">:</span> <span class="p">[</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">60</span> <span class="p">]</span>
+<span class="nx">current</span><span class="p">:</span> <span class="mi">20</span> <span class="nx">index</span><span class="p">:</span> <span class="mi">1</span> <span class="nx">array</span><span class="p">:</span> <span class="p">[</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">60</span> <span class="p">]</span>
+<span class="nx">current</span><span class="p">:</span> <span class="mi">30</span> <span class="nx">index</span><span class="p">:</span> <span class="mi">2</span> <span class="nx">array</span><span class="p">:</span> <span class="p">[</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">60</span> <span class="p">]</span>
+<span class="nx">current</span><span class="p">:</span> <span class="mi">40</span> <span class="nx">index</span><span class="p">:</span> <span class="mi">3</span> <span class="nx">array</span><span class="p">:</span> <span class="p">[</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">60</span> <span class="p">]</span>
+<span class="nx">current</span><span class="p">:</span> <span class="mi">50</span> <span class="nx">index</span><span class="p">:</span> <span class="mi">4</span> <span class="nx">array</span><span class="p">:</span> <span class="p">[</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">60</span> <span class="p">]</span>
+<span class="nx">current</span><span class="p">:</span> <span class="mi">60</span> <span class="nx">index</span><span class="p">:</span> <span class="mi">5</span> <span class="nx">array</span><span class="p">:</span> <span class="p">[</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">60</span> <span class="p">]</span>
+
+<span class="p">[</span><span class="nx">Done</span><span class="p">]</span> <span class="nx">exited</span> <span class="kd">with</span> <span class="nx">code</span><span class="o">=</span><span class="mi">0</span> <span class="k">in</span> <span class="mf">0.079</span> <span class="nx">seconds</span>
+
+<span class="o">----------------------------------------------------------------------------</span>
+
+<span class="cm">/*  map 데이터 출력 */</span>
+<span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">50</span><span class="p">];</span>
+    <span class="c1">//arr을 map으로 처리 템플릿 리터널</span>
+    <span class="kd">const</span> <span class="nx">arr1</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">item</span><span class="p">){</span>
+      <span class="k">return</span> <span class="p">(</span><span class="s2">`</span><span class="p">${</span><span class="nx">item</span><span class="p">}</span><span class="s2">`</span><span class="p">)</span>
+    <span class="p">})</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr1</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="dl">''</span><span class="p">))</span>
+
+<span class="p">}</span>
+
+<span class="o">=&gt;</span><span class="nx">결과값</span>
+
+<span class="p">[</span><span class="nx">Running</span><span class="p">]</span> <span class="nx">node</span> <span class="dl">"</span><span class="s2">/workspaces/codespaces-blank/index.js</span><span class="dl">"</span>
+<span class="mi">1020304050</span>
+
+<span class="p">[</span><span class="nx">Done</span><span class="p">]</span> <span class="nx">exited</span> <span class="kd">with</span> <span class="nx">code</span><span class="o">=</span><span class="mi">0</span> <span class="k">in</span> <span class="mf">0.054</span> <span class="nx">seconds</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="5--foreach">5.  forEach</h2>
+
+<p>주어진 함수를 배열 요소 각각에 대해 실행</p>
+
+<p>반환값:  <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a></p>
+
+<p>callback: 새로운 배열 요소를 생성하는 함수. 다음 세 가지 인수를 가집니다.</p>
+
+<p>(1): currentValue: 처리할 현재 요소.</p>
+
+<p>(2): index Optional: 처리할 현재 요소의 인덱스.</p>
+
+<p>(3): array Optional: forEach()을 호출한 배열.</p>
+
+<p>(4): thisArg Optional: callback을 실행할 때 this로 사용되는 값.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>[Array.prototype.forEach() - JavaScript</td>
+      <td>MDN](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/*  forEach 데이터 출력 */</span>
+<span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">];</span>
+    <span class="nx">arr</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">element</span><span class="p">,</span><span class="nx">index</span><span class="p">,</span><span class="nx">array</span><span class="p">){</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`</span><span class="p">${</span><span class="nx">array</span><span class="p">}</span><span class="s2">의 </span><span class="p">${</span><span class="nx">index</span><span class="p">}</span><span class="s2">번째의 요소는 </span><span class="p">${</span><span class="nx">element</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+
+<span class="o">=&gt;</span> <span class="nx">결과값</span>
+
+<span class="p">[</span><span class="nx">Running</span><span class="p">]</span> <span class="nx">node</span> <span class="dl">"</span><span class="s2">/workspaces/codespaces-blank/index.js</span><span class="dl">"</span>
+<span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="nx">의</span> <span class="mi">0</span><span class="nx">번째의</span> <span class="nx">요소는</span> <span class="mi">0</span>
+<span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="nx">의</span> <span class="mi">1</span><span class="nx">번째의</span> <span class="nx">요소는</span> <span class="mi">1</span>
+<span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="nx">의</span> <span class="mi">2</span><span class="nx">번째의</span> <span class="nx">요소는</span> <span class="mi">2</span>
+<span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="nx">의</span> <span class="mi">3</span><span class="nx">번째의</span> <span class="nx">요소는</span> <span class="mi">3</span>
+<span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="nx">의</span> <span class="mi">4</span><span class="nx">번째의</span> <span class="nx">요소는</span> <span class="mi">4</span>
+<span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="nx">의</span> <span class="mi">5</span><span class="nx">번째의</span> <span class="nx">요소는</span> <span class="mi">5</span>
+<span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="nx">의</span> <span class="mi">6</span><span class="nx">번째의</span> <span class="nx">요소는</span> <span class="mi">6</span>
+<span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="nx">의</span> <span class="mi">7</span><span class="nx">번째의</span> <span class="nx">요소는</span> <span class="mi">7</span>
+<span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="nx">의</span> <span class="mi">8</span><span class="nx">번째의</span> <span class="nx">요소는</span> <span class="mi">8</span>
+<span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="nx">의</span> <span class="mi">9</span><span class="nx">번째의</span> <span class="nx">요소는</span> <span class="mi">9</span>
+<span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="nx">의</span> <span class="mi">10</span><span class="nx">번째의</span> <span class="nx">요소는</span> <span class="mi">10</span>
+
+<span class="p">[</span><span class="nx">Done</span><span class="p">]</span> <span class="nx">exited</span> <span class="kd">with</span> <span class="nx">code</span><span class="o">=</span><span class="mi">0</span> <span class="k">in</span> <span class="mf">0.057</span> <span class="nx">seconds</span>
+
+<span class="o">----------------------------------------------------------------------------</span>
+
+<span class="cm">/*  forEach 데이터 출력 */</span>
+<span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">];</span>
+    <span class="nx">arr</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">item</span><span class="p">,</span><span class="nx">i</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="nx">i</span><span class="o">==</span><span class="mi">4</span><span class="p">){</span>
+           <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">반복문 중단</span><span class="dl">"</span><span class="p">)</span>
+          <span class="c1">//  break </span>
+          <span class="c1">// continue    </span>
+					<span class="cm">/* break,continue문은 forEach문에서 사용할 수 없다 */</span>
+      <span class="p">}</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`</span><span class="p">${[</span><span class="nx">i</span><span class="p">]}</span><span class="s2">번째 요소 =&gt;</span><span class="p">${</span><span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">]}</span><span class="s2">`</span><span class="p">)</span>
+    <span class="p">})</span>
+<span class="p">}</span>
+
+<span class="o">=&gt;</span><span class="nx">결과값</span>
+
+<span class="p">[</span><span class="nx">Running</span><span class="p">]</span> <span class="nx">node</span> <span class="dl">"</span><span class="s2">/workspaces/codespaces-blank/index.js</span><span class="dl">"</span>
+<span class="mi">0</span><span class="nx">번째</span> <span class="nx">요소</span> <span class="o">=&gt;</span><span class="mi">0</span>
+<span class="mi">1</span><span class="nx">번째</span> <span class="nx">요소</span> <span class="o">=&gt;</span><span class="mi">1</span>
+<span class="mi">2</span><span class="nx">번째</span> <span class="nx">요소</span> <span class="o">=&gt;</span><span class="mi">2</span>
+<span class="mi">3</span><span class="nx">번째</span> <span class="nx">요소</span> <span class="o">=&gt;</span><span class="mi">3</span>
+<span class="nx">반복문</span> <span class="nx">중단</span>
+<span class="mi">4</span><span class="nx">번째</span> <span class="nx">요소</span> <span class="o">=&gt;</span><span class="mi">4</span>
+<span class="mi">5</span><span class="nx">번째</span> <span class="nx">요소</span> <span class="o">=&gt;</span><span class="mi">5</span>
+<span class="mi">6</span><span class="nx">번째</span> <span class="nx">요소</span> <span class="o">=&gt;</span><span class="mi">6</span>
+<span class="mi">7</span><span class="nx">번째</span> <span class="nx">요소</span> <span class="o">=&gt;</span><span class="mi">7</span>
+<span class="mi">8</span><span class="nx">번째</span> <span class="nx">요소</span> <span class="o">=&gt;</span><span class="mi">8</span>
+<span class="mi">9</span><span class="nx">번째</span> <span class="nx">요소</span> <span class="o">=&gt;</span><span class="mi">9</span>
+<span class="mi">10</span><span class="nx">번째</span> <span class="nx">요소</span> <span class="o">=&gt;</span><span class="mi">10</span>
+
+<span class="p">[</span><span class="nx">Done</span><span class="p">]</span> <span class="nx">exited</span> <span class="kd">with</span> <span class="nx">code</span><span class="o">=</span><span class="mi">0</span> <span class="k">in</span> <span class="mf">0.055</span> <span class="nx">seconds</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="5--reduce">5.  reduce</h2>
+
+<p>배열의 각 요소에 대해 주어진 리듀서(reducer) 함수를 실행하고, 하나의 결과값을 반환.</p>
+
+<p>반환 값: 누적 계산의 결과 값.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>[Array.prototype.reduce() - JavaScript</td>
+      <td>MDN](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>1): 리듀서 함수는 네 개의 인자를 가집니다.</p>
+
+<p>(1): 누산기 (acc)</p>
+
+<p>(2): 현재 값 (cur)</p>
+
+<p>(3): 현재 인덱스 (idx)</p>
+
+<p>(4): 원본 배열 (src)</p>
+
+<p>2): callback: 배열의 각 요소에 대해 실행할 함수. 다음 네 가지 인수를 받습니다.</p>
+
+<p>(1): accumulator:누산기는 콜백의 반환값을 누적합니다. 콜백의 이전 반환값 또는, 콜백의 첫 번째 호출이면서 initialValue를 제공한 경우에는 initialValue의 값입니다.</p>
+
+<p>(2): currentValue: 처리할 현재 요소.</p>
+
+<p>(3): currentIndex Optional: 처리할 현재 요소의 인덱스. initialValue를 제공한 경우 0, 아니면     1부터 시작합니다.</p>
+
+<p>(4): array Optional: reduce()를 호출한 배열.</p>
+
+<p>(5): initialValue Optional: callback의 최초 호출에서 첫 번째 인수에 제공하는 값. 초기값을     제공하지 않으면 배열의 첫 번째 요소를 사용합니다. 빈 배열에서 초기값 없이 reduce()를 호출하면 오류가 발생합니다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/*  reduce 데이터 출력 */</span>
+<span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">40</span><span class="p">];</span>
+    <span class="kd">let</span> <span class="nx">total</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">reduce</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">acc</span><span class="p">,</span><span class="nx">cur</span><span class="p">,</span><span class="nx">idx</span><span class="p">,</span><span class="nx">src</span><span class="p">){</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">acc</span><span class="p">);</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">--------------------</span><span class="dl">"</span><span class="p">)</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">cur</span><span class="p">);</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">--------------------</span><span class="dl">"</span><span class="p">)</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">idx</span><span class="p">);</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">--------------------</span><span class="dl">"</span><span class="p">)</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">src</span><span class="p">);</span>
+        <span class="k">return</span> <span class="nx">acc</span><span class="o">+</span><span class="nx">cur</span>
+      <span class="p">})</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`합:</span><span class="p">${</span><span class="nx">total</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="o">=&gt;</span> <span class="nx">결과값</span>
+
+<span class="p">[</span><span class="nx">Running</span><span class="p">]</span> <span class="nx">node</span> <span class="dl">"</span><span class="s2">/workspaces/codespaces-blank/index.js</span><span class="dl">"</span>
+<span class="nx">accumulator</span><span class="p">:</span> <span class="mi">10</span> <span class="nx">콜백반환값</span>
+<span class="o">--------------------</span>
+<span class="nx">currentValue</span><span class="p">:</span> <span class="mi">20</span> <span class="nx">현재요소</span>
+<span class="o">--------------------</span>
+<span class="nx">currentIndex</span><span class="p">:</span> <span class="mi">1</span> <span class="nx">인덱스</span>
+<span class="o">--------------------</span>
+<span class="nx">array</span><span class="p">:</span> <span class="p">[</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span> <span class="p">]</span> <span class="nx">배열</span>
+<span class="nx">accumulator</span><span class="p">:</span> <span class="mi">30</span> <span class="nx">콜백반환</span>
+<span class="o">--------------------</span>
+<span class="nx">currentValue</span><span class="p">:</span> <span class="mi">30</span> <span class="nx">현재요소</span>
+<span class="o">--------------------</span>
+<span class="nx">currentIndex</span><span class="p">:</span> <span class="mi">2</span> <span class="nx">인덱스</span>
+<span class="o">--------------------</span>
+<span class="nx">array</span><span class="p">:</span> <span class="p">[</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span> <span class="p">]</span> <span class="nx">배열</span>
+<span class="nx">accumulator</span><span class="p">:</span> <span class="mi">60</span>
+<span class="o">--------------------</span>
+<span class="nx">currentValue</span><span class="p">:</span> <span class="mi">40</span> <span class="nx">현재요소</span>
+<span class="o">--------------------</span>
+<span class="nx">currentIndex</span><span class="p">:</span> <span class="mi">3</span> <span class="nx">인덱스값</span>
+<span class="o">--------------------</span>
+<span class="nx">array</span><span class="p">:</span> <span class="p">[</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span> <span class="p">]</span> <span class="nx">배열</span>
+<span class="nx">합</span><span class="p">:</span><span class="mi">100</span>
+
+<span class="p">[</span><span class="nx">Done</span><span class="p">]</span> <span class="nx">exited</span> <span class="kd">with</span> <span class="nx">code</span><span class="o">=</span><span class="mi">0</span> <span class="k">in</span> <span class="mf">0.061</span> <span class="nx">seconds</span>
+
+</code></pre></div></div>
+
+<hr />
+
+  </div>
+</div>
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/kdn0325" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 Abel. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    <script>
+  'use strict';
+
+  (function() {
+    var commentContainer = document.querySelector('#utterances-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.setAttribute('src', 'https://utteranc.es/client.js');
+    script.setAttribute('repo', 'kdn0325/comments');
+    script.setAttribute('issue-term', 'pathname');
+    script.setAttribute('theme', 'photon-dark');
+    script.setAttribute('crossorigin', 'anonymous');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+
+  
+
+
+
+
+
+  </body>
+</html>

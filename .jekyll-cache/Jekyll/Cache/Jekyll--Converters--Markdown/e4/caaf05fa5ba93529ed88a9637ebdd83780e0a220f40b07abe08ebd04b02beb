@@ -1,0 +1,68 @@
+I"�	<hr />
+
+<h3 id="문제-설명">문제 설명</h3>
+
+<p>정수 <code class="language-plaintext highlighter-rouge">n</code>이 주어질 때, <code class="language-plaintext highlighter-rouge">n</code> 이하의 짝수를 모두 더한 값을 return 하도록 solution 함수를 작성해주세요.</p>
+
+<hr />
+
+<h3 id="제한사항">제한사항</h3>
+
+<ul>
+  <li>0 &lt; <code class="language-plaintext highlighter-rouge">n</code> ≤ 1000</li>
+</ul>
+
+<hr />
+
+<h3 id="입출력-예">입출력 예</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>n</th>
+      <th>result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>10</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>6</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h3 id="입출력-설명">입출력 설명</h3>
+
+<p>입출력 예 #1</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">n</code>이 10이므로 2 + 4 + 6 + 8 + 10 = 30을 return 합니다.</li>
+</ul>
+
+<p>입출력 예 #2</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">n</code>이 4이므로 2 + 4 = 6을 return 합니다.</li>
+</ul>
+
+<hr />
+
+<h3 id="나의-풀이">나의 풀이</h3>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">answer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;=</span><span class="nx">n</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+        <span class="k">if</span><span class="p">(</span><span class="nx">i</span><span class="o">%</span><span class="mi">2</span><span class="o">==</span><span class="mi">0</span><span class="p">){</span>
+            <span class="nx">answer</span> <span class="o">+=</span> <span class="nx">i</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+:ET

@@ -1,0 +1,1434 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>#3 next/router 사용하기 - ABEL FRONTELIO : 개발 노트</title>
+<meta name="description" content="next/router 사용하기">
+
+
+  <meta name="author" content="Abel🤭">
+  
+  <meta property="article:author" content="Abel🤭">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="ABEL FRONTELIO : 개발 노트">
+<meta property="og:title" content="#3 next/router 사용하기">
+<meta property="og:url" content="http://localhost:4000/next/3/">
+
+
+  <meta property="og:description" content="next/router 사용하기">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2022-09-26T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2022-09-26T00:00:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/next/3/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Abel",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="ABEL FRONTELIO : 개발 노트 Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+<!-- end custom head snippets -->
+
+
+  </head>
+
+  <body class="layout--archive">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          ABEL FRONTELIO : 개발 노트
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/index.html">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#next" itemprop="item"><span itemprop="name">Next</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">#3 next/router 사용하기</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Abel🤭</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>FRONTELIO - Software Developer.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+        
+          
+            <li><a href="mailto:dn10003@email.com" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/kdn0325" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+
+  
+    
+
+<nav class="nav__list">
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items" id="category_tag_menu">
+      <li>
+        <span>전체 글 수77개<span>
+      </li>
+      <li>
+        <span class="nav__sub-title">Programming Language</span>
+            <ul>
+                
+                    
+                
+                    
+                        <li><a href="/categories/js" class="">Javscript (16)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/ts" class="">Typescript (10)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+        </li>
+      <li>
+        <span class="nav__sub-title">Front-end</span>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/html" class="">HTML(1)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/css" class="">CSS (2)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/react" class="">React (13)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/next" class="">Next.js (3)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/rn" class="">React Native (1)</a></li>
+                    
+                
+                    
+                
+            </ul>
+        </li>
+        <li>
+          <span class="nav__sub-title">Back-end</span>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+          </li>
+        <li>
+        <li>
+          <span class="nav__sub-title">DB</span>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+          </li>
+        <li>
+        <li>
+          <span class="nav__sub-title">OS</span>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+        </li>
+        <li>
+          <span class="nav__sub-title">컴퓨터 공학</span>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                          <li><a href="/categories/codingtest" class="">Coding Test(26)</a></li>
+                      
+                  
+              </ul>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                          <li><a href="/categories/computerscience" class="">CS(1)</a></li>
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+        </li>
+        <li>
+          <span class="nav__sub-title">etc</span>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                          <li><a href="/categories/git" class="">Git(2)</a></li>
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+              <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+              <ul>
+                  
+                      
+                          <li><a href="/categories/blog" class=""> Jekyll Blog(1)</a></li>
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+        </li>
+        <li>
+          <span class="nav__sub-title">Review</span>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                          <li><a href="/categories/refer" class="">Reference(1)</a></li>
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+        </li>
+      <li>
+  </ul>
+</nav>
+
+  
+
+  </div>
+
+
+  <div class="archive">
+    
+      <h1 id="page-title" class="page__title">#3 next/router 사용하기</h1>
+    
+    <h3 id="nextrouter-사용하기"><strong>next/router 사용하기</strong></h3>
+
+<p>router 객체에 접근하기 위해서 <strong>useRouter</strong>를 사용한다</p>
+
+<p><strong>1. import 후</strong></p>
+
+<p>import { useRouter } from ‘next/router’</p>
+
+<p><strong>2. 아래의 형태로 사용</strong></p>
+
+<p>const router = useRouter()</p>
+
+<h2 id="router-object"><strong>router object</strong></h2>
+
+<h3 id="1-aspath"><strong>1. asPath</strong></h3>
+
+<ul>
+  <li>basePath이나 locale이 포함되지 않은 path    ex ) ‘<a href="https://dlquff-byeol4001.vercel.app/501da229-9915-4264-9d37-6783545ee553'">https://dlquff-byeol4001.vercel.app/501da229-9915-4264-9d37-6783545ee553’</a> 의 경우</li>
+</ul>
+
+<p>asPath = ’/501da229-9915-4264-9d37-6783545ee553’</p>
+
+<h3 id="2-basepath"><strong>2. basePath</strong></h3>
+
+<ul>
+  <li>활성화 되어 있는 basePath → next.config.js에 지정한 경로 접두사</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// next.config.js
+module.exports <span class="o">=</span> <span class="o">{</span>
+  basePath: <span class="s1">'/경로접두사'</span>,
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h3 id="3-isfallback"><strong>3. isFallback</strong></h3>
+
+<ul>
+  <li>fallback 에 관련된 값 boolean 또는 ’blocking’으로 들어옴</li>
+</ul>
+
+<p>→ 빌드 타임에 생성해놓지 않은 path로 요청이 들어온 경우 어떻게 할지 정하는 부분</p>
+
+<p><strong>⚠️ fallback 관련 내용 참고</strong> → <a href="https://velog.io/@mskwon/next-js-static-generation-fallback#fallback">https://velog.io/@mskwon/next-js-static-generation-fallback#fallback</a></p>
+
+<h3 id="4-isready"><strong>4. isReady</strong></h3>
+
+<ul>
+  <li>라우터 필드가 클라이언트 측에서 업데이트되고 사용할 준비가 되었는지 여부.</li>
+</ul>
+
+<p>→ useEffect 메소드 내에서만 사용해야하며 서버에서 조건부로 렌더링 하는 데에 사용해야한다.</p>
+
+<p> <strong>⚠️ isReady 사용 예시</strong> →  <a href="https://im-designloper.tistory.com/98">https://im-designloper.tistory.com/98</a></p>
+
+<h3 id="5-ispreview"><strong>5. isPreview</strong></h3>
+
+<ul>
+  <li>현재 미리보기 모드인지 여부</li>
+</ul>
+
+<h3 id="6pathname"><strong>6. pathname</strong></h3>
+
+<ul>
+  <li>활성화 되어 있는 basePath → next.config.js에 지정한 경로 접두사</li>
+</ul>
+
+<h3 id="7-query"><strong>7. query</strong></h3>
+
+<p>현재 route값    → /pages폴더 하위에 있는 페이지 경로</p>
+
+<h2 id="routerpushrouterreplace"><strong>router.push | router.replace</strong></h2>
+
+<p>클라이언트에서 <strong>페이지 전환</strong>을 할때 사용</p>
+
+<p><strong>push</strong>로 이동시키면 history stack에 쌓여서 <strong>뒤로가기가 가능</strong>하고<strong>replace</strong>로 이동시키면 history stack에 안쌓여서 <strong>뒤로가기 불가능</strong></p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>router.push(url, as, options) </td>
+      <td>  router.replace(url, as, options)</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p>⚠️</p>
+
+  <p><strong>외부 url로 이동하는 경우</strong></p>
+
+</blockquote>
+
+<p><strong>1. url</strong></p>
+
+<ul>
+  <li>이동할 url &gt; url 객체 사용 가능</li>
+</ul>
+
+<p><strong>2. as</strong></p>
+
+<ul>
+  <li>이동 후 브라우저에 표시될 URL</li>
+</ul>
+
+<p><strong>3. option</strong></p>
+
+<p>{      <strong>scroll:</strong>  default: true  탐색 후 페이지 맨 위로 스크롤 제어      <strong>shallow:</strong>   default: false                        getStaticProps, getServerSideProps, getInitialProps를 다시 실행하지 않고 현재 페이지 경로 업데이트      <strong>locale:</strong> 새로운 페이지의 locale}</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// as 사용 안하고 option (scroll) 사용하는 경우 예제</span>
+<span class="nx">router</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
+  <span class="na">pathname</span><span class="p">:</span> <span class="nx">router</span><span class="p">.</span><span class="nx">pathname</span><span class="p">,</span>
+  <span class="na">query</span><span class="p">:</span> <span class="p">{</span> <span class="p">...</span><span class="nx">router</span><span class="p">.</span><span class="nx">query</span><span class="p">,</span> <span class="na">currency</span><span class="p">:</span> <span class="nx">newCurrency</span><span class="p">.</span><span class="nx">value</span> <span class="p">},</span>
+<span class="p">},</span> <span class="kc">undefined</span><span class="p">,</span> <span class="p">{</span> <span class="na">scroll</span><span class="p">:</span> <span class="kc">false</span> <span class="p">});</span>
+</code></pre></div></div>
+
+<h2 id="routerprefetch"><strong>router.prefetch</strong></h2>
+
+<p>빠른 클라이언트 전환을 위해 페이지를 데이터를 미리 가져온다.</p>
+
+<p>next/link 의 경우 자동으로 페이지를 미리 가져오기 때문에 next/link 가 없는 탐색에서 유용하다.</p>
+
+<p>router.prefetch(url, as)</p>
+
+<p><strong>1. url</strong></p>
+
+<ul>
+  <li>이동할 url &gt; url 객체 사용 가능</li>
+</ul>
+
+<p><strong>2. as</strong></p>
+
+<ul>
+  <li>이동 후 브라우저에 표시될 URL</li>
+</ul>
+
+<h2 id="routerbeforepopstate"><strong>router.beforePopState</strong></h2>
+
+<p>라우터가 동작하기전에 무언가 작업을 하고 싶을 때 사용</p>
+
+<ul>
+  <li>popstate : 사용자의 세션 기록 탐색으로 인해 현재 활성화된 기록 항목이 바뀔 때 발생<strong>⚠️ popstate 관련 정보</strong> → <a href="https://developer.mozilla.org/ko/docs/Web/API/Window/popstate_event">https://developer.mozilla.org/ko/docs/Web/API/Window/popstate_event</a></li>
+</ul>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">useEffect</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">useRouter</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">next/router</span><span class="dl">'</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">Page</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">router</span> <span class="o">=</span> <span class="nx">useRouter</span><span class="p">()</span>
+
+  <span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">router</span><span class="p">.</span><span class="nx">beforePopState</span><span class="p">(({</span> <span class="nx">url</span><span class="p">,</span> <span class="k">as</span><span class="p">,</span> <span class="nx">options</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="c1">// 아래 두 url로만 이동을 허용하고 싶을때</span>
+      <span class="k">if</span> <span class="p">(</span><span class="k">as</span> <span class="o">!==</span> <span class="dl">'</span><span class="s1">/</span><span class="dl">'</span> <span class="o">&amp;&amp;</span> <span class="k">as</span> <span class="o">!==</span> <span class="dl">'</span><span class="s1">/other</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// Have SSR render bad routes as a 404.</span>
+        <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span> <span class="o">=</span> <span class="k">as</span>
+        <span class="k">return</span> <span class="kc">false</span>
+      <span class="p">}</span>
+
+      <span class="k">return</span> <span class="kc">true</span>
+    <span class="p">})</span>
+  <span class="p">},</span> <span class="p">[])</span>
+
+  <span class="k">return</span> <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Welcome to the page<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="routerback"><strong>router.back</strong></h2>
+
+<p>뒤로가기 버튼 클릭과 같음</p>
+
+<p>window.history.back()  실행</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">useRouter</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">next/router</span><span class="dl">'</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">Page</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">router</span> <span class="o">=</span> <span class="nx">useRouter</span><span class="p">()</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="p">=</span><span class="s">"button"</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span><span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">router</span><span class="p">.</span><span class="nx">back</span><span class="p">()</span><span class="si">}</span><span class="p">&gt;</span>
+      Click here to go back
+    <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+  <span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="routerreload"><strong>router.reload</strong></h2>
+
+<p>새로고침 버튼 클릭과 같음</p>
+
+<p>window.history.reload()  실행</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">useRouter</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">next/router</span><span class="dl">'</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">Page</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">router</span> <span class="o">=</span> <span class="nx">useRouter</span><span class="p">()</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="p">=</span><span class="s">"button"</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span><span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">router</span><span class="p">.</span><span class="nx">reload</span><span class="p">()</span><span class="si">}</span><span class="p">&gt;</span>
+      Click here to reload
+    <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+  <span class="p">)</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<h2 id="routerevents"><strong>router.events</strong></h2>
+
+<p>next/router로 이벤트를 감지해서 특정 이벤트가 발생하면 함수를 실행</p>
+
+<p><strong>1. routeChangeStart</strong></p>
+
+<p><strong>routeChangeStart(url, { shallow })</strong>  경로가 변경되기 시작할때 발생</p>
+
+<p><strong>2. routeChangeComplete</strong></p>
+
+<p><strong>routeChangeComplete(url, { shallow })</strong>  경로가 완전히 변경되면 발생</p>
+
+<p><strong>3. routeChangeError</strong></p>
+
+<p><strong>routeChangeError(url, { shallow })</strong>  경로 변경시 오류가 발생하거나 경로 전환 취소시 발생 (err.cancelled - 탐색이 취소되었는지 여부)</p>
+
+<p><strong>4. beforeHistoryChange</strong></p>
+
+<p><strong>beforeHistoryChange(url, { shallow })</strong>  브라우저의 history를 변경하기 전에 발생</p>
+
+<p><strong>5. hashChangeStart</strong></p>
+
+<p><strong>hashChangeStart(url, { shallow })</strong>  해시는 변경되지만 페이지는 변경되지 않을때 발생</p>
+
+<p><strong>6. hashChangeComplete</strong></p>
+
+<p><strong>hashChangeComplete(url, { shallow })</strong>  해시가 변경되었지만 페이지는 변경되지 않을때 발생</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">useEffect</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">useRouter</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">next/router</span><span class="dl">'</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">MyApp</span><span class="p">({</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">pageProps</span> <span class="p">})</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">router</span> <span class="o">=</span> <span class="nx">useRouter</span><span class="p">()</span>
+
+  <span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">handleRouteChange</span> <span class="o">=</span> <span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="p">{</span> <span class="nx">shallow</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span>
+        <span class="s2">`App is changing to </span><span class="p">${</span><span class="nx">url</span><span class="p">}</span><span class="s2"> </span><span class="p">${</span>
+          <span class="nx">shallow</span> <span class="p">?</span> <span class="dl">'</span><span class="s1">with</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">without</span><span class="dl">'</span>
+        <span class="p">}</span><span class="s2"> shallow routing`</span>
+      <span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="nx">router</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">라우터이벤트 이름 ex) routeChangeStart</span><span class="dl">'</span> <span class="nx">handleRouteChange</span><span class="p">)</span>
+
+    <span class="c1">// If the component is unmounted, unsubscribe</span>
+    <span class="c1">// from the event with the `off` method:</span>
+    <span class="k">return</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">router</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">off</span><span class="p">(</span><span class="dl">'</span><span class="s1">라우터이벤트 이름 ex) routeChangeStart</span><span class="dl">'</span> <span class="nx">handleRouteChange</span><span class="p">)</span>
+    <span class="p">}</span>
+  <span class="p">},</span> <span class="p">[])</span>
+
+  <span class="k">return</span> <span class="p">&lt;</span><span class="nc">Component</span> <span class="si">{</span><span class="p">...</span><span class="nx">pageProps</span><span class="si">}</span> <span class="p">/&gt;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="withrouter"><strong>withRouter</strong></h2>
+
+<p>라우터에 의해서 호출된 컴포넌트가 아니어도 match, location, history 객체에 접근할 수 있도록 해준다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">withRouter</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">next/router</span><span class="dl">'</span>
+
+<span class="kd">function</span> <span class="nx">Page</span><span class="p">({</span> <span class="nx">router</span> <span class="p">})</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">router</span><span class="p">.</span><span class="nx">pathname</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">withRouter</span><span class="p">(</span><span class="nx">Page</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="widthrouterusetypescript"><strong>+ widthRouter &gt; use TypeScript</strong></h3>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">withRouter</span><span class="p">,</span> <span class="nx">NextRouter</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">next/router</span><span class="dl">'</span>
+
+<span class="kr">interface</span> <span class="nx">WithRouterProps</span> <span class="p">{</span>
+  <span class="nl">router</span><span class="p">:</span> <span class="nx">NextRouter</span>
+<span class="p">}</span>
+
+<span class="kr">interface</span> <span class="nx">MyComponentProps</span> <span class="kd">extends</span> <span class="nx">WithRouterProps</span> <span class="p">{}</span>
+
+<span class="kd">class</span> <span class="nx">MyComponent</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span><span class="o">&lt;</span><span class="nx">MyComponentProps</span><span class="o">&gt;</span> <span class="p">{</span>
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">router</span><span class="p">.</span><span class="nx">pathname</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">withRouter</span><span class="p">(</span><span class="nx">MyComponent</span><span class="p">)</span>
+</code></pre></div></div>
+<p>✔️ <strong>참고</strong></p>
+
+<p><a href="https://im-designloper.tistory.com/102">https://im-designloper.tistory.com/102</a></p>
+
+  </div>
+</div>
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/kdn0325" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 Abel. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    <script>
+  'use strict';
+
+  (function() {
+    var commentContainer = document.querySelector('#utterances-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.setAttribute('src', 'https://utteranc.es/client.js');
+    script.setAttribute('repo', 'kdn0325/comments');
+    script.setAttribute('issue-term', 'pathname');
+    script.setAttribute('theme', 'photon-dark');
+    script.setAttribute('crossorigin', 'anonymous');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+
+  
+
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,320 @@
+I"rl<h2 id="1--for문">1.  for문</h2>
+
+<p>반복문은 특정 작업을 반복적으로 할 때 사용
+몇 번 반복해라 ( 횟수가 정해질 때 많이 사용 )</p>
+
+<p>for( 초기값; 조건식; 증감식 ){ 표현식 }</p>
+
+<ul>
+  <li>초기값 :시작값변수I,j,k 순</li>
+  <li>조건식 : ~까지 관계연산자</li>
+  <li>증감식 :수식 ,++,–</li>
+</ul>
+
+<p>(1):  초기 값을 처리.</p>
+
+<p>(2): 조건식을 비교하여 참이면 문장을 실행하고, 거짓이면 for 반복문을 종료.</p>
+
+<p>(3): 조건식이 참이 되어 문장을 실행하면 표현식을 실행.</p>
+
+<p>(4): 변수값을 증가.</p>
+
+<p>종료(조건이 만족할 true)될 때까지 (2)와 (3)을 반복
+false면 밖으로 빠져나감</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
+  <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="mi">5</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="o">=&gt;</span> <span class="nx">결과값</span>
+
+<span class="p">[</span><span class="nx">Running</span><span class="p">]</span> <span class="nx">node</span> <span class="dl">"</span><span class="s2">/workspaces/codespaces-blank/index.js</span><span class="dl">"</span>
+<span class="mi">0</span>
+<span class="mi">1</span>
+<span class="mi">2</span>
+
+<span class="p">[</span><span class="nx">Done</span><span class="p">]</span> <span class="nx">exited</span> <span class="kd">with</span> <span class="nx">code</span><span class="o">=</span><span class="mi">0</span> <span class="k">in</span> <span class="mf">0.054</span> <span class="nx">seconds</span>
+
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="2--이중-for문">2.  이중 for문</h2>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span><span class="p">(</span><span class="nx">초기값</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span> <span class="nx">조건식</span><span class="p">;</span> <span class="nx">증감식</span><span class="p">){</span>
+      <span class="k">for</span><span class="p">(</span><span class="nx">초기값</span><span class="p">(</span><span class="nx">j</span><span class="p">);</span> <span class="nx">조건식</span><span class="p">;</span> <span class="nx">증감식</span><span class="p">){</span>
+        <span class="nx">실행문</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 구구단 출력해보기</span>
+
+<span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">result</span><span class="o">=</span><span class="dl">""</span><span class="p">;</span>
+  <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;=</span><span class="mi">9</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+    <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">j</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="nx">j</span><span class="o">&lt;=</span><span class="mi">9</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">){</span>
+      <span class="nx">result</span><span class="o">=</span><span class="nx">i</span><span class="o">*</span><span class="nx">j</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span><span class="dl">"</span><span class="s2">X</span><span class="dl">"</span><span class="p">,</span><span class="nx">j</span><span class="p">,</span><span class="dl">"</span><span class="s2">=</span><span class="dl">"</span><span class="p">,</span><span class="nx">result</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`\n`</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="o">=&gt;</span> <span class="nx">결과값</span>
+
+<span class="p">[</span><span class="nx">Done</span><span class="p">]</span> <span class="nx">exited</span> <span class="kd">with</span> <span class="nx">code</span><span class="o">=</span><span class="mi">0</span> <span class="k">in</span> <span class="mf">0.051</span> <span class="nx">seconds</span>
+
+<span class="p">[</span><span class="nx">Running</span><span class="p">]</span> <span class="nx">node</span> <span class="dl">"</span><span class="s2">/workspaces/codespaces-blank/index.js</span><span class="dl">"</span>
+<span class="mi">2</span> <span class="nx">X</span> <span class="mi">1</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="mi">2</span> <span class="nx">X</span> <span class="mi">2</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="mi">2</span> <span class="nx">X</span> <span class="mi">3</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="mi">2</span> <span class="nx">X</span> <span class="mi">4</span> <span class="o">=</span> <span class="mi">8</span>
+<span class="mi">2</span> <span class="nx">X</span> <span class="mi">5</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="mi">2</span> <span class="nx">X</span> <span class="mi">6</span> <span class="o">=</span> <span class="mi">12</span>
+<span class="mi">2</span> <span class="nx">X</span> <span class="mi">7</span> <span class="o">=</span> <span class="mi">14</span>
+<span class="mi">2</span> <span class="nx">X</span> <span class="mi">8</span> <span class="o">=</span> <span class="mi">16</span>
+<span class="mi">2</span> <span class="nx">X</span> <span class="mi">9</span> <span class="o">=</span> <span class="mi">18</span>
+
+<span class="mi">3</span> <span class="nx">X</span> <span class="mi">1</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="mi">3</span> <span class="nx">X</span> <span class="mi">2</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="mi">3</span> <span class="nx">X</span> <span class="mi">3</span> <span class="o">=</span> <span class="mi">9</span>
+<span class="mi">3</span> <span class="nx">X</span> <span class="mi">4</span> <span class="o">=</span> <span class="mi">12</span>
+<span class="mi">3</span> <span class="nx">X</span> <span class="mi">5</span> <span class="o">=</span> <span class="mi">15</span>
+<span class="mi">3</span> <span class="nx">X</span> <span class="mi">6</span> <span class="o">=</span> <span class="mi">18</span>
+<span class="mi">3</span> <span class="nx">X</span> <span class="mi">7</span> <span class="o">=</span> <span class="mi">21</span>
+<span class="mi">3</span> <span class="nx">X</span> <span class="mi">8</span> <span class="o">=</span> <span class="mi">24</span>
+<span class="mi">3</span> <span class="nx">X</span> <span class="mi">9</span> <span class="o">=</span> <span class="mi">27</span>
+
+<span class="mi">4</span> <span class="nx">X</span> <span class="mi">1</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="mi">4</span> <span class="nx">X</span> <span class="mi">2</span> <span class="o">=</span> <span class="mi">8</span>
+<span class="mi">4</span> <span class="nx">X</span> <span class="mi">3</span> <span class="o">=</span> <span class="mi">12</span>
+<span class="mi">4</span> <span class="nx">X</span> <span class="mi">4</span> <span class="o">=</span> <span class="mi">16</span>
+<span class="mi">4</span> <span class="nx">X</span> <span class="mi">5</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="mi">4</span> <span class="nx">X</span> <span class="mi">6</span> <span class="o">=</span> <span class="mi">24</span>
+<span class="mi">4</span> <span class="nx">X</span> <span class="mi">7</span> <span class="o">=</span> <span class="mi">28</span>
+<span class="mi">4</span> <span class="nx">X</span> <span class="mi">8</span> <span class="o">=</span> <span class="mi">32</span>
+<span class="mi">4</span> <span class="nx">X</span> <span class="mi">9</span> <span class="o">=</span> <span class="mi">36</span>
+
+<span class="mi">5</span> <span class="nx">X</span> <span class="mi">1</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="mi">5</span> <span class="nx">X</span> <span class="mi">2</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="mi">5</span> <span class="nx">X</span> <span class="mi">3</span> <span class="o">=</span> <span class="mi">15</span>
+<span class="mi">5</span> <span class="nx">X</span> <span class="mi">4</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="mi">5</span> <span class="nx">X</span> <span class="mi">5</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="mi">5</span> <span class="nx">X</span> <span class="mi">6</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="mi">5</span> <span class="nx">X</span> <span class="mi">7</span> <span class="o">=</span> <span class="mi">35</span>
+<span class="mi">5</span> <span class="nx">X</span> <span class="mi">8</span> <span class="o">=</span> <span class="mi">40</span>
+<span class="mi">5</span> <span class="nx">X</span> <span class="mi">9</span> <span class="o">=</span> <span class="mi">45</span>
+
+<span class="mi">6</span> <span class="nx">X</span> <span class="mi">1</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="mi">6</span> <span class="nx">X</span> <span class="mi">2</span> <span class="o">=</span> <span class="mi">12</span>
+<span class="mi">6</span> <span class="nx">X</span> <span class="mi">3</span> <span class="o">=</span> <span class="mi">18</span>
+<span class="mi">6</span> <span class="nx">X</span> <span class="mi">4</span> <span class="o">=</span> <span class="mi">24</span>
+<span class="mi">6</span> <span class="nx">X</span> <span class="mi">5</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="mi">6</span> <span class="nx">X</span> <span class="mi">6</span> <span class="o">=</span> <span class="mi">36</span>
+<span class="mi">6</span> <span class="nx">X</span> <span class="mi">7</span> <span class="o">=</span> <span class="mi">42</span>
+<span class="mi">6</span> <span class="nx">X</span> <span class="mi">8</span> <span class="o">=</span> <span class="mi">48</span>
+<span class="mi">6</span> <span class="nx">X</span> <span class="mi">9</span> <span class="o">=</span> <span class="mi">54</span>
+
+<span class="mi">7</span> <span class="nx">X</span> <span class="mi">1</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="mi">7</span> <span class="nx">X</span> <span class="mi">2</span> <span class="o">=</span> <span class="mi">14</span>
+<span class="mi">7</span> <span class="nx">X</span> <span class="mi">3</span> <span class="o">=</span> <span class="mi">21</span>
+<span class="mi">7</span> <span class="nx">X</span> <span class="mi">4</span> <span class="o">=</span> <span class="mi">28</span>
+<span class="mi">7</span> <span class="nx">X</span> <span class="mi">5</span> <span class="o">=</span> <span class="mi">35</span>
+<span class="mi">7</span> <span class="nx">X</span> <span class="mi">6</span> <span class="o">=</span> <span class="mi">42</span>
+<span class="mi">7</span> <span class="nx">X</span> <span class="mi">7</span> <span class="o">=</span> <span class="mi">49</span>
+<span class="mi">7</span> <span class="nx">X</span> <span class="mi">8</span> <span class="o">=</span> <span class="mi">56</span>
+<span class="mi">7</span> <span class="nx">X</span> <span class="mi">9</span> <span class="o">=</span> <span class="mi">63</span>
+
+<span class="mi">8</span> <span class="nx">X</span> <span class="mi">1</span> <span class="o">=</span> <span class="mi">8</span>
+<span class="mi">8</span> <span class="nx">X</span> <span class="mi">2</span> <span class="o">=</span> <span class="mi">16</span>
+<span class="mi">8</span> <span class="nx">X</span> <span class="mi">3</span> <span class="o">=</span> <span class="mi">24</span>
+<span class="mi">8</span> <span class="nx">X</span> <span class="mi">4</span> <span class="o">=</span> <span class="mi">32</span>
+<span class="mi">8</span> <span class="nx">X</span> <span class="mi">5</span> <span class="o">=</span> <span class="mi">40</span>
+<span class="mi">8</span> <span class="nx">X</span> <span class="mi">6</span> <span class="o">=</span> <span class="mi">48</span>
+<span class="mi">8</span> <span class="nx">X</span> <span class="mi">7</span> <span class="o">=</span> <span class="mi">56</span>
+<span class="mi">8</span> <span class="nx">X</span> <span class="mi">8</span> <span class="o">=</span> <span class="mi">64</span>
+<span class="mi">8</span> <span class="nx">X</span> <span class="mi">9</span> <span class="o">=</span> <span class="mi">72</span>
+
+<span class="mi">9</span> <span class="nx">X</span> <span class="mi">1</span> <span class="o">=</span> <span class="mi">9</span>
+<span class="mi">9</span> <span class="nx">X</span> <span class="mi">2</span> <span class="o">=</span> <span class="mi">18</span>
+<span class="mi">9</span> <span class="nx">X</span> <span class="mi">3</span> <span class="o">=</span> <span class="mi">27</span>
+<span class="mi">9</span> <span class="nx">X</span> <span class="mi">4</span> <span class="o">=</span> <span class="mi">36</span>
+<span class="mi">9</span> <span class="nx">X</span> <span class="mi">5</span> <span class="o">=</span> <span class="mi">45</span>
+<span class="mi">9</span> <span class="nx">X</span> <span class="mi">6</span> <span class="o">=</span> <span class="mi">54</span>
+<span class="mi">9</span> <span class="nx">X</span> <span class="mi">7</span> <span class="o">=</span> <span class="mi">63</span>
+<span class="mi">9</span> <span class="nx">X</span> <span class="mi">8</span> <span class="o">=</span> <span class="mi">72</span>
+<span class="mi">9</span> <span class="nx">X</span> <span class="mi">9</span> <span class="o">=</span> <span class="mi">81</span>
+
+<span class="p">[</span><span class="nx">Done</span><span class="p">]</span> <span class="nx">exited</span> <span class="kd">with</span> <span class="nx">code</span><span class="o">=</span><span class="mi">0</span> <span class="k">in</span> <span class="mf">0.059</span> <span class="nx">seconds</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="3--while문">3.  while문</h2>
+
+<p>시작 ~까지 (끝) , 주로 무한 반복 처리 할때 사용 : while(true)</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>while(조건식){
+      실행문
+      증감식
+  }
+</code></pre></div></div>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">2</span><span class="nx">의</span> <span class="nx">배수만</span> <span class="nx">출력해보기</span> 
+
+<span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="k">while</span><span class="p">(</span><span class="nx">i</span><span class="o">&lt;=</span><span class="mi">50</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">i</span><span class="o">%</span><span class="mi">2</span><span class="o">==</span><span class="mi">0</span><span class="p">){</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="nx">i</span><span class="o">++</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="o">=&gt;</span> <span class="nx">결과값</span> 
+
+<span class="p">[</span><span class="nx">Done</span><span class="p">]</span> <span class="nx">exited</span> <span class="kd">with</span> <span class="nx">code</span><span class="o">=</span><span class="mi">0</span> <span class="k">in</span> <span class="mf">0.059</span> <span class="nx">seconds</span>
+
+<span class="p">[</span><span class="nx">Running</span><span class="p">]</span> <span class="nx">node</span> <span class="dl">"</span><span class="s2">/workspaces/codespaces-blank/index.js</span><span class="dl">"</span>
+<span class="mi">275</span>
+
+<span class="p">[</span><span class="nx">Done</span><span class="p">]</span> <span class="nx">exited</span> <span class="kd">with</span> <span class="nx">code</span><span class="o">=</span><span class="mi">0</span> <span class="k">in</span> <span class="mf">0.049</span> <span class="nx">seconds</span>
+
+<span class="p">[</span><span class="nx">Running</span><span class="p">]</span> <span class="nx">node</span> <span class="dl">"</span><span class="s2">/workspaces/codespaces-blank/index.js</span><span class="dl">"</span>
+<span class="mi">2</span>
+<span class="mi">4</span>
+<span class="mi">6</span>
+<span class="mi">8</span>
+<span class="mi">10</span>
+<span class="mi">12</span>
+<span class="mi">14</span>
+<span class="mi">16</span>
+<span class="mi">18</span>
+<span class="mi">20</span>
+<span class="mi">22</span>
+<span class="mi">24</span>
+<span class="mi">26</span>
+<span class="mi">28</span>
+<span class="mi">30</span>
+<span class="mi">32</span>
+<span class="mi">34</span>
+<span class="mi">36</span>
+<span class="mi">38</span>
+<span class="mi">40</span>
+<span class="mi">42</span>
+<span class="mi">44</span>
+<span class="mi">46</span>
+<span class="mi">48</span>
+<span class="mi">50</span>
+
+<span class="p">[</span><span class="nx">Done</span><span class="p">]</span> <span class="nx">exited</span> <span class="kd">with</span> <span class="nx">code</span><span class="o">=</span><span class="mi">0</span> <span class="k">in</span> <span class="mf">0.049</span> <span class="nx">seconds</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="4--do-while문">4.  do while문</h2>
+
+<p><strong>조건에 만족하지 않아도 무조건 한번은 실행</strong></p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>do{
+    실행문
+}while(조건)
+</code></pre></div></div>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">num</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span><span class="p">;</span>
+  <span class="k">do</span><span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">num</span><span class="p">);</span>
+    <span class="nx">num</span><span class="o">++</span><span class="p">;</span>
+  <span class="p">}</span><span class="k">while</span><span class="p">(</span><span class="nx">num</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="o">=&gt;</span> <span class="nx">결과값</span> 
+
+<span class="p">[</span><span class="nx">Done</span><span class="p">]</span> <span class="nx">exited</span> <span class="kd">with</span> <span class="nx">code</span><span class="o">=</span><span class="mi">0</span> <span class="k">in</span> <span class="mf">0.049</span> <span class="nx">seconds</span>
+
+<span class="p">[</span><span class="nx">Running</span><span class="p">]</span> <span class="nx">node</span> <span class="dl">"</span><span class="s2">/workspaces/codespaces-blank/index.js</span><span class="dl">"</span>
+<span class="o">-</span><span class="mi">5</span>
+
+<span class="p">[</span><span class="nx">Done</span><span class="p">]</span> <span class="nx">exited</span> <span class="kd">with</span> <span class="nx">code</span><span class="o">=</span><span class="mi">0</span> <span class="k">in</span> <span class="mf">0.046</span> <span class="nx">seconds</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="5--break문">5.  break문</h2>
+
+<p>반복문인 while 와for 문에서 break문을 만나면 조건식과 상관없이 종료</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;=</span><span class="mi">10</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+      <span class="k">if</span><span class="p">(</span><span class="nx">i</span><span class="o">==</span><span class="mi">5</span><span class="p">){</span>
+        <span class="k">break</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="o">=&gt;</span> <span class="nx">i값이</span> <span class="mi">5</span><span class="nx">가</span> <span class="nx">되면</span> <span class="nx">종료</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="6--continue문">6.  continue문</h2>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">=&gt;</span> <span class="nx">홀수만</span> <span class="nx">출력</span>
+
+<span class="p">{</span>
+  <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;=</span><span class="mi">10</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">i</span><span class="o">%</span><span class="mi">2</span><span class="o">==</span><span class="mi">0</span><span class="p">){</span>
+      <span class="k">continue</span><span class="p">;</span> <span class="c1">// 다시 처음으로 되돌아감</span>
+    <span class="p">}</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">i의 값 : </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">i</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="o">=&gt;</span> <span class="nx">결과값</span>
+
+<span class="p">[</span><span class="nx">Done</span><span class="p">]</span> <span class="nx">exited</span> <span class="kd">with</span> <span class="nx">code</span><span class="o">=</span><span class="mi">0</span> <span class="k">in</span> <span class="mf">0.176</span> <span class="nx">seconds</span>
+
+<span class="p">[</span><span class="nx">Running</span><span class="p">]</span> <span class="nx">node</span> <span class="dl">"</span><span class="s2">/workspaces/codespaces-blank/index.js</span><span class="dl">"</span>
+<span class="nx">i의</span> <span class="nx">값</span> <span class="p">:</span> <span class="mi">1</span>
+<span class="nx">i의</span> <span class="nx">값</span> <span class="p">:</span> <span class="mi">3</span>
+<span class="nx">i의</span> <span class="nx">값</span> <span class="p">:</span> <span class="mi">5</span>
+<span class="nx">i의</span> <span class="nx">값</span> <span class="p">:</span> <span class="mi">7</span>
+<span class="nx">i의</span> <span class="nx">값</span> <span class="p">:</span> <span class="mi">9</span>
+
+<span class="p">[</span><span class="nx">Done</span><span class="p">]</span> <span class="nx">exited</span> <span class="kd">with</span> <span class="nx">code</span><span class="o">=</span><span class="mi">0</span> <span class="k">in</span> <span class="mf">0.045</span> <span class="nx">seconds</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="응용">응용</h2>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">id</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">kdn</span><span class="dl">"</span><span class="p">;</span>
+  <span class="kd">let</span> <span class="nx">pw</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">1234</span><span class="dl">"</span><span class="p">;</span>
+  <span class="kd">let</span> <span class="nx">count</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="kd">let</span> <span class="nx">userid</span> <span class="o">=</span><span class="dl">""</span><span class="p">;</span>
+  <span class="kd">let</span> <span class="nx">userpw</span> <span class="o">=</span><span class="dl">""</span><span class="p">;</span>
+  
+  <span class="k">while</span><span class="p">(</span><span class="kc">true</span><span class="p">){</span>
+    <span class="nx">userid</span> <span class="o">=</span><span class="nx">prompt</span><span class="p">(</span><span class="dl">"</span><span class="s2">ID를 입력하세요</span><span class="dl">"</span><span class="p">);</span>
+    <span class="nx">userpw</span> <span class="o">=</span><span class="nx">prompt</span><span class="p">(</span><span class="dl">"</span><span class="s2">Password를 입력하세요</span><span class="dl">"</span><span class="p">)</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">userid</span><span class="o">==</span><span class="nx">id</span> <span class="o">&amp;&amp;</span> <span class="nx">userpw</span><span class="o">==</span> <span class="nx">pw</span><span class="p">){</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">로그인 성공</span><span class="dl">"</span><span class="p">)</span>
+      <span class="k">break</span>
+    <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">로그인 실패! 다시 입력해주세요</span><span class="dl">"</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">count</span><span class="o">&gt;</span><span class="mi">5</span><span class="p">){</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">로그인 횟수 5회 초과하여 은행에 문의해주세요</span><span class="dl">"</span><span class="p">)</span>
+      <span class="k">break</span>
+    <span class="p">}</span>
+    <span class="nx">count</span><span class="o">++</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<hr />
+:ET

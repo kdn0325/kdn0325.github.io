@@ -1,0 +1,68 @@
+I"	<hr />
+
+<h3 id="문제-설명">문제 설명</h3>
+
+<p>정수가 담긴 배열 <code class="language-plaintext highlighter-rouge">array</code>와 정수 <code class="language-plaintext highlighter-rouge">n</code>이 매개변수로 주어질 때, <code class="language-plaintext highlighter-rouge">array</code>에 <code class="language-plaintext highlighter-rouge">n</code>이 몇 개 있는 지를 return 하도록 solution 함수를 완성해보세요.</p>
+
+<hr />
+
+<h3 id="제한사항">제한사항</h3>
+
+<ul>
+  <li>1 ≤ <code class="language-plaintext highlighter-rouge">array</code>의 길이 ≤ 100</li>
+  <li>0 ≤ <code class="language-plaintext highlighter-rouge">array</code>의 원소 ≤ 1,000</li>
+  <li>0 ≤ <code class="language-plaintext highlighter-rouge">n</code> ≤ 1,000</li>
+</ul>
+
+<hr />
+
+<h3 id="입출력-예">입출력 예</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>array</th>
+      <th>n</th>
+      <th>result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>[1, 1, 2, 3, 4, 5]</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>[0, 2, 3, 4]</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h3 id="입출력-설명">입출력 설명</h3>
+
+<p>입출력 예 #1</p>
+
+<ul>
+  <li>[1, 1, 2, 3, 4, 5] 에는 1이 2개 있습니다.</li>
+</ul>
+
+<p>입출력 예 #2</p>
+
+<ul>
+  <li>[0, 2, 3, 4] 에는 1이 0개 있습니다.</li>
+</ul>
+
+<hr />
+
+<h3 id="나의-풀이">나의 풀이</h3>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">array</span><span class="p">,</span> <span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">intArray</span> <span class="o">=</span> <span class="nx">array</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">item</span> <span class="o">=&gt;</span> <span class="nx">n</span> <span class="o">===</span> <span class="nx">item</span><span class="p">).</span><span class="nx">length</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nx">intArray</span>
+<span class="p">}</span>
+</code></pre></div></div>
+:ET

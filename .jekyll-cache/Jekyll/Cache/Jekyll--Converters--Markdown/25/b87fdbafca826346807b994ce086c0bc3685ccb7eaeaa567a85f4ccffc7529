@@ -1,0 +1,76 @@
+I"6<hr />
+
+<h3 id="문제-설명">문제 설명</h3>
+
+<p>머쓱이네 옷가게는 10만 원 이상 사면 5%, 30만 원 이상 사면 10%, 50만 원 이상 사면 20%를 할인해줍니다.구매한 옷의 가격 price가 주어질 때, 지불해야 할 금액을 return 하도록 solution 함수를 완성해보세요.</p>
+
+<hr />
+
+<h3 id="제한사항">제한사항</h3>
+
+<ul>
+  <li>10 ≤ <code class="language-plaintext highlighter-rouge">price</code> ≤ 1,000,000
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">price</code>는 10원 단위로(1의 자리가 0) 주어집니다.</li>
+    </ul>
+  </li>
+  <li>소수점 이하를 버린 정수를 return합니다.</li>
+</ul>
+
+<hr />
+
+<h3 id="입출력-예">입출력 예</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>price</th>
+      <th>result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>150,000</td>
+      <td>142,500</td>
+    </tr>
+    <tr>
+      <td>580,000</td>
+      <td>464,000</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h3 id="입출력-예-설명">입출력 예 설명</h3>
+
+<p>입출력 예 #1</p>
+
+<ul>
+  <li>150,000원에서 5%를 할인한 142,500원을 return 합니다.</li>
+</ul>
+
+<p>입출력 예 #2</p>
+
+<ul>
+  <li>580,000원에서 20%를 할인한 464,000원을 return 합니다.</li>
+</ul>
+
+<hr />
+
+<h3 id="나의-풀이">나의 풀이</h3>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">price</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">price</span> <span class="o">&gt;=</span> <span class="mi">100000</span> <span class="o">&amp;&amp;</span> <span class="nx">price</span> <span class="o">&lt;</span> <span class="mi">300000</span><span class="p">){</span>
+        <span class="k">return</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nx">price</span> <span class="o">*</span> <span class="p">.</span><span class="mi">95</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">price</span>  <span class="o">&gt;=</span> <span class="mi">300000</span> <span class="o">&amp;&amp;</span> <span class="nx">price</span> <span class="o">&lt;</span> <span class="mi">500000</span><span class="p">){</span>
+        <span class="k">return</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nx">price</span> <span class="o">*</span> <span class="p">.</span><span class="mi">9</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">price</span> <span class="o">&gt;=</span> <span class="mi">500000</span><span class="p">){</span>
+        <span class="k">return</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nx">price</span> <span class="o">*</span> <span class="p">.</span><span class="mi">8</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">price</span>
+<span class="p">}</span>
+</code></pre></div></div>
+:ET

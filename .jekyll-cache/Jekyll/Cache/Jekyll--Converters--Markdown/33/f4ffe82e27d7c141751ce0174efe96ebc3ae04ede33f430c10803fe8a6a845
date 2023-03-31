@@ -1,0 +1,67 @@
+I"�
+<hr />
+
+<h3 id="문제-설명">문제 설명</h3>
+
+<p>머쓱이는 추운 날에도 아이스 아메리카노만 마십니다. 아이스 아메리카노는 한잔에 5,500원입니다. 머쓱이가 가지고 있는 돈 <code class="language-plaintext highlighter-rouge">money</code>가 매개변수로 주어질 때, 머쓱이가 최대로 마실 수 있는 아메리카노의 잔 수와 남는 돈을 순서대로 담은 배열을 return 하도록 solution 함수를 완성해보세요.</p>
+
+<hr />
+
+<h3 id="제한사항">제한사항</h3>
+
+<ul>
+  <li>0 &lt; <code class="language-plaintext highlighter-rouge">money</code> ≤ 1,000,000</li>
+</ul>
+
+<hr />
+
+<h3 id="입출력-예">입출력 예</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>money</th>
+      <th>result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>5,500</td>
+      <td>[1, 0]</td>
+    </tr>
+    <tr>
+      <td>15,000</td>
+      <td>[2, 4000]</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h3 id="입출력-설명">입출력 설명</h3>
+
+<p>입출력 예 #1</p>
+
+<ul>
+  <li>5,500원은 아이스 아메리카노 한 잔을 살 수 있고 잔돈은 0원입니다.</li>
+</ul>
+
+<p>입출력 예 #2</p>
+
+<ul>
+  <li>15,000원은 아이스 아메리카노 두 잔을 살 수 있고 잔돈은 4,000원입니다.</li>
+</ul>
+
+<hr />
+
+<h3 id="나의-풀이">나의 풀이</h3>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">money</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">coffee</span> <span class="o">=</span> <span class="mi">5500</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">change</span> <span class="o">=</span> <span class="p">[</span><span class="nb">parseInt</span><span class="p">(</span><span class="nx">money</span> <span class="o">/</span> <span class="nx">coffee</span><span class="p">)];</span>
+    <span class="kd">var</span> <span class="nx">coffeeNumber</span> <span class="o">=</span> <span class="p">[</span><span class="nx">money</span><span class="o">-</span><span class="p">(</span><span class="nx">coffee</span><span class="o">*</span><span class="nx">change</span><span class="p">)];</span>
+    <span class="kd">var</span> <span class="nx">answer</span> <span class="o">=</span> <span class="p">[...</span><span class="nx">change</span><span class="p">,</span> <span class="p">...</span><span class="nx">coffeeNumber</span><span class="p">]</span>
+    <span class="k">return</span> <span class="nx">answer</span>
+<span class="p">}</span>
+</code></pre></div></div>
+:ET

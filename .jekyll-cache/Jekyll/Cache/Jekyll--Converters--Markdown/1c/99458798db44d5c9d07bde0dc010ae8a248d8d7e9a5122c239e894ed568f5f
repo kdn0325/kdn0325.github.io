@@ -1,0 +1,88 @@
+I"�"<h2 id="2-function">2. Function</h2>
+
+<h3 id="javascript-기본-함수">Javascript 기본 함수</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function jsAdd(num1,num2){
+   return num1+num2
+}
+
+* 화살표함수 *
+
+const jsAdd = (num1,num2) =&gt; {
+    return num1+num2
+}
+</code></pre></div></div>
+
+<h3 id="typescript-기본-함수">Typescript 기본 함수</h3>
+
+<ul>
+  <li>매개변수의 타입을 지정해줌 , 함수의 타입을 지정해줌</li>
+</ul>
+
+<div class="language-tsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">add</span><span class="p">(</span><span class="nx">num1</span><span class="p">:</span><span class="kr">number</span><span class="p">,</span><span class="nx">num2</span><span class="p">:</span><span class="kr">number</span><span class="p">):</span><span class="kr">number</span><span class="p">{</span>
+  <span class="k">return</span> <span class="nx">num1</span><span class="o">+</span><span class="nx">num2</span>
+<span class="p">}</span>
+
+<span class="o">*</span> <span class="nx">화살표함수</span> <span class="o">*</span>
+
+<span class="kd">const</span> <span class="nx">add</span> <span class="o">=</span> <span class="p">(</span><span class="nx">num1</span><span class="p">:</span><span class="kr">number</span><span class="p">,</span><span class="nx">num2</span><span class="p">:</span><span class="kr">number</span><span class="p">):</span><span class="kr">number</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">num1</span><span class="o">+</span><span class="nx">num2</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<h3 id="optional-parameter---파라미터가-있는-함수에-아무런-값도-전달하지-않고-함수를-호출하는-경우-출력은-undefined">Optional parameter :  파라미터가 있는 함수에 아무런 값도 전달하지 않고 함수를 호출하는 경우 (출력은 undefined)</h3>
+
+<ul>
+  <li>?를 사용하면 전달해도 되고 전달 하지 않아도됌</li>
+  <li>?를 사용하지 않으면 lastname에 parameter가 없으면 Error 출력</li>
+</ul>
+
+<div class="language-tsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+  <span class="kd">function</span> <span class="nx">printName</span><span class="p">(</span><span class="nx">firstname</span><span class="p">:</span><span class="kr">string</span> <span class="p">,</span> <span class="nx">lastname</span><span class="p">:</span><span class="kr">string</span><span class="p">){</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">firstname</span><span class="p">);</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">lastname</span><span class="p">);</span> 
+  <span class="p">}</span>
+	
+	<span class="o">*</span> <span class="nb">Error</span> <span class="o">*</span> 
+
+  <span class="nx">printName</span><span class="p">(</span><span class="dl">"</span><span class="s2">steve</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">Jobs</span><span class="dl">"</span><span class="p">)</span> <span class="c1">// 값 : "steve","Jobs"</span>
+  <span class="nx">printName</span><span class="p">(</span><span class="dl">"</span><span class="s2">Kdn</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// 2번째 파라미터를 넣지 않음 An argument for 'lastname' was not provided.</span>
+  <span class="nx">printName</span><span class="p">(</span><span class="dl">"</span><span class="s2">dnod</span><span class="dl">"</span><span class="p">)</span> <span class="c1">// 2번째 파라미터를 넣지 않음  An argument for 'lastname' was not provided.</span>
+
+	<span class="o">*</span> <span class="nx">Correct</span> <span class="o">*</span>
+
+ <span class="kd">function</span> <span class="nx">printName</span><span class="p">(</span><span class="nx">firstname</span><span class="p">:</span><span class="kr">string</span> <span class="p">,</span> <span class="nx">lastname</span><span class="p">?:</span><span class="kr">string</span><span class="p">){</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">firstname</span><span class="p">);</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">lastname</span><span class="p">);</span> <span class="c1">// undefined</span>
+	<span class="p">}</span>
+
+	<span class="nx">printName</span><span class="p">(</span><span class="dl">"</span><span class="s2">steve</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">Jobs</span><span class="dl">"</span><span class="p">)</span> <span class="c1">// 값 : "steve","Jobs"</span>
+	<span class="nx">printName</span><span class="p">(</span><span class="dl">"</span><span class="s2">Kdn</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// 값 : "kdn","undefined"</span>
+	<span class="nx">printName</span><span class="p">(</span><span class="dl">"</span><span class="s2">dnod</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// 값 : "dnod","undefined"</span>
+
+</code></pre></div></div>
+
+<h3 id="default-parameter---기본값으로-설정하면-기본-입력한-메시지가-출력">Default parameter :  기본값으로 설정하면 기본 입력한 메시지가 출력</h3>
+
+<div class="language-tsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+    <span class="kd">function</span> <span class="nx">printMessage</span><span class="p">(</span><span class="nx">message</span><span class="p">:</span><span class="kr">string</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">default message</span><span class="dl">'</span><span class="p">){</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="nx">printMessage</span><span class="p">()</span> <span class="c1">// 값 : default message</span>
+
+</code></pre></div></div>
+
+<h3 id="rest-parameterspread-연산자를-사용하여-함수의-파라미터를-작성한-형태---모든-전달-되는-파라미터를-배열로-받아옴-number--숫자-타입의-배열">Rest parameter(Spread 연산자(…)를 사용하여 함수의 파라미터를 작성한 형태)  : 모든 전달 되는 파라미터를 배열로 받아옴 number[] = 숫자 타입의 배열</h3>
+
+<div class="language-tsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+    <span class="kd">function</span> <span class="nx">addNumbers</span><span class="p">(...</span><span class="nx">numbers</span><span class="p">:</span><span class="kr">number</span><span class="p">[])</span> <span class="p">:</span> <span class="kr">number</span><span class="p">{</span>
+        <span class="k">return</span> <span class="nx">numbers</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">)</span><span class="o">=&gt;</span><span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">);</span> <span class="c1">//누산 reduce 함수</span>
+    <span class="p">}</span>
+
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">addNumbers</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">));</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">addNumbers</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">));</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">addNumbers</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">0</span><span class="p">));</span>
+</code></pre></div></div>
+:ET

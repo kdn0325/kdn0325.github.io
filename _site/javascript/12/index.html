@@ -1,0 +1,1586 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>#12 배열 (1) - ABEL FRONTELIO : 개발 노트</title>
+<meta name="description" content="1.  배열: 리스트와 비슷한 객체로서 순회와 변형 작업을 수행하는 메서드">
+
+
+  <meta name="author" content="Abel🤭">
+  
+  <meta property="article:author" content="Abel🤭">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="ABEL FRONTELIO : 개발 노트">
+<meta property="og:title" content="#12 배열 (1)">
+<meta property="og:url" content="http://localhost:4000/javascript/12/">
+
+
+  <meta property="og:description" content="1.  배열: 리스트와 비슷한 객체로서 순회와 변형 작업을 수행하는 메서드">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2023-03-27T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2023-03-27T00:00:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/javascript/12/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Abel",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="ABEL FRONTELIO : 개발 노트 Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+<!-- end custom head snippets -->
+
+
+  </head>
+
+  <body class="layout--archive">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          ABEL FRONTELIO : 개발 노트
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/index.html">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#javascript" itemprop="item"><span itemprop="name">Javascript</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">#12 배열 (1)</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Abel🤭</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>FRONTELIO - Software Developer.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+        
+          
+            <li><a href="mailto:dn10003@email.com" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/kdn0325" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+
+  
+    
+
+<nav class="nav__list">
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items" id="category_tag_menu">
+      <li>
+        <span>전체 글 수77개<span>
+      </li>
+      <li>
+        <span class="nav__sub-title">Programming Language</span>
+            <ul>
+                
+                    
+                
+                    
+                        <li><a href="/categories/js" class="">Javscript (16)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/ts" class="">Typescript (10)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+        </li>
+      <li>
+        <span class="nav__sub-title">Front-end</span>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/html" class="">HTML(1)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/css" class="">CSS (2)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/react" class="">React (13)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/next" class="">Next.js (3)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/rn" class="">React Native (1)</a></li>
+                    
+                
+                    
+                
+            </ul>
+        </li>
+        <li>
+          <span class="nav__sub-title">Back-end</span>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+          </li>
+        <li>
+        <li>
+          <span class="nav__sub-title">DB</span>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+          </li>
+        <li>
+        <li>
+          <span class="nav__sub-title">OS</span>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+        </li>
+        <li>
+          <span class="nav__sub-title">컴퓨터 공학</span>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                          <li><a href="/categories/codingtest" class="">Coding Test(26)</a></li>
+                      
+                  
+              </ul>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                          <li><a href="/categories/computerscience" class="">CS(1)</a></li>
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+        </li>
+        <li>
+          <span class="nav__sub-title">etc</span>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                          <li><a href="/categories/git" class="">Git(2)</a></li>
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+              <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+              <ul>
+                  
+                      
+                          <li><a href="/categories/blog" class=""> Jekyll Blog(1)</a></li>
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+        </li>
+        <li>
+          <span class="nav__sub-title">Review</span>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                          <li><a href="/categories/refer" class="">Reference(1)</a></li>
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+        </li>
+      <li>
+  </ul>
+</nav>
+
+  
+
+  </div>
+
+
+  <div class="archive">
+    
+      <h1 id="page-title" class="page__title">#12 배열 (1)</h1>
+    
+    <h2 id="1--배열-리스트와-비슷한-객체로서-순회와-변형-작업을-수행하는-메서드">1.  배열: 리스트와 비슷한 객체로서 순회와 변형 작업을 수행하는 메서드</h2>
+
+<table>
+  <tbody>
+    <tr>
+      <td>[Array - JavaScript</td>
+      <td>MDN](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>버스타기 : Array를 사용</p>
+
+<p>사람이 많다 : 데이터가 많다(3개 이상)</p>
+
+<p>줄 세움 (나열) =&gt; 처리속도가 빠름</p>
+
+<p>처리속도가 빠름 : 삭제,수정,추가가 용이(유지보수가 좋다)</p>
+
+<hr />
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
+  <span class="cm">/* 기본 배열 출력 */</span>
+  
+  <span class="kd">let</span> <span class="nx">arr</span> <span class="o">=</span><span class="p">[];</span>
+  <span class="nx">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span> <span class="dl">'</span><span class="s1">홍길동</span><span class="dl">'</span><span class="p">;</span>
+  <span class="nx">arr</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+  <span class="nx">arr</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">=</span> <span class="dl">'</span><span class="s1">서울시 강남구</span><span class="dl">'</span><span class="p">;</span>
+  <span class="nx">arr</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">=</span> <span class="dl">'</span><span class="s1">010-0000-0000</span><span class="dl">'</span><span class="p">;</span>
+
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">이름:</span><span class="dl">'</span><span class="p">,</span><span class="nx">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">나이:</span><span class="dl">'</span><span class="p">,</span><span class="nx">arr</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">주소:</span><span class="dl">'</span><span class="p">,</span><span class="nx">arr</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">번호:</span><span class="dl">'</span><span class="p">,</span><span class="nx">arr</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">갯수:</span><span class="dl">'</span><span class="p">,</span><span class="nx">arr</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="o">=&gt;</span> <span class="nx">결과값</span>
+
+<span class="p">[</span><span class="nx">Running</span><span class="p">]</span> <span class="nx">node</span> <span class="dl">"</span><span class="s2">/workspaces/codespaces-blank/index.js</span><span class="dl">"</span>
+<span class="nx">이름</span><span class="p">:</span> <span class="nx">홍길동</span>
+<span class="nx">나이</span><span class="p">:</span> <span class="mi">20</span>
+<span class="nx">주소</span><span class="p">:</span> <span class="nx">서울시</span> <span class="nx">강남구</span>
+<span class="nx">번호</span><span class="p">:</span> <span class="mi">010</span><span class="o">-</span><span class="mi">0000</span><span class="o">-</span><span class="mi">0000</span>
+<span class="nx">갯수</span><span class="p">:</span> <span class="mi">4</span>
+
+<span class="p">[</span><span class="nx">Done</span><span class="p">]</span> <span class="nx">exited</span> <span class="kd">with</span> <span class="nx">code</span><span class="o">=</span><span class="mi">0</span> <span class="k">in</span> <span class="mf">0.056</span> <span class="nx">seconds</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+  /* 초기값 */
+
+    const menuList = ['Room0','Room1','Room2','Room3'];
+    
+    //for문으로 출력
+
+    for(let i=0; i&lt;menuList.length; i++){
+      let menuitem =menuList[i];
+      console.log(i,'번째방:',menuitem)
+    }
+    console.log('------------------------------')
+
+    // for of문
+    let cnt = 0;
+    for(let menu of menuList){
+      let menuItem = menu;
+      console.log(cnt,'번째방:',menuItem);
+      cnt++;
+    }
+    console.log('------------------------------')
+
+    //for in 문
+    for(let idx in menuList){ // index번호를 가져옴
+      let menuItem = menuList[idx];
+      console.log(idx,'번째방',menuList)
+    }
+}
+
+=&gt; 결과값
+
+[Running] node "/workspaces/codespaces-blank/index.js"
+0 번째방: Room0
+1 번째방: Room1
+2 번째방: Room2
+3 번째방: Room3
+------------------------------
+0 번째방: Room0
+1 번째방: Room1
+2 번째방: Room2
+3 번째방: Room3
+------------------------------
+0 번째방 [ 'Room0', 'Room1', 'Room2', 'Room3' ]
+1 번째방 [ 'Room0', 'Room1', 'Room2', 'Room3' ]
+2 번째방 [ 'Room0', 'Room1', 'Room2', 'Room3' ]
+3 번째방 [ 'Room0', 'Room1', 'Room2', 'Room3' ]
+
+[Done] exited with code=0 in 0.053 seconds
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="2--배열-순환-for문-활용">2.  배열 순환 For문 활용</h2>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="cm">/* 배열 순환으로 이름 조회 */</span>
+
+<span class="p">{</span>
+  <span class="cm">/* 초기값 */</span>
+  <span class="kd">let</span> <span class="nx">name</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">강호동</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">유재석</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">신동엽</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">이수근</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">김희철</span><span class="dl">'</span><span class="p">]</span>
+  <span class="kd">let</span> <span class="nx">len</span> <span class="o">=</span> <span class="nx">name</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+  <span class="kd">let</span> <span class="nx">username</span> <span class="o">=</span> <span class="nx">prompt</span><span class="p">(</span><span class="dl">'</span><span class="s1">이름 조회</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">조회할 이름을 입력해주세요</span><span class="dl">'</span><span class="p">);</span>
+
+  <span class="c1">//for문: 조회가 되면 break로 끝내기</span>
+  
+  <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="nx">len</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">username</span><span class="o">==</span><span class="nx">name</span><span class="p">[</span><span class="nx">i</span><span class="p">]){</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">username</span><span class="p">,</span><span class="dl">'</span><span class="s1">을 찾았습니다</span><span class="dl">'</span><span class="p">)</span>
+      <span class="k">break</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="c1">//for of문</span>
+  <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">namelist</span> <span class="k">of</span> <span class="nx">name</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">namelist</span><span class="o">==</span><span class="nx">username</span><span class="p">){</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">username</span><span class="p">,</span><span class="dl">'</span><span class="s1">을 찾았습니다</span><span class="dl">'</span><span class="p">)</span>
+      <span class="k">break</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="c1">//for in문</span>
+  <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">idx</span> <span class="k">in</span> <span class="nx">name</span><span class="p">){</span> <span class="c1">// 인덱스번호 출력</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">name</span><span class="p">[</span><span class="nx">idx</span><span class="p">]</span><span class="o">==</span><span class="nx">username</span><span class="p">){</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">username</span><span class="p">,</span><span class="dl">'</span><span class="s1">을 찾았습니다</span><span class="dl">'</span><span class="p">)</span>
+      <span class="k">break</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="o">=&gt;</span> <span class="nx">결과값</span>
+
+<span class="p">[</span><span class="nx">Running</span><span class="p">]</span> <span class="nx">node</span> <span class="dl">"</span><span class="s2">/workspaces/codespaces-blank/index.js</span><span class="dl">"</span>
+<span class="nx">강호동</span> <span class="nx">을</span> <span class="nx">찾았습니다</span>
+<span class="nx">강호동</span> <span class="nx">을</span> <span class="nx">찾았습니다</span>
+<span class="nx">강호동</span> <span class="nx">을</span> <span class="nx">찾았습니다</span>
+
+<span class="p">[</span><span class="nx">Done</span><span class="p">]</span> <span class="nx">exited</span> <span class="kd">with</span> <span class="nx">code</span><span class="o">=</span><span class="mi">0</span> <span class="k">in</span> <span class="mf">0.053</span> <span class="nx">seconds</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="3--tostringjoin">3.  toString,join</h2>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* toString,join 활용 */</span>
+
+<span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">name</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">강호동</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">유재석</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">신동엽</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">이수근</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">김희철</span><span class="dl">'</span><span class="p">]</span>
+  <span class="kd">let</span> <span class="nx">str</span>  <span class="o">=</span> <span class="nx">name</span><span class="p">.</span><span class="nx">toString</span><span class="p">();</span>
+  <span class="kd">let</span> <span class="nx">str1</span>  <span class="o">=</span> <span class="nx">name</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="dl">'</span><span class="s1">+</span><span class="dl">'</span><span class="p">);</span>
+  <span class="kd">let</span> <span class="nx">str2</span>  <span class="o">=</span> <span class="nx">name</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="dl">'</span><span class="s1">-</span><span class="dl">'</span><span class="p">);</span>
+  <span class="kd">let</span> <span class="nx">str3</span>  <span class="o">=</span> <span class="nx">name</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="dl">'</span><span class="s1"> </span><span class="dl">'</span><span class="p">);</span>
+  <span class="kd">let</span> <span class="nx">str4</span>  <span class="o">=</span> <span class="nx">name</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="dl">''</span><span class="p">);</span>
+
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">str:</span><span class="dl">'</span><span class="p">,</span><span class="nx">str</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">str의 타입은?</span><span class="dl">'</span><span class="p">,</span><span class="k">typeof</span><span class="p">(</span><span class="nx">str</span><span class="p">))</span>
+
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">str1:</span><span class="dl">'</span><span class="p">,</span><span class="nx">str1</span><span class="p">);</span>
+
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">str2:</span><span class="dl">'</span><span class="p">,</span><span class="nx">str2</span><span class="p">);</span>
+
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">str3:</span><span class="dl">'</span><span class="p">,</span><span class="nx">str3</span><span class="p">);</span>
+  
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">str4:</span><span class="dl">'</span><span class="p">,</span><span class="nx">str4</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="o">=&gt;</span> <span class="nx">결과값</span>
+<span class="p">[</span><span class="nx">Running</span><span class="p">]</span> <span class="nx">node</span> <span class="dl">"</span><span class="s2">/workspaces/codespaces-blank/index.js</span><span class="dl">"</span>
+<span class="nx">str</span><span class="p">:</span> <span class="nx">강호동</span><span class="p">,</span><span class="nx">유재석</span><span class="p">,</span><span class="nx">신동엽</span><span class="p">,</span><span class="nx">이수근</span><span class="p">,</span><span class="nx">김희철</span>
+<span class="nx">str의</span> <span class="nx">타입은</span><span class="p">?</span> <span class="nx">string</span>
+<span class="nx">str1</span><span class="p">:</span> <span class="nx">강호동</span><span class="o">+</span><span class="nx">유재석</span><span class="o">+</span><span class="nx">신동엽</span><span class="o">+</span><span class="nx">이수근</span><span class="o">+</span><span class="nx">김희철</span>
+<span class="nx">str2</span><span class="p">:</span> <span class="nx">강호동</span><span class="o">-</span><span class="nx">유재석</span><span class="o">-</span><span class="nx">신동엽</span><span class="o">-</span><span class="nx">이수근</span><span class="o">-</span><span class="nx">김희철</span>
+<span class="nx">str3</span><span class="p">:</span> <span class="nx">강호동</span> <span class="nx">유재석</span> <span class="nx">신동엽</span> <span class="nx">이수근</span> <span class="nx">김희철</span>
+<span class="nx">str4</span><span class="p">:</span> <span class="nx">강호동유재석신동엽이수근김희철</span>
+
+<span class="p">[</span><span class="nx">Done</span><span class="p">]</span> <span class="nx">exited</span> <span class="kd">with</span> <span class="nx">code</span><span class="o">=</span><span class="mi">0</span> <span class="k">in</span> <span class="mf">0.052</span> <span class="nx">seconds</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="4--pushpopunshiftshift">4.  push,pop,unshift,shift</h2>
+
+<p>1): push() 메서드는 배열의 끝에 하나 이상의 요소를 추가하고, 배열의 새로운 길이를 반환합니다.(원본이 바뀜)</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>[Array.prototype.push() - JavaScript</td>
+      <td>MDN](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/push)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>2): pop() 메서드는 배열에서 마지막 요소를 제거하고 그 요소를 반환합니다.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>[Array.prototype.pop() - JavaScript</td>
+      <td>MDN](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/pop)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>3): unshift() 메서드는 새로운 요소를 배열의 맨 앞쪽에 추가하고, 새로운 길이를 반환합니다.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>[Array.prototype.unshift() - JavaScript</td>
+      <td>MDN](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>4): shift() 메서드는 배열에서 첫 번째 요소를 제거하고, 제거된 요소를 반환합니다. 이 메서드는 배열의 길이를 변하게 합니다.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>[Array.prototype.shift() - JavaScript</td>
+      <td>MDN](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/shift)</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* push,pop,unshift,shift 활용 */</span>
+
+	<span class="cm">/* (1). push 활용 */</span>
+
+  <span class="kd">let</span> <span class="nx">color</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">red</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">green</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">blue</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">yellow</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">orange</span><span class="dl">'</span><span class="p">];</span>
+  <span class="nx">color</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="dl">'</span><span class="s1">purple</span><span class="dl">'</span><span class="p">);</span> <span class="c1">// 맨뒤 배열 purple 추가</span>
+  <span class="nx">color</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="dl">'</span><span class="s1">pink</span><span class="dl">'</span><span class="p">);</span> <span class="c1">// 맨뒤 배열 pink 추가</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">color</span><span class="p">);</span>
+
+<span class="o">=&gt;</span><span class="nx">결과값</span>
+
+<span class="p">[</span><span class="dl">'</span><span class="s1">red</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">green</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">blue</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">yellow</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">orange</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">purple</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">pink</span><span class="dl">'</span><span class="p">]</span>
+
+<span class="o">--------------------------------------------------------------------</span>
+
+<span class="cm">/* (2). pop 활용 */</span>
+
+  <span class="nx">color</span><span class="p">.</span><span class="nx">pop</span><span class="p">();</span> <span class="c1">//맨뒤 배열 삭제</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">color</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">""</span><span class="p">)</span>
+
+<span class="o">=&gt;</span> <span class="nx">결과값</span>
+
+<span class="p">[</span> <span class="dl">'</span><span class="s1">red</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">green</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">blue</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">yellow</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">orange</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">purple</span><span class="dl">'</span><span class="p">]</span>
+
+<span class="o">--------------------------------------------------------------------</span>
+
+<span class="cm">/* (3). unshift 활용 */</span>
+
+  <span class="nx">color</span><span class="p">.</span><span class="nx">unshift</span><span class="p">(</span><span class="dl">'</span><span class="s1">hotpink</span><span class="dl">'</span><span class="p">);</span> <span class="c1">// 맨앞 배열 추가</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">color</span><span class="p">)</span>
+
+<span class="o">=&gt;</span> <span class="nx">결과값</span>
+
+<span class="p">[</span><span class="dl">'</span><span class="s1">hotpink</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">red</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">green</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">blue</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">yellow</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">orange</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">purple</span><span class="dl">'</span><span class="p">]</span>
+
+<span class="o">--------------------------------------------------------------------</span>
+
+<span class="cm">/* (4). shift 활용 */</span>
+
+  <span class="nx">color</span><span class="p">.</span><span class="nx">shift</span><span class="p">();</span> <span class="c1">// 맨 앞 배열 삭제</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">color</span><span class="p">);</span>
+
+<span class="o">=&gt;</span> <span class="nx">결과값</span>
+
+<span class="p">[</span><span class="dl">'</span><span class="s1">red</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">green</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">blue</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">yellow</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">orange</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">purple</span><span class="dl">'</span><span class="p">]</span>
+
+<span class="o">--------------------------------------------------------------------</span>
+
+<span class="cm">/* (5). 배열 데이터 수정 */</span>
+  <span class="c1">//수정</span>
+  <span class="nx">color</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="dl">'</span><span class="s1">라임</span><span class="dl">'</span><span class="p">;</span>
+  <span class="nx">color</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="dl">'</span><span class="s1">블루</span><span class="dl">'</span><span class="p">;</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">color</span><span class="p">);</span>
+
+<span class="o">=&gt;</span> <span class="nx">결과값</span>
+
+<span class="p">[</span> <span class="dl">'</span><span class="s1">라임</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">블루</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">blue</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">yellow</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">orange</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">purple</span><span class="dl">'</span> <span class="p">]</span>
+
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="5--isarrayconcatslicesplice">5.  isArray,concat,slice,splice</h2>
+
+<p>1): <strong><code class="language-plaintext highlighter-rouge">Array.isArray()</code></strong>메서드는 인자가 <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>인지 판별합니다.(반환은 Boolean값)</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>[Array.isArray() - JavaScript</td>
+      <td>MDN](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>2): <strong><code class="language-plaintext highlighter-rouge">concat()</code></strong> 메서드는 인자로 주어진 배열이나 값들을 기존 배열에 합쳐서 새 배열을 반환합니다.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>[Array.prototype.concat() - JavaScript</td>
+      <td>MDN](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/concat)</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>기존배열을 변경하지 않습니다.</li>
+  <li>추가된 새로운 배열을 반환합니다.</li>
+</ul>
+
+<p>3): <strong><code class="language-plaintext highlighter-rouge">slice()</code></strong> 메서드는 어떤 배열의 <code class="language-plaintext highlighter-rouge">begin</code> 부터 <code class="language-plaintext highlighter-rouge">end</code> 까지(<code class="language-plaintext highlighter-rouge">end</code> 미포함)에 대한 얕은 복사본을 새로운 배열 객체로 반환합니다.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>[Array.prototype.slice() - JavaScript</td>
+      <td>MDN](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/slice)</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>원본 배열은 바뀌지 않습니다.</li>
+</ul>
+
+<p>4): <strong><code class="language-plaintext highlighter-rouge">splice()</code></strong> 메서드는 배열의 기존 요소를 삭제 또는 교체하거나 새 요소를 추가하여 배열의 내용을 변경합니다.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>[Array.prototype.splice() - JavaScript</td>
+      <td>MDN](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/splice)</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* isArray,concat,slice,splice 활용 */</span>
+
+	<span class="cm">/* (1). isArray 활용 */</span>
+
+	<span class="kd">let</span> <span class="nx">color</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">red,green,pink,skyblue,hotpink</span><span class="dl">'</span><span class="p">;</span>
+
+  <span class="cm">/* string을 배열로 변경 */</span>
+  <span class="kd">let</span> <span class="nx">arr</span> <span class="o">=</span> <span class="nx">color</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="dl">'</span><span class="s1">,</span><span class="dl">'</span><span class="p">);</span>
+
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Array</span><span class="p">.</span><span class="nx">isArray</span><span class="p">(</span><span class="nx">color</span><span class="p">))</span> <span class="c1">// 배열인지 판별 false</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Array</span><span class="p">.</span><span class="nx">isArray</span><span class="p">(</span><span class="nx">arr</span><span class="p">))</span> <span class="c1">// 배열인지 판별 true</span>
+
+<span class="o">=&gt;</span><span class="nx">결과값</span>
+
+<span class="p">[</span><span class="nx">Running</span><span class="p">]</span> <span class="nx">node</span> <span class="dl">"</span><span class="s2">/workspaces/codespaces-blank/index.js</span><span class="dl">"</span>
+<span class="kc">false</span>
+<span class="kc">true</span>
+
+<span class="p">[</span><span class="nx">Done</span><span class="p">]</span> <span class="nx">exited</span> <span class="kd">with</span> <span class="nx">code</span><span class="o">=</span><span class="mi">0</span> <span class="k">in</span> <span class="mf">0.054</span> <span class="nx">seconds</span>
+
+<span class="o">--------------------------------------------------------------------</span>
+
+<span class="cm">/* (2). concat 활용 */</span>
+
+	<span class="kd">const</span> <span class="nx">arr1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">300</span><span class="p">,</span><span class="mi">400</span><span class="p">];</span>
+	<span class="kd">const</span> <span class="nx">arr2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">50</span><span class="p">];</span>
+  <span class="kd">const</span> <span class="nx">arr3</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">];</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr1</span><span class="p">);</span>
+
+  <span class="kd">let</span> <span class="nx">arrToConcat</span> <span class="o">=</span> <span class="nx">arr1</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">arr2</span><span class="p">,</span><span class="nx">arr3</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">arrToConcat?</span><span class="dl">'</span><span class="p">,</span><span class="nx">arrToConcat</span><span class="p">);</span>
+
+<span class="o">=&gt;</span> <span class="nx">결과값</span>
+
+<span class="p">[</span><span class="nx">Running</span><span class="p">]</span> <span class="nx">node</span> <span class="dl">"</span><span class="s2">/workspaces/codespaces-blank/index.js</span><span class="dl">"</span>
+
+<span class="nx">배열의</span> <span class="nx">초기값</span> <span class="nx">출력</span> <span class="p">[</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">400</span> <span class="p">]</span>
+
+<span class="nx">arrToConcat</span><span class="p">?</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span> <span class="p">,</span><span class="mi">30</span> <span class="p">,</span><span class="mi">40</span> <span class="p">,</span><span class="mi">50</span> <span class="p">,</span><span class="mi">1</span> <span class="p">,</span><span class="mi">2</span> <span class="p">,</span><span class="mi">3</span> <span class="p">,</span><span class="mi">4</span> <span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+
+<span class="p">[</span><span class="nx">Done</span><span class="p">]</span> <span class="nx">exited</span> <span class="kd">with</span> <span class="nx">code</span><span class="o">=</span><span class="mi">0</span> <span class="k">in</span> <span class="mf">0.057</span> <span class="nx">seconds</span>
+
+<span class="o">--------------------------------------------------------------------</span>
+
+<span class="cm">/* (3). slice 활용 */</span>
+
+	<span class="kd">let</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">60</span><span class="p">];</span>
+  <span class="kd">let</span> <span class="nx">str</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span> <span class="c1">// slice(시작인덱스~,마지막 배열)</span>
+  <span class="kd">let</span> <span class="nx">str1</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span> <span class="c1">//slice(시작인덱스부터~)</span>
+  <span class="kd">let</span> <span class="nx">str2</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">);</span>
+  <span class="kd">let</span> <span class="nx">str3</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span> <span class="c1">// slice(음수면 뒷자리부터)</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`</span><span class="p">${</span><span class="nx">str</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`</span><span class="p">${</span><span class="nx">str1</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`</span><span class="p">${</span><span class="nx">str2</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`</span><span class="p">${</span><span class="nx">str3</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+
+<span class="o">=&gt;</span> <span class="nx">결과값</span>
+
+<span class="p">[</span><span class="nx">Running</span><span class="p">]</span> <span class="nx">node</span> <span class="dl">"</span><span class="s2">/workspaces/codespaces-blank/index.js</span><span class="dl">"</span>
+<span class="mi">20</span><span class="p">,</span><span class="mi">30</span>
+<span class="mi">40</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">60</span>
+<span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">40</span>
+<span class="mi">60</span>
+
+<span class="p">[</span><span class="nx">Done</span><span class="p">]</span> <span class="nx">exited</span> <span class="kd">with</span> <span class="nx">code</span><span class="o">=</span><span class="mi">0</span> <span class="k">in</span> <span class="mf">0.056</span> <span class="nx">seconds</span><span class="p">[</span><span class="dl">'</span><span class="s1">hotpink</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">red</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">green</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">blue</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">yellow</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">orange</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">purple</span><span class="dl">'</span><span class="p">]</span>
+
+<span class="o">--------------------------------------------------------------------</span>
+
+<span class="cm">/* (4). splice 활용 */</span>
+
+	<span class="kd">let</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">60</span><span class="p">];</span>
+  <span class="nx">data</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span> <span class="c1">//  splice(시작인덱스,배열숫자) 배열을 삭제용</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+
+  <span class="kd">let</span> <span class="nx">data1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">60</span><span class="p">];</span>
+  <span class="nx">data1</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="dl">'</span><span class="s1">홍길동</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">강호동</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">김철수</span><span class="dl">'</span><span class="p">);</span> 
+  <span class="c1">//splice(시작인덱스번호,배열자릿수 ,)</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data1</span><span class="p">);</span>
+
+  <span class="kd">let</span> <span class="nx">data2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">60</span><span class="p">];</span>
+  <span class="nx">data2</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="dl">'</span><span class="s1">a</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">b</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">c</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">d</span><span class="dl">'</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data2</span><span class="p">);</span>
+
+<span class="o">=&gt;</span> <span class="nx">결과값</span>
+
+<span class="p">[</span><span class="nx">Running</span><span class="p">]</span> <span class="nx">node</span> <span class="dl">"</span><span class="s2">/workspaces/codespaces-blank/index.js</span><span class="dl">"</span>
+<span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">60</span><span class="p">]</span>
+
+<span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="dl">'</span><span class="s1">홍길동</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">강호동</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">김철수</span><span class="dl">'</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">60</span><span class="p">]</span>
+
+<span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="dl">'</span><span class="s1">a</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">b</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">c</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">d</span><span class="dl">'</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">60</span><span class="p">]</span>
+
+<span class="p">[</span><span class="nx">Done</span><span class="p">]</span> <span class="nx">exited</span> <span class="kd">with</span> <span class="nx">code</span><span class="o">=</span><span class="mi">0</span> <span class="k">in</span> <span class="mf">0.059</span> <span class="nx">seconds</span>
+</code></pre></div></div>
+
+<hr />
+
+  </div>
+</div>
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/kdn0325" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 Abel. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    <script>
+  'use strict';
+
+  (function() {
+    var commentContainer = document.querySelector('#utterances-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.setAttribute('src', 'https://utteranc.es/client.js');
+    script.setAttribute('repo', 'kdn0325/comments');
+    script.setAttribute('issue-term', 'pathname');
+    script.setAttribute('theme', 'photon-dark');
+    script.setAttribute('crossorigin', 'anonymous');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+
+  
+
+
+
+
+
+  </body>
+</html>

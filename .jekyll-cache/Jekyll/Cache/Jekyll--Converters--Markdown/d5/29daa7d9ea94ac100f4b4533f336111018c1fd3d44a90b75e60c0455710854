@@ -1,0 +1,241 @@
+I"�1<ol>
+  <li>프로그래밍 언어</li>
+  <li>Complied Language
+    <ul>
+      <li>Transpile</li>
+      <li>JS ⇒ Interpreted Language</li>
+    </ul>
+  </li>
+</ol>
+
+<table>
+  <thead>
+    <tr>
+      <th>Compiled</th>
+      <th>Interpreted</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>컴파일 필요 O</td>
+      <td>컴파일 필요 X</td>
+    </tr>
+    <tr>
+      <td>컴파일러가 필요 O</td>
+      <td>컴파일러가 필요 X</td>
+    </tr>
+    <tr>
+      <td>컴파일하는 시점 O</td>
+      <td>컴파일하는 시점 X</td>
+    </tr>
+    <tr>
+      <td>컴파일된 결과물 실행</td>
+      <td>코드 자체를 실행</td>
+    </tr>
+    <tr>
+      <td>컴파일된 결과물을 실행하는 시점</td>
+      <td>코드를 실행하는 시점 O = 런타임</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Traditional Compiled Language</p>
+
+<ul>
+  <li>컴파일 언어</li>
+  <li>C , C++ , Go, C#</li>
+  <li>프로그래머가 작성한 Source Code를 기계어로 변환하는 과정을 Compile이라고함</li>
+  <li>기계어로 바꾸는 방식(인터프리터 언어) 보다 빠름</li>
+</ul>
+
+<p>tsc—init ⇒ tsconfig.json file 생성</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"target": "es2016" =&gt; 컴파일 시킬 ES버전
+"module": "commonjs" =&gt; 결과의 모듈을 변환
+
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="ide-활용">IDE 활용</h2>
+
+<p>Compiler</p>
+
+<ul>
+  <li>VS Code에 컴파일러 내장</li>
+</ul>
+
+<p>tslint ⇒ Typescript code 규약</p>
+
+<ul>
+  <li>npm i typescript tslint(로컬)</li>
+  <li>tslint —int</li>
+  <li>tslint 플러그인 설치</li>
+</ul>
+
+<hr />
+
+<h2 id="super-property">Super Property</h2>
+
+<ul>
+  <li>compileOnSave - true/false(default false) ⇒</li>
+  <li>extends - 파일 경로명:string (잘안쓰임)</li>
+  <li>CompilerOptions</li>
+  <li>files ⇒ 상대 혹은 절대 경로의 리스트 배열 (설정없으면 모두 compile)</li>
+  <li>glob패턴</li>
+  <li>include ⇒  (설정없으면 모두 compile)</li>
+  <li>exclude ⇒  (설정없으면 모두 compile)</li>
+</ul>
+
+<h3 id="compileroptions">CompilerOptions</h3>
+
+<div class="language-tsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">@</span><span class="nd">types</span> <span class="c1">//node_modules/@types 라는 모든 경로를 찾아서 사용 / [] 빈 배열 설정시 시스템이용 X</span>
+
+<span class="nx">target</span> <span class="p">:</span> <span class="nx">빌드</span> <span class="nx">결과물을</span> <span class="nx">어떤</span> <span class="nx">버전으로</span> <span class="nx">할</span> <span class="nx">것인지</span> <span class="nx">설정</span> <span class="p">(</span><span class="nx">지정</span> <span class="nx">안할</span> <span class="nx">시</span> <span class="nx">es3</span><span class="p">)</span>
+
+<span class="nx">lib</span> <span class="p">:</span> <span class="kd">type</span> <span class="nx">definition</span> <span class="nx">라이브러리를</span> <span class="nx">어떤</span> <span class="nx">것을</span> <span class="nx">사용할지</span>  <span class="nx">설정</span>
+
+<span class="nx">target</span> <span class="p">:</span> <span class="nx">TypeScript는</span> <span class="nx">JS</span> <span class="nx">API</span><span class="p">(</span><span class="nb">Math</span> <span class="nx">와</span> <span class="nx">같은</span><span class="p">)</span><span class="nx">에</span> <span class="nx">대한</span> <span class="nx">기본적인</span> <span class="nx">타입</span> <span class="nx">정의와</span> <span class="nx">브라우저</span> <span class="nx">환경</span>
+
+<span class="kr">module</span> <span class="p">:</span> <span class="nx">컴파일</span> <span class="nx">된</span> <span class="nx">모듈의</span> <span class="nx">결과물을</span> <span class="nx">어떤</span> <span class="nx">모듈</span> <span class="nx">시스템으로</span> <span class="nx">할지를</span> <span class="nx">결정</span> <span class="nx">target이</span> <span class="dl">'</span><span class="s1">es6</span><span class="dl">'</span><span class="nx">면</span> <span class="nx">es6가</span> <span class="nx">디폴트값</span>
+
+</code></pre></div></div>
+
+<h1 id="typescript-basic">Typescript Basic</h1>
+
+<hr />
+
+<p>Primitive Type : 실제 값을 저장하는 자료형</p>
+
+<p>literal : 값자체가 변하지 않는 값</p>
+
+<p>Boolean : true/false</p>
+
+<p>Number : 숫자</p>
+
+<p>String : 문자</p>
+
+<p>Template String : 행에 걸쳐 있거나 표현식을 넣을 수 있는 문자열</p>
+
+<p>Undefined &amp; Null : 고유값</p>
+
+<p>*Void : 타입이 없는 상태 , 주로 함수의 리턴이 없을 때 사용</p>
+
+<p>*Any : 어떤 타입이어도 상관없는 타입 , 최대한 쓰지 않는게 핵심</p>
+
+<p>Never : 리턴에 주로 사용 (자주 안쓰임)</p>
+
+<p>Array : 배열 객체</p>
+
+<p>*Tuple : 배열인데 타입이 한가지가 아닌 경우 (객체임)</p>
+
+<p>*Enum : 비슷한 값들끼리 묶어줄 때 임의의 값을 순차적으로 할당해줌 ⇒ Enum 원소의 결과값은 string</p>
+
+<p>*Symbol : 고유하고 수정 불가능한 값으로 만듬</p>
+
+<h1 id="type-assertion">Type Assertion</h1>
+
+<hr />
+
+<p>형 변환과 다름</p>
+
+<p>‘타입이 이것이다’라고 컴파일러에게 알려주는 것을 의미함</p>
+
+<ul>
+  <li>변수 as 강제할 타입 (주로사용)</li>
+  <li>
+    <강제할 타입=""> 변수
+
+</강제할>
+  </li>
+</ul>
+<h1 id="type-alias">Type Alias</h1>
+
+<hr />
+
+<p>타입 별칭을 지어줌</p>
+
+<h1 id="interface">Interface</h1>
+
+<hr />
+
+<h3 id="class-implements-interface">class implements interface</h3>
+
+<div class="language-tsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">interface</span> <span class="nx">IPerson</span> <span class="p">{</span>
+    <span class="nl">name</span><span class="p">:</span><span class="kr">string</span><span class="p">;</span>
+    <span class="nx">hello</span><span class="p">():</span><span class="k">void</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nx">Person</span> <span class="k">implements</span> <span class="nx">IPerson</span><span class="p">{</span>
+    <span class="nl">name</span><span class="p">:</span> <span class="kr">string</span>
+
+    <span class="kd">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">:</span><span class="kr">string</span><span class="p">){</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span>
+    <span class="p">}</span>
+    <span class="nx">hello</span><span class="p">():</span><span class="k">void</span><span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`hello </span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="s2"> 입니다`</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="k">public</span> <span class="nx">hi</span><span class="p">():</span> <span class="k">void</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`현지 </span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="s2"> 입니다`</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">person</span> <span class="p">:</span> <span class="nx">IPerson</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Person</span><span class="p">(</span><span class="dl">"</span><span class="s2">Mark</span><span class="dl">"</span><span class="p">)</span>
+
+<span class="nx">person</span><span class="p">.</span><span class="nx">hi</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="interface-extends-interface">interface extends interface</h3>
+
+<div class="language-tsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">interface</span> <span class="nx">Person</span> <span class="p">{</span>
+    <span class="nl">name</span><span class="p">:</span><span class="kr">string</span><span class="p">;</span>
+    <span class="nl">age</span><span class="p">?:</span><span class="kr">number</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">interface</span> <span class="nx">Korean</span> <span class="kd">extends</span> <span class="nx">Person</span><span class="p">{</span>
+    <span class="nl">city</span> <span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Person interface를 상속 받고 Korean interface에 city의 타입 추가 </span>
+
+<span class="kd">const</span> <span class="nx">k</span> <span class="p">:</span> <span class="nx">Korean</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Kdn</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">city</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Seoul</span><span class="dl">'</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<h3 id="function-interface">function interface</h3>
+
+<div class="language-tsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">interface</span> <span class="nx">HelloPerson</span> <span class="p">{</span>
+    <span class="p">(</span><span class="nx">name</span><span class="p">:</span><span class="kr">string</span> <span class="p">,</span> <span class="nx">age</span><span class="p">?:</span> <span class="kr">number</span><span class="p">):</span> <span class="k">void</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">helloPerson</span><span class="p">:</span> <span class="nx">HelloPerson</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">name</span><span class="p">:</span><span class="kr">string</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nx">helloPerson</span><span class="p">(</span><span class="dl">"</span><span class="s2">Mark</span><span class="dl">"</span><span class="p">)</span>
+
+<span class="c1">//함수의 타입 체크는 할당할때가 아니라 사용할때 합니다</span>
+</code></pre></div></div>
+
+<h3 id="class">Class</h3>
+
+<div class="language-tsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Person</span> <span class="p">{</span>
+	<span class="nl">name</span><span class="p">:</span><span class="kr">string</span><span class="p">;</span>
+	<span class="nl">age</span><span class="p">:</span><span class="kr">number</span><span class="p">;</span>
+	<span class="kd">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">:</span> <span class="kr">string</span> <span class="p">){</span>
+		<span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+<span class="kd">const</span> <span class="nx">person</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Person</span><span class="p">(</span><span class="dl">"</span><span class="s2">Mark</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span>
+
+<span class="c1">//1. 생성자 함수가 없으면 디폴트 생성자가 불림</span>
+<span class="c1">//2. 클래스의 프로퍼티 혹은 멤버 변수가 정의되어 있지만</span>
+ <span class="nx">값을</span> <span class="nx">대입하지</span> <span class="nx">않으면</span> <span class="nx">undefined임</span>
+
+<span class="c1">//3. 접근제어자는 public이 디폴트값</span>
+</code></pre></div></div>
+:ET

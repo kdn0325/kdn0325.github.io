@@ -1,0 +1,68 @@
+I"�	<hr />
+
+<h3 id="문제-설명">문제 설명</h3>
+
+<p>정수 <code class="language-plaintext highlighter-rouge">n</code>이 매개변수로 주어질 때, <code class="language-plaintext highlighter-rouge">n</code> 이하의 홀수가 오름차순으로 담긴 배열을 return하도록 solution 함수를 완성해주세요.</p>
+
+<hr />
+
+<h3 id="제한사항">제한사항</h3>
+
+<ul>
+  <li>1 ≤ <code class="language-plaintext highlighter-rouge">n</code> ≤ 100</li>
+</ul>
+
+<hr />
+
+<h3 id="입출력-예">입출력 예</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>n</th>
+      <th>result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>10</td>
+      <td>[1, 3, 5, 7, 9]</td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td>[1, 3, 5, 7, 9, 11, 13, 15]</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h3 id="입출력-설명">입출력 설명</h3>
+
+<p>입출력 #1</p>
+
+<ul>
+  <li>10 이하의 홀수가 담긴 배열 [1, 3, 5, 7, 9]를 return합니다.</li>
+</ul>
+
+<p>입출력 #1</p>
+
+<ul>
+  <li>15 이하의 홀수가 담긴 배열 [1, 3, 5, 7, 9, 11, 13, 15]를 return합니다.</li>
+</ul>
+
+<hr />
+
+<h3 id="나의-풀이">나의 풀이</h3>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">answer</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="nx">n</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+        <span class="k">if</span><span class="p">(</span><span class="nx">i</span><span class="o">%</span><span class="mi">2</span><span class="o">==</span><span class="mi">1</span><span class="p">){</span>
+            <span class="nx">answer</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span> 
+    <span class="k">return</span> <span class="nx">answer</span>
+<span class="p">}</span>
+</code></pre></div></div>
+:ET

@@ -1,0 +1,1567 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>#15 예외처리(Exception Handling) - ABEL FRONTELIO : 개발 노트</title>
+<meta name="description" content="1.  Error">
+
+
+  <meta name="author" content="Abel🤭">
+  
+  <meta property="article:author" content="Abel🤭">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="ABEL FRONTELIO : 개발 노트">
+<meta property="og:title" content="#15 예외처리(Exception Handling)">
+<meta property="og:url" content="http://localhost:4000/javascript/15/">
+
+
+  <meta property="og:description" content="1.  Error">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2023-03-30T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2023-03-30T00:00:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/javascript/15/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Abel",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="ABEL FRONTELIO : 개발 노트 Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+<!-- end custom head snippets -->
+
+
+  </head>
+
+  <body class="layout--archive">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          ABEL FRONTELIO : 개발 노트
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/index.html">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#javascript" itemprop="item"><span itemprop="name">Javascript</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">#15 예외처리(Exception Handling)</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Abel🤭</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>FRONTELIO - Software Developer.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+        
+          
+            <li><a href="mailto:dn10003@email.com" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/kdn0325" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+
+  
+    
+
+<nav class="nav__list">
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items" id="category_tag_menu">
+      <li>
+        <span>전체 글 수77개<span>
+      </li>
+      <li>
+        <span class="nav__sub-title">Programming Language</span>
+            <ul>
+                
+                    
+                
+                    
+                        <li><a href="/categories/js" class="">Javscript (16)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/ts" class="">Typescript (10)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+        </li>
+      <li>
+        <span class="nav__sub-title">Front-end</span>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/html" class="">HTML(1)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/css" class="">CSS (2)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/react" class="">React (13)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/next" class="">Next.js (3)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/rn" class="">React Native (1)</a></li>
+                    
+                
+                    
+                
+            </ul>
+        </li>
+        <li>
+          <span class="nav__sub-title">Back-end</span>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+          </li>
+        <li>
+        <li>
+          <span class="nav__sub-title">DB</span>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+          </li>
+        <li>
+        <li>
+          <span class="nav__sub-title">OS</span>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+        </li>
+        <li>
+          <span class="nav__sub-title">컴퓨터 공학</span>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                          <li><a href="/categories/codingtest" class="">Coding Test(26)</a></li>
+                      
+                  
+              </ul>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                          <li><a href="/categories/computerscience" class="">CS(1)</a></li>
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+        </li>
+        <li>
+          <span class="nav__sub-title">etc</span>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                          <li><a href="/categories/git" class="">Git(2)</a></li>
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+              <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+              <ul>
+                  
+                      
+                          <li><a href="/categories/blog" class=""> Jekyll Blog(1)</a></li>
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+        </li>
+        <li>
+          <span class="nav__sub-title">Review</span>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                          <li><a href="/categories/refer" class="">Reference(1)</a></li>
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+        </li>
+      <li>
+  </ul>
+</nav>
+
+  
+
+  </div>
+
+
+  <div class="archive">
+    
+      <h1 id="page-title" class="page__title">#15 예외처리(Exception Handling)</h1>
+    
+    <h2 id="1--error">1.  Error</h2>
+
+<p><code class="language-plaintext highlighter-rouge">런타임</code> 오류가 발생했을 때 던져짐</p>
+
+<h3 id="1-프로그래밍의-에러-3가지">1) 프로그래밍의 에러 3가지</h3>
+
+<p>(1). <strong>문법 에러 : 문법상 맞지 않아서 발생하는 에러 (컴파일 시 에러가 있다고 알려줌)</strong></p>
+
+<p>(2). <strong>런타임 에러 : 문법은 어긋나지 않지만 실행시에 오류가 발생. (존재하지 않는 메소드를 호출)</strong></p>
+
+<p>(3). <strong>논리적 에러 : 문법적으로도 맞고 실행시에 아무런 문제가 발생하지 않지만 원하는 값이 안나오는 에러(로직이 잘못되어서 발생하는 에러)</strong></p>
+
+<hr />
+
+<h3 id="2-error-types">2) <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error#error_types">Error types</a></strong></h3>
+
+<p>(1) <strong>SyntaxError: 문법적으로 유효하지 않은 코드를 해석하려고 시도할 때 발생하는 오류를 의미</strong></p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>[SyntaxError - JavaScript</td>
+      <td>MDN](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/SyntaxError)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>에러발생이유</p>
+
+<ul>
+  <li>문법적으로 유효하지 않은 코드 사용</li>
+</ul>
+
+<hr />
+
+<p>(2) <strong>ReferenceError : 현재 범위에서 존재하지 않거나 초기화되지 않은 변수를 참조했을 때 발생</strong></p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>[ReferenceError - JavaScript</td>
+      <td>MDN](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>에러발생이유</p>
+
+<ul>
+  <li><strong><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Errors/Not_defined#%EC%84%A0%EC%96%B8%EB%90%98%EC%A7%80_%EC%95%8A%EC%9D%80_%EB%B3%80%EC%88%98">선언되지 않은 변수</a></strong></li>
+  <li><strong><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Errors/Not_defined#%EC%9E%98%EB%AA%BB%EB%90%9C_%EC%8A%A4%EC%BD%94%ED%94%84">잘못된 스코프</a></strong></li>
+</ul>
+
+<hr />
+
+<p>(3) <strong>RangeError : 어떤 값이 집합에 없거나 허용되는 범위가 아닐 때 오류</strong></p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>[RangeError - JavaScript</td>
+      <td>MDN](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/RangeError)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>에러발생이유</p>
+
+<ul>
+  <li>허용되는 문자열이 아닌 값을 <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/normalize">String.prototype.normalize()</a>
+에 전달 할때</li>
+  <li><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> 생성자를 통해 잘못된 길이의 배열을 만드려고 시도 할때</li>
+  <li>숫자 메서드 <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Number/toExponential">Number.prototype.toExponential()</a>
+<a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed">Number.prototype.toFixed()</a><code class="language-plaintext highlighter-rouge"> 혹은 </code><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Number/toPrecision">Number.prototype.toPrecision()</a>에 나쁜 값을 전달 할때</li>
+</ul>
+
+<hr />
+
+<p>(4) <strong>TypeError : 일반적으로 값이 기대하던 자료형이 아니라서 연산을 할 수 없을 때 발생하는 오류</strong></p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>[TypeError - JavaScript</td>
+      <td>MDN](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/TypeError)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>에러발생이유</p>
+
+<ul>
+  <li>함수에 전달된 피연산자 또는 인수가 해당 연산자나 함수가 예상하는 타입과 호환되지 않을 경우</li>
+  <li>변경할 수 없는 값을 수정하려고 할 경우</li>
+  <li>부적절한 방법으로 값을 사용하려고 할 경우</li>
+</ul>
+
+<hr />
+
+<p>(5) <strong>URIError: <code class="language-plaintext highlighter-rouge">URIError</code></strong>객체는 전역 URI 핸들링 함수가 잘못된 방식으로 사용되었을 때의 오류를 표현함.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>[URIError - JavaScript</td>
+      <td>MDN](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/URIError)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>에러발생이유</p>
+
+<ul>
+  <li><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/encodeURI">encodeURI()</a>나 <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/decodeURI">decodeURl()</a> 함수에 부적절한 매개변수를 제공했을 때 발생하는 오류의 인스턴스를 생성합니다.</li>
+</ul>
+
+<hr />
+
+<p>(6) <strong>EvalError:</strong> 전역 <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/eval">eval()</a>   함수에 관한 오류</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>[EvalError - JavaScript</td>
+      <td>MDN](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/EvalError)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>JavaScript에 의해 더 이상 발생하지 않지만 <code class="language-plaintext highlighter-rouge">EvalError</code>객체는 하위 호환성을 위해 남아있습니다.</p>
+
+<hr />
+
+<p>(7) <strong>InternalError: JavaScript 엔진 내부에서 발생한 오류</strong></p>
+
+<p><strong>비표준:</strong>
+이 기능은 비표준이므로 실제 프로덕션에서 사용하지 마세요. 모든 사용자 환경에서 작동하지 않을 수 도 있으며, 미래에 호환성 문제가 생길 수 있습니다.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>[EvalError - JavaScript</td>
+      <td>MDN](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/EvalError)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>에러발생이유</p>
+
+<ul>
+  <li>“too many switch cases”, (swich case의 수가 너무 많음)</li>
+  <li>“too many parentheses in regular expression”, (정규표현식에 너무 많은 괄호가 있음)</li>
+  <li>“array initializer too large”, (배열 초기화 값이 너무 큼)</li>
+  <li>“too much recursion”. (너무 많은 재귀 호출)</li>
+</ul>
+
+<hr />
+
+<h3 id="3-error-name-values-정리">3) <strong>**Error Name Values 정리</strong>**</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>종류</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>SyntaxError</td>
+      <td>문법에러 , 코딩상의 실이므로 수정하지 않으면 프로그램이 동작하지 않음</td>
+    </tr>
+    <tr>
+      <td>ReferenceError</td>
+      <td>잘못된 참조가 발생</td>
+    </tr>
+    <tr>
+      <td>RangeError</td>
+      <td>숫자에서 범위를 벗어나면 오류가 발생</td>
+    </tr>
+    <tr>
+      <td>TypeError</td>
+      <td>값 유형에 대한 오류가 발생</td>
+    </tr>
+    <tr>
+      <td>URIError</td>
+      <td>encodeURI( )</td>
+    </tr>
+    <tr>
+      <td>에서 오류가 발생</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>EvalError</td>
+      <td>eval( )함수에서 오류가 발생</td>
+    </tr>
+    <tr>
+      <td>** eval( ) : 문자열을 코드로 변경해주는 함수 (최신 버전에서는 발생하지않음)</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>InternalError</td>
+      <td>일반적으로 어떤 값이 너무 큰 경우</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="2--exception-handling예외-처리">2.  <strong>**Exception Handling(예외 처리)</strong>**</h2>
+
+<h3 id="1--기본-예외-처리">1)  기본 예외 처리</h3>
+
+<p>존재하면 true로 변환 , 존재하지 않으면 false로 변환</p>
+
+<ul>
+  <li>기본 활용</li>
+</ul>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* true */</span>
+
+<span class="p">{</span>
+    <span class="kd">function</span> <span class="nx">errHandler</span><span class="p">(){</span>
+        <span class="kd">const</span> <span class="nx">h1</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">인사</span><span class="dl">'</span><span class="p">;</span>
+        <span class="k">if</span><span class="p">(</span><span class="nx">h1</span><span class="o">===</span><span class="dl">'</span><span class="s1">인사</span><span class="dl">'</span><span class="p">){</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">안녕하세요</span><span class="dl">'</span><span class="p">)</span> <span class="c1">// if 조건문을 사용하여 h1이 존재하면 true로 변환 , 존재하지 않으면 false로 변환</span>
+        <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">인사가 아니라 추출하지 않음.</span><span class="dl">'</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="nx">errHandler</span><span class="p">()</span>
+<span class="p">}</span>
+
+<span class="o">=&gt;</span> <span class="nx">결과값</span>
+
+<span class="p">[</span><span class="nx">Running</span><span class="p">]</span> <span class="nx">node</span> <span class="dl">"</span><span class="s2">/workspaces/codespaces-blank/index.js</span><span class="dl">"</span>
+<span class="nx">인사가</span> <span class="nx">아니라</span> <span class="nx">추출하지</span> <span class="nx">않음</span><span class="p">.</span>
+
+<span class="p">[</span><span class="nx">Done</span><span class="p">]</span> <span class="nx">exited</span> <span class="kd">with</span> <span class="nx">code</span><span class="o">=</span><span class="mi">0</span> <span class="k">in</span> <span class="mf">0.067</span> <span class="nx">seconds</span>
+
+<span class="o">------------------------------------------------------------------</span>
+
+<span class="cm">/* false */</span>
+
+<span class="p">{</span>
+    <span class="kd">function</span> <span class="nx">errHandler</span><span class="p">(){</span>
+        <span class="kd">const</span> <span class="nx">h1</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">인사가 아닐때</span><span class="dl">'</span><span class="p">;</span>
+        <span class="k">if</span><span class="p">(</span><span class="nx">h1</span><span class="o">===</span><span class="dl">'</span><span class="s1">인사</span><span class="dl">'</span><span class="p">){</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">안녕하세요</span><span class="dl">'</span><span class="p">)</span> <span class="c1">// if 조건문을 사용하여 h1이 존재하면 true로 변환 , 존재하지 않으면 false로 변환</span>
+        <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">인사가 아니라 추출하지 않음.</span><span class="dl">'</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="nx">errHandler</span><span class="p">()</span>
+<span class="p">}</span>
+
+<span class="o">=&gt;</span> <span class="nx">결과값</span>
+
+<span class="p">[</span><span class="nx">Running</span><span class="p">]</span> <span class="nx">node</span> <span class="dl">"</span><span class="s2">/workspaces/codespaces-blank/index.js</span><span class="dl">"</span>
+<span class="nx">안녕하세요</span>
+
+<span class="p">[</span><span class="nx">Done</span><span class="p">]</span> <span class="nx">exited</span> <span class="kd">with</span> <span class="nx">code</span><span class="o">=</span><span class="mi">0</span> <span class="k">in</span> <span class="mf">0.054</span> <span class="nx">seconds</span>
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="2--고급-예외-처리">2)  고급 예외 처리</h3>
+
+<p>(1) try…catch…finally <strong>: <code class="language-plaintext highlighter-rouge">try...catch</code></strong> 문은 실행할 코드블럭을 표시하고 예외(exception)가 발생(throw)할 경우의 응답을 지정</p>
+
+<ul>
+  <li>기본 문법</li>
+</ul>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">try</span> <span class="p">{</span>
+    <span class="nx">예외가</span> <span class="nx">발생할</span> <span class="nx">가능성이</span> <span class="nx">있는</span> <span class="nx">코드</span>
+<span class="p">}</span><span class="k">catch</span><span class="p">(</span><span class="nx">exception</span><span class="p">){</span>
+    <span class="nx">예외가</span> <span class="nx">발생했을때</span> <span class="nx">실행</span> <span class="nx">할</span> <span class="nx">코드</span>
+<span class="p">}</span><span class="k">finally</span><span class="p">{</span>
+    <span class="nx">무조건</span> <span class="nx">실행할</span> <span class="nx">코드</span><span class="p">(</span><span class="k">finally</span> <span class="nx">구문은</span> <span class="nx">필요한</span> <span class="nx">경우에만</span> <span class="nx">사용</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>try…catch…finally 활용</li>
+</ul>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
+    <span class="cm">/* 고급 에러 처리 */</span>
+    <span class="k">try</span><span class="p">{</span>
+        <span class="nx">willExcept</span><span class="p">.</span><span class="nx">byebye</span><span class="p">()</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">try 구문 실행</span><span class="dl">'</span><span class="p">)</span>
+    <span class="p">}</span><span class="k">catch</span><span class="p">(</span><span class="nx">exception</span><span class="p">){</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">catch 구문 실행</span><span class="dl">'</span><span class="p">)</span>
+    <span class="p">}</span><span class="k">finally</span><span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">finally 구문 실행</span><span class="dl">'</span><span class="p">)</span> <span class="c1">// 예외의 발생 여부와 관계없이 무조건 실행 됌</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="o">=&gt;</span> <span class="nx">결과값</span>
+
+<span class="p">[</span><span class="nx">Running</span><span class="p">]</span> <span class="nx">node</span> <span class="dl">"</span><span class="s2">/workspaces/codespaces-blank/index.js</span><span class="dl">"</span>
+<span class="k">catch</span> <span class="nx">구문</span> <span class="nx">실행</span>
+<span class="k">finally</span> <span class="nx">구문</span> <span class="nx">실행</span>
+
+<span class="p">[</span><span class="nx">Done</span><span class="p">]</span> <span class="nx">exited</span> <span class="kd">with</span> <span class="nx">code</span><span class="o">=</span><span class="mi">0</span> <span class="k">in</span> <span class="mf">0.059</span> <span class="nx">seconds</span>
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="3--강제-예외-발생">3)  강제 예외 발생</h3>
+
+<p>(1) <code class="language-plaintext highlighter-rouge">throw</code><strong>:</strong> 사용자 정의 예외를 발생(throw)할 수 있습니다.</p>
+
+<p>상황에 따라 강제로 예외를 발생시켜야 하는 경우가 있음</p>
+
+<p>예외가 발생하면 현재 함수의 실행이 중지되고 <code class="language-plaintext highlighter-rouge">throw</code> 이후의 명령문은 실행되지 않습니다.), 제어 흐름은 콜스택의 첫 번째 <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/try...catch">catch</a>블록으로 전달됩니다. 호출자 함수 사이에 <code class="language-plaintext highlighter-rouge">catch</code>블록이 없으면 프로그램이 종료</p>
+
+<ul>
+  <li>기본 문법</li>
+</ul>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//단순한 예외</span>
+    <span class="k">throw</span> <span class="nx">문자열</span> 
+    
+<span class="c1">//조금 더 자세하게 예외를 발생</span>
+    <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="nx">문자열</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li>throw 활용</li>
+</ul>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="cm">/* 빈값 예외 처리 */</span>
+
+<span class="p">{</span>
+    <span class="kd">function</span> <span class="nx">test</span><span class="p">(){</span>
+        <span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="dl">""</span><span class="p">;</span>
+        <span class="k">try</span><span class="p">{</span>
+            <span class="c1">//개발자 직접 에러를 발생</span>
+            <span class="k">if</span><span class="p">(</span><span class="nx">x</span><span class="o">==</span><span class="dl">""</span><span class="p">)</span> <span class="k">throw</span> <span class="dl">"</span><span class="s2">개발자 직접 에러 처리:빈값 입니다</span><span class="dl">"</span>
+            <span class="kd">let</span> <span class="nx">y</span> <span class="o">=</span> <span class="nx">x</span><span class="o">+</span><span class="mi">20</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">y</span><span class="p">)</span>
+        <span class="p">}</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`</span><span class="p">${</span><span class="nx">err</span><span class="p">}</span><span class="s2">`</span><span class="p">)</span>
+        <span class="p">}</span><span class="k">finally</span><span class="p">{</span>
+            <span class="c1">//무조건 실행</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">finally구문은 try/catch문 제일 마지막에 무조건 실행</span><span class="dl">"</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="c1">//함수 호출</span>
+    <span class="nx">test</span><span class="p">()</span>
+<span class="p">}</span>
+
+<span class="o">=&gt;</span> <span class="nx">결과값</span>
+
+<span class="p">[</span><span class="nx">Running</span><span class="p">]</span> <span class="nx">node</span> <span class="dl">"</span><span class="s2">/workspaces/codespaces-blank/index.js</span><span class="dl">"</span>
+<span class="nx">개발자</span> <span class="nx">직접</span> <span class="nx">에러</span> <span class="nx">처리</span><span class="p">:</span><span class="nx">빈값</span> <span class="nx">입니다</span>
+<span class="nx">finally구문은</span> <span class="k">try</span><span class="sr">/catch문 제일 마지막에 무조건 실</span><span class="err">행
+</span>
+<span class="p">[</span><span class="nx">Done</span><span class="p">]</span> <span class="nx">exited</span> <span class="kd">with</span> <span class="nx">code</span><span class="o">=</span><span class="mi">0</span> <span class="k">in</span> <span class="mf">0.052</span> <span class="nx">seconds</span>
+
+<span class="o">------------------------------------------------------------------</span>
+
+<span class="cm">/* 0으로 나눌때 예외 처리 */</span>
+
+<span class="p">{</span>
+    <span class="kd">function</span> <span class="nx">divide</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">){</span>
+        <span class="k">if</span><span class="p">(</span><span class="nx">b</span><span class="o">===</span><span class="mi">0</span><span class="p">){</span>
+            <span class="k">throw</span> <span class="dl">'</span><span class="s1">0으로 나눌 수 없습니다.</span><span class="dl">'</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="nx">a</span><span class="o">/</span> <span class="nx">b</span>
+    <span class="p">}</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">divide</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+<span class="p">}</span>
+
+<span class="o">=&gt;</span> <span class="nx">결과값</span>
+
+<span class="p">[</span><span class="nx">Running</span><span class="p">]</span> <span class="nx">node</span> <span class="dl">"</span><span class="s2">/workspaces/codespaces-blank/index.js</span><span class="dl">"</span>
+
+<span class="nx">node</span><span class="p">:</span><span class="nx">internal</span><span class="o">/</span><span class="nx">process</span><span class="o">/</span><span class="nx">esm_loader</span><span class="p">:</span><span class="mi">100</span>
+    <span class="nx">internalBinding</span><span class="p">(</span><span class="dl">'</span><span class="s1">errors</span><span class="dl">'</span><span class="p">).</span><span class="nx">triggerUncaughtException</span><span class="p">(</span>
+                              <span class="o">^</span>
+<span class="mi">0</span><span class="nx">으로</span> <span class="nx">나눌</span> <span class="nx">수</span> <span class="nx">없습니다</span><span class="p">.</span>
+<span class="p">(</span><span class="nx">Use</span> <span class="s2">`node --trace-uncaught ...`</span> <span class="nx">to</span> <span class="nx">show</span> <span class="nx">where</span> <span class="nx">the</span> <span class="nx">exception</span> <span class="nx">was</span> <span class="nx">thrown</span><span class="p">)</span>
+
+<span class="nx">Node</span><span class="p">.</span><span class="nx">js</span> <span class="nx">v19</span><span class="p">.</span><span class="mf">7.0</span>
+
+<span class="p">[</span><span class="nx">Done</span><span class="p">]</span> <span class="nx">exited</span> <span class="kd">with</span> <span class="nx">code</span><span class="o">=</span><span class="mi">1</span> <span class="k">in</span> <span class="mf">0.048</span> <span class="nx">seconds</span>
+</code></pre></div></div>
+
+<ul>
+  <li>throw new Error 활용</li>
+</ul>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="cm">/* object undefined 자세한 예외 처리  */</span>
+
+<span class="p">{</span>
+    <span class="cm">/* undefined+undefined는 NaN으로 나옴 */</span>
+    <span class="kd">function</span> <span class="nx">test</span><span class="p">(</span><span class="nx">object</span><span class="p">){</span>
+        <span class="c1">// object.a와 object.b는 undefined </span>
+        <span class="k">if</span><span class="p">(</span><span class="nx">object</span><span class="p">.</span><span class="nx">a</span> <span class="o">!==</span> <span class="kc">undefined</span> <span class="o">&amp;&amp;</span> <span class="nx">object</span><span class="p">.</span><span class="nx">b</span> <span class="o">!==</span> <span class="kc">undefined</span><span class="p">){</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">object</span><span class="p">.</span><span class="nx">a</span><span class="o">+</span><span class="nx">object</span><span class="p">.</span><span class="nx">b</span><span class="p">)</span>
+        <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="dl">'</span><span class="s1">a 속성과 b 속성을 지정하지 않음</span><span class="dl">'</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="nx">test</span><span class="p">({})</span>
+<span class="p">}</span>
+
+<span class="o">=&gt;</span> <span class="nx">결과값</span>
+
+<span class="p">[</span><span class="nx">Running</span><span class="p">]</span> <span class="nx">node</span> <span class="dl">"</span><span class="s2">/workspaces/codespaces-blank/index.js</span><span class="dl">"</span>
+<span class="nx">file</span><span class="p">:</span><span class="c1">///workspaces/codespaces-blank/index.js:8</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="dl">'</span><span class="s1">a 속성과 b 속성을 지정하지 않음</span><span class="dl">'</span><span class="p">)</span>
+                  <span class="o">^</span>
+
+<span class="nb">Error</span><span class="p">:</span> <span class="nx">a</span> <span class="nx">속성과</span> <span class="nx">b</span> <span class="nx">속성을</span> <span class="nx">지정하지</span> <span class="nx">않음</span>
+    <span class="nx">at</span> <span class="nx">test</span> <span class="p">(</span><span class="nx">file</span><span class="p">:</span><span class="c1">///workspaces/codespaces-blank/index.js:8:19)</span>
+    <span class="nx">at</span> <span class="nx">file</span><span class="p">:</span><span class="c1">///workspaces/codespaces-blank/index.js:11:5</span>
+    <span class="nx">at</span> <span class="nx">ModuleJob</span><span class="p">.</span><span class="nx">run</span> <span class="p">(</span><span class="nx">node</span><span class="p">:</span><span class="nx">internal</span><span class="o">/</span><span class="nx">modules</span><span class="o">/</span><span class="nx">esm</span><span class="o">/</span><span class="nx">module_job</span><span class="p">:</span><span class="mi">193</span><span class="p">:</span><span class="mi">25</span><span class="p">)</span>
+
+<span class="nx">Node</span><span class="p">.</span><span class="nx">js</span> <span class="nx">v19</span><span class="p">.</span><span class="mf">7.0</span>
+
+<span class="p">[</span><span class="nx">Done</span><span class="p">]</span> <span class="nx">exited</span> <span class="kd">with</span> <span class="nx">code</span><span class="o">=</span><span class="mi">1</span> <span class="k">in</span> <span class="mf">0.049</span> <span class="nx">seconds</span>
+</code></pre></div></div>
+<hr />
+
+  </div>
+</div>
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/kdn0325" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 Abel. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    <script>
+  'use strict';
+
+  (function() {
+    var commentContainer = document.querySelector('#utterances-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.setAttribute('src', 'https://utteranc.es/client.js');
+    script.setAttribute('repo', 'kdn0325/comments');
+    script.setAttribute('issue-term', 'pathname');
+    script.setAttribute('theme', 'photon-dark');
+    script.setAttribute('crossorigin', 'anonymous');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+
+  
+
+
+
+
+
+  </body>
+</html>

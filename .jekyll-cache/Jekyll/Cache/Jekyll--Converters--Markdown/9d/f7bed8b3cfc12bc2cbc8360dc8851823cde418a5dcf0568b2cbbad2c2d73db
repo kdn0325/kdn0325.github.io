@@ -1,0 +1,68 @@
+I";	<hr />
+
+<div class="list__item">
+    <article class="archive-item">
+        <div>
+            <span>
+              <a href="/css/2/">#2 선택자 정리</a>
+            </span>
+            <small> 
+              <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2022.08.29
+              
+<!--Archive page 용-: (post -> page)-->
+<!--page__taxonomy.html에서 가져 옴-->
+        
+        <span class="page__taxonomy">
+            <span itemprop="keywords"><a href="/categories/#css" class="page__taxonomy-item-category" rel="tag">CSS</a>
+                    
+                    
+                    <a href="/tags/#cascading-style-sheet" class="page__taxonomy-item-tag" rel="tag">Cascading Style Sheet</a><span class="sep"> </span>
+                
+                    
+                    
+                    <a href="/tags/#css3" class="page__taxonomy-item-tag" rel="tag">CSS3</a><span class="sep"> </span>
+                
+                    
+                    
+                    <a href="/tags/#css" class="page__taxonomy-item-tag" rel="tag">css</a>
+                
+            </span>
+        </span>
+            </small>
+        </div>
+      </article>
+</div>
+
+<div class="list__item">
+    <article class="archive-item">
+        <div>
+            <span>
+              <a href="/css/1/">#1 CSS 기초</a>
+            </span>
+            <small> 
+              <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2022.08.29
+              
+<!--Archive page 용-: (post -> page)-->
+<!--page__taxonomy.html에서 가져 옴-->
+        
+        <span class="page__taxonomy">
+            <span itemprop="keywords"><a href="/categories/#css" class="page__taxonomy-item-category" rel="tag">CSS</a>
+                    
+                    
+                    <a href="/tags/#cascading-style-sheet" class="page__taxonomy-item-tag" rel="tag">Cascading Style Sheet</a><span class="sep"> </span>
+                
+                    
+                    
+                    <a href="/tags/#css3" class="page__taxonomy-item-tag" rel="tag">CSS3</a><span class="sep"> </span>
+                
+                    
+                    
+                    <a href="/tags/#css" class="page__taxonomy-item-tag" rel="tag">css</a>
+                
+            </span>
+        </span>
+            </small>
+        </div>
+      </article>
+</div>
+:ET

@@ -1,0 +1,61 @@
+I"
+<hr />
+
+<h3 id="문제-설명">문제 설명</h3>
+
+<p>문자열 <code class="language-plaintext highlighter-rouge">my_string</code>과 정수 <code class="language-plaintext highlighter-rouge">n</code>이 매개변수로 주어질 때, <code class="language-plaintext highlighter-rouge">my_string</code>에 들어있는 각 문자를 <code class="language-plaintext highlighter-rouge">n</code>만큼 반복한 문자열을 return 하도록 solution 함수를 완성해보세요.</p>
+
+<hr />
+
+<h3 id="제한사항">제한사항</h3>
+
+<ul>
+  <li>2 ≤ <code class="language-plaintext highlighter-rouge">my_string</code> 길이 ≤ 5</li>
+  <li>2 ≤ <code class="language-plaintext highlighter-rouge">n</code> ≤ 10</li>
+  <li>“my_string”은 영어 대소문자로 이루어져 있습니다.</li>
+</ul>
+
+<hr />
+
+<h3 id="입출력-예">입출력 예</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>my_string</th>
+      <th>n</th>
+      <th>result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>“hello”</td>
+      <td>3</td>
+      <td>“hhheeellllllooo”</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h3 id="입출력-설명">입출력 설명</h3>
+
+<p>입출력 예 #1</p>
+
+<ul>
+  <li>“hello”의 각 문자를 세 번씩 반복한 “hhheeellllllooo”를 return 합니다.</li>
+</ul>
+
+<hr />
+
+<h3 id="나의-풀이">나의 풀이</h3>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">my_string</span><span class="p">,</span> <span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">answerArray</span> <span class="o">=</span> <span class="p">[...</span><span class="nx">my_string</span><span class="p">].</span><span class="nx">map</span><span class="p">((</span><span class="nx">item</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">(</span>
+        <span class="nx">item</span><span class="p">.</span><span class="nx">repeat</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span>
+    <span class="p">))</span>
+    <span class="kd">var</span> <span class="nx">answer</span> <span class="o">=</span> <span class="nx">answerArray</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="dl">""</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nx">answer</span>
+<span class="p">}</span>
+</code></pre></div></div>
+:ET

@@ -1,0 +1,1230 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>#10 router - ABEL FRONTELIO : 개발 노트</title>
+<meta name="description" content="router 란">
+
+
+  <meta name="author" content="Abel🤭">
+  
+  <meta property="article:author" content="Abel🤭">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="ABEL FRONTELIO : 개발 노트">
+<meta property="og:title" content="#10 router">
+<meta property="og:url" content="http://localhost:4000/react/11/">
+
+
+  <meta property="og:description" content="router 란">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2022-09-09T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2023-03-29T00:00:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/react/11/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Abel",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="ABEL FRONTELIO : 개발 노트 Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+<!-- end custom head snippets -->
+
+
+  </head>
+
+  <body class="layout--archive">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          ABEL FRONTELIO : 개발 노트
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/index.html">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#react" itemprop="item"><span itemprop="name">React</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">#10 router</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Abel🤭</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>FRONTELIO - Software Developer.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+        
+          
+            <li><a href="mailto:dn10003@email.com" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/kdn0325" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+
+  
+    
+
+<nav class="nav__list">
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items" id="category_tag_menu">
+      <li>
+        <span>전체 글 수77개<span>
+      </li>
+      <li>
+        <span class="nav__sub-title">Programming Language</span>
+            <ul>
+                
+                    
+                
+                    
+                        <li><a href="/categories/js" class="">Javscript (16)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/ts" class="">Typescript (10)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+        </li>
+      <li>
+        <span class="nav__sub-title">Front-end</span>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/html" class="">HTML(1)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/css" class="">CSS (2)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/react" class="">React (13)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/next" class="">Next.js (3)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/rn" class="">React Native (1)</a></li>
+                    
+                
+                    
+                
+            </ul>
+        </li>
+        <li>
+          <span class="nav__sub-title">Back-end</span>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+          </li>
+        <li>
+        <li>
+          <span class="nav__sub-title">DB</span>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+          </li>
+        <li>
+        <li>
+          <span class="nav__sub-title">OS</span>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+        </li>
+        <li>
+          <span class="nav__sub-title">컴퓨터 공학</span>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                          <li><a href="/categories/codingtest" class="">Coding Test(26)</a></li>
+                      
+                  
+              </ul>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                          <li><a href="/categories/computerscience" class="">CS(1)</a></li>
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+        </li>
+        <li>
+          <span class="nav__sub-title">etc</span>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                          <li><a href="/categories/git" class="">Git(2)</a></li>
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+              <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+              <ul>
+                  
+                      
+                          <li><a href="/categories/blog" class=""> Jekyll Blog(1)</a></li>
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+        </li>
+        <li>
+          <span class="nav__sub-title">Review</span>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                          <li><a href="/categories/refer" class="">Reference(1)</a></li>
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+        </li>
+      <li>
+  </ul>
+</nav>
+
+  
+
+  </div>
+
+
+  <div class="archive">
+    
+      <h1 id="page-title" class="page__title">#10 router</h1>
+    
+    <p><strong>router 란</strong></p>
+
+<p><a href="https://ko.wikipedia.org/wiki/%EB%9D%BC%EC%9A%B0%ED%8C%85"><strong>라우팅 - 위키백과, 우리 모두의 백과사전</strong></a></p>
+
+<p>SPA(Single Page Application) 싱글페이지라고 부르는 이유는 유저가 처음 접속했을때 구체적인 data를 제외한 정적파일을 모두 불러오기 때문</p>
+
+<p>리액트 라우터로 페이지를 나누어 유저가 접속하는 url마다 다른 data를 보여줄 수 할수 있음</p>
+
+<p>페이지의 로딩 없이, 페이지에 필요한 컴포넌트를 불러와 렌더링 하여 보여주도록 도와줌</p>
+
+<p>새로운 페이지를 로드하지 않고 하나의 페이지 안에서 필요한 데이터만 가져오는 형태</p>
+
+<p><strong>CSR(Client Side Rendering)</strong></p>
+
+<p>최초 한 번 HTML, static, js 등을 다 받아와서 로딩하는 방식</p>
+
+<p>이후에는 클라이언트의 요청이 있을 때마다 리소스를 서버에서 제공하고 클라이언트가 해석 후 렌더링</p>
+
+<p>클라이언트 요청=&gt; 변화가 필요한 영역만 서버에 전달=&gt; 서버에서 클라이언트로 리소스 전달=&gt; 클라이언트에서 view 처리</p>
+
+<p>SPA(Single Page App) 형식의 프론트엔드 라이브러리(React, Vue)의 방식</p>
+
+<p>(React SSR 라이브러리=Next.js, Vue SSR 라이브러리=Nuxt.js)</p>
+
+<p>처음에 HTML에 대한 정보 비어 있음</p>
+
+<p>yarn add react-router-dom</p>
+
+<p>과거의 버전을 쓰고 싶다고 하면</p>
+
+<p>package.json 열기</p>
+
+<p>“react-router-dom”: “5”,</p>
+
+<p>수정후</p>
+
+<p>터미널에서 yarn</p>
+
+<p>yarn yarn</p>
+
+<p>===============</p>
+
+<p>현재 6 버전으로 바뀜</p>
+
+<p><a href="https://reactrouter.com/">https://reactrouter.com/</a></p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>**[Declarative routing for React apps at any scale</td>
+      <td>React Router**</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Version 6 of React Router is here! React Router v6 takes the best features from v3, v5, and its sister project, Reach Router, in our smallest and most powerful package yet.
+reactrouter.com](https://reactrouter.com/)</p>
+
+<p><a href="https://reactrouter.com/docs/en/v6/upgrading/v5">https://reactrouter.com/docs/en/v6/upgrading/v5</a></p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span><span class="err"> </span><span class="p">{</span><span class="err"> </span><span class="nx">BrowserRouter</span><span class="err"> </span><span class="p">,</span><span class="err"> </span><span class="nx">Routes</span><span class="p">,</span><span class="err"> </span><span class="nx">Route</span><span class="p">,</span><span class="err"> </span><span class="nx">Link</span><span class="err"> </span><span class="p">}</span><span class="err"> </span><span class="k">from</span><span class="err"> </span><span class="dl">"</span><span class="s2">react-router-dom</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="p">&lt;</span><span class="nc">Route</span> <span class="na">path</span><span class="p">=</span><span class="s">"주소"</span><span class="err"> </span><span class="na">element</span><span class="p">=</span><span class="si">{</span> <span class="p">&lt;</span><span class="err">보여주고싶은</span> <span class="err">컴포넌트</span> <span class="p">/&gt;</span><span class="err"> </span><span class="si">}</span><span class="p">&gt;</span>
+</code></pre></div></div>
+
+<p>Switch =&gt; Routes로</p>
+
+<p><strong>Route : 어떤경로로 들어왔을때 어떤 컴포넌트를 보여주겠다.. ( 컴포넌트 보이는 영역)</strong></p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">&lt;</span><span class="nc">Routes</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nc">Route</span> <span class="na">path</span><span class="p">=</span><span class="s">"/aaa"</span> <span class="na">element</span><span class="p">=</span><span class="si">{</span><span class="p">&lt;</span><span class="nc">Aaa</span> <span class="p">/&gt;</span><span class="si">}</span> <span class="p">/&gt;</span>
+
+<span class="p">&lt;</span><span class="nc">Route</span> <span class="na">path</span><span class="p">=</span><span class="s">"/bbb"</span> <span class="na">element</span><span class="p">=</span><span class="si">{</span><span class="p">&lt;</span><span class="nc">Bbb</span> <span class="p">/&gt;</span><span class="si">}</span> <span class="p">/&gt;</span>
+
+<span class="p">&lt;/</span><span class="nc">Routes</span><span class="p">&gt;</span>
+</code></pre></div></div>
+
+<hr />
+
+<p><strong>Link : Router의 주소를 바꿈 a 태그지만 새로고침 안됨</strong></p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">&lt;</span><span class="nc">Link</span> <span class="na">to</span><span class="p">=</span><span class="s">"/"</span><span class="p">&gt;</span>홈<span class="p">&lt;/</span><span class="nc">Link</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nc">Link</span> <span class="na">to</span><span class="p">=</span><span class="s">"/path주소"</span><span class="p">&gt;</span>소개<span class="p">&lt;/</span><span class="nc">Link</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nc">Link</span> <span class="na">to</span><span class="p">=</span><span class="s">"/about"</span><span class="p">&gt;</span>소개<span class="p">&lt;/</span><span class="nc">Link</span><span class="p">&gt;</span>
+</code></pre></div></div>
+
+<p>useHistory 사라짐 - useNavigate 함수</p>
+
+<p>history.push(‘/’) -&gt; navigate(‘/’)</p>
+
+  </div>
+</div>
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/kdn0325" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 Abel. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    <script>
+  'use strict';
+
+  (function() {
+    var commentContainer = document.querySelector('#utterances-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.setAttribute('src', 'https://utteranc.es/client.js');
+    script.setAttribute('repo', 'kdn0325/comments');
+    script.setAttribute('issue-term', 'pathname');
+    script.setAttribute('theme', 'photon-dark');
+    script.setAttribute('crossorigin', 'anonymous');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+
+  
+
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,63 @@
+I"A<hr />
+
+<h3 id="문제-설명">문제 설명</h3>
+
+<p>문자열 <code class="language-plaintext highlighter-rouge">my_string</code>이 매개변수로 주어집니다. <code class="language-plaintext highlighter-rouge">my_string</code>을 거꾸로 뒤집은 문자열을 return하도록 solution 함수를 완성해주세요.</p>
+
+<hr />
+
+<h3 id="제한사항">제한사항</h3>
+
+<ul>
+  <li>• 1 ≤ <code class="language-plaintext highlighter-rouge">my_string</code>의 길이 ≤ 1,000</li>
+</ul>
+
+<hr />
+
+<h3 id="입출력-예">입출력 예</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>my_string</th>
+      <th>return</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>“jaron”</td>
+      <td>“noraj”</td>
+    </tr>
+    <tr>
+      <td>“bread”</td>
+      <td>“daerb”</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h3 id="입출력-설명">입출력 설명</h3>
+
+<p>입출력 예 #1</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">my_string</code>이 “jaron”이므로 거꾸로 뒤집은 “noraj”를 return합니다.</li>
+</ul>
+
+<p>입출력 예 #2</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">my_string</code>이 “bread”이므로 거꾸로 뒤집은 “daerb”를 return합니다.</li>
+</ul>
+
+<hr />
+
+<h3 id="나의-풀이">나의 풀이</h3>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">my_string</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">answer</span> <span class="o">=</span> <span class="nx">my_string</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="dl">''</span><span class="p">).</span><span class="nx">reverse</span><span class="p">().</span><span class="nx">join</span><span class="p">(</span><span class="dl">''</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nx">answer</span>
+<span class="p">}</span>
+</code></pre></div></div>
+:ET

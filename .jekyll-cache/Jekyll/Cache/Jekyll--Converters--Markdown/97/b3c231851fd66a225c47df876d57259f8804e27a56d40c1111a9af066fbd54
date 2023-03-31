@@ -1,0 +1,93 @@
+I"�<p><strong>router 란</strong></p>
+
+<p><a href="https://ko.wikipedia.org/wiki/%EB%9D%BC%EC%9A%B0%ED%8C%85"><strong>라우팅 - 위키백과, 우리 모두의 백과사전</strong></a></p>
+
+<p>SPA(Single Page Application) 싱글페이지라고 부르는 이유는 유저가 처음 접속했을때 구체적인 data를 제외한 정적파일을 모두 불러오기 때문</p>
+
+<p>리액트 라우터로 페이지를 나누어 유저가 접속하는 url마다 다른 data를 보여줄 수 할수 있음</p>
+
+<p>페이지의 로딩 없이, 페이지에 필요한 컴포넌트를 불러와 렌더링 하여 보여주도록 도와줌</p>
+
+<p>새로운 페이지를 로드하지 않고 하나의 페이지 안에서 필요한 데이터만 가져오는 형태</p>
+
+<p><strong>CSR(Client Side Rendering)</strong></p>
+
+<p>최초 한 번 HTML, static, js 등을 다 받아와서 로딩하는 방식</p>
+
+<p>이후에는 클라이언트의 요청이 있을 때마다 리소스를 서버에서 제공하고 클라이언트가 해석 후 렌더링</p>
+
+<p>클라이언트 요청=&gt; 변화가 필요한 영역만 서버에 전달=&gt; 서버에서 클라이언트로 리소스 전달=&gt; 클라이언트에서 view 처리</p>
+
+<p>SPA(Single Page App) 형식의 프론트엔드 라이브러리(React, Vue)의 방식</p>
+
+<p>(React SSR 라이브러리=Next.js, Vue SSR 라이브러리=Nuxt.js)</p>
+
+<p>처음에 HTML에 대한 정보 비어 있음</p>
+
+<p>yarn add react-router-dom</p>
+
+<p>과거의 버전을 쓰고 싶다고 하면</p>
+
+<p>package.json 열기</p>
+
+<p>“react-router-dom”: “5”,</p>
+
+<p>수정후</p>
+
+<p>터미널에서 yarn</p>
+
+<p>yarn yarn</p>
+
+<p>===============</p>
+
+<p>현재 6 버전으로 바뀜</p>
+
+<p><a href="https://reactrouter.com/">https://reactrouter.com/</a></p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>**[Declarative routing for React apps at any scale</td>
+      <td>React Router**</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Version 6 of React Router is here! React Router v6 takes the best features from v3, v5, and its sister project, Reach Router, in our smallest and most powerful package yet.
+reactrouter.com](https://reactrouter.com/)</p>
+
+<p><a href="https://reactrouter.com/docs/en/v6/upgrading/v5">https://reactrouter.com/docs/en/v6/upgrading/v5</a></p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span><span class="err"> </span><span class="p">{</span><span class="err"> </span><span class="nx">BrowserRouter</span><span class="err"> </span><span class="p">,</span><span class="err"> </span><span class="nx">Routes</span><span class="p">,</span><span class="err"> </span><span class="nx">Route</span><span class="p">,</span><span class="err"> </span><span class="nx">Link</span><span class="err"> </span><span class="p">}</span><span class="err"> </span><span class="k">from</span><span class="err"> </span><span class="dl">"</span><span class="s2">react-router-dom</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="p">&lt;</span><span class="nc">Route</span> <span class="na">path</span><span class="p">=</span><span class="s">"주소"</span><span class="err"> </span><span class="na">element</span><span class="p">=</span><span class="si">{</span> <span class="p">&lt;</span><span class="err">보여주고싶은</span> <span class="err">컴포넌트</span> <span class="p">/&gt;</span><span class="err"> </span><span class="si">}</span><span class="p">&gt;</span>
+</code></pre></div></div>
+
+<p>Switch =&gt; Routes로</p>
+
+<p><strong>Route : 어떤경로로 들어왔을때 어떤 컴포넌트를 보여주겠다.. ( 컴포넌트 보이는 영역)</strong></p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">&lt;</span><span class="nc">Routes</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nc">Route</span> <span class="na">path</span><span class="p">=</span><span class="s">"/aaa"</span> <span class="na">element</span><span class="p">=</span><span class="si">{</span><span class="p">&lt;</span><span class="nc">Aaa</span> <span class="p">/&gt;</span><span class="si">}</span> <span class="p">/&gt;</span>
+
+<span class="p">&lt;</span><span class="nc">Route</span> <span class="na">path</span><span class="p">=</span><span class="s">"/bbb"</span> <span class="na">element</span><span class="p">=</span><span class="si">{</span><span class="p">&lt;</span><span class="nc">Bbb</span> <span class="p">/&gt;</span><span class="si">}</span> <span class="p">/&gt;</span>
+
+<span class="p">&lt;/</span><span class="nc">Routes</span><span class="p">&gt;</span>
+</code></pre></div></div>
+
+<hr />
+
+<p><strong>Link : Router의 주소를 바꿈 a 태그지만 새로고침 안됨</strong></p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">&lt;</span><span class="nc">Link</span> <span class="na">to</span><span class="p">=</span><span class="s">"/"</span><span class="p">&gt;</span>홈<span class="p">&lt;/</span><span class="nc">Link</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nc">Link</span> <span class="na">to</span><span class="p">=</span><span class="s">"/path주소"</span><span class="p">&gt;</span>소개<span class="p">&lt;/</span><span class="nc">Link</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nc">Link</span> <span class="na">to</span><span class="p">=</span><span class="s">"/about"</span><span class="p">&gt;</span>소개<span class="p">&lt;/</span><span class="nc">Link</span><span class="p">&gt;</span>
+</code></pre></div></div>
+
+<p>useHistory 사라짐 - useNavigate 함수</p>
+
+<p>history.push(‘/’) -&gt; navigate(‘/’)</p>
+:ET

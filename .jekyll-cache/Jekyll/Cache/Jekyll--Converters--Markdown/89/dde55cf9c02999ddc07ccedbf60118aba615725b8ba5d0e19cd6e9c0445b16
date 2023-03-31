@@ -1,0 +1,76 @@
+I"
+<hr />
+
+<h3 id="문제-설명">문제 설명</h3>
+
+<p>머쓱이네 피자가게는 피자를 일곱 조각으로 잘라 줍니다. 피자를 나눠먹을 사람의 수 <code class="language-plaintext highlighter-rouge">n</code>이 주어질 때, 모든 사람이 피자를 한 조각 이상 먹기 위해 필요한 피자의 수를 return 하는 solution 함수를 완성해보세요.</p>
+
+<hr />
+
+<h3 id="제한사항">제한사항</h3>
+
+<ul>
+  <li>• 1 ≤ <code class="language-plaintext highlighter-rouge">n</code> ≤ 100</li>
+</ul>
+
+<hr />
+
+<h3 id="입출력-예">입출력 예</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>n</th>
+      <th>result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>7</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td>3</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h3 id="입출력-설명">입출력 설명</h3>
+
+<p>입출력 예 #1</p>
+
+<ul>
+  <li>7명이 최소 한 조각씩 먹기 위해서 최소 1판이 필요합니다.</li>
+</ul>
+
+<p>입출력 예 #2</p>
+
+<ul>
+  <li>1명은 최소 한 조각을 먹기 위해 1판이 필요합니다.</li>
+</ul>
+
+<p>입출력 예 #3</p>
+
+<ul>
+  <li>15명이 최소 한 조각씩 먹기 위해서 최소 3판이 필요합니다.</li>
+</ul>
+
+<hr />
+
+<h3 id="나의-풀이">나의 풀이</h3>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">n</span><span class="p">,</span> <span class="nx">k</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">answer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">lamb</span> <span class="o">=</span> <span class="mi">12000</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">drink</span> <span class="o">=</span> <span class="mi">2000</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nx">lamb</span><span class="o">*</span><span class="nx">n</span><span class="o">+</span><span class="nx">k</span><span class="o">*</span><span class="nx">drink</span><span class="o">-</span><span class="nb">parseInt</span><span class="p">(</span><span class="nx">n</span><span class="o">/</span><span class="mi">10</span><span class="p">)</span><span class="o">*</span><span class="mi">2000</span>
+<span class="p">}</span>
+</code></pre></div></div>
+:ET

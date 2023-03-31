@@ -1,0 +1,70 @@
+I"`<hr />
+
+<h3 id="문제-설명">문제 설명</h3>
+
+<p>머쓱이네 양꼬치 가게는 10인분을 먹으면 음료수 하나를 서비스로 줍니다. 양꼬치는 1인분에 12,000원, 음료수는 2,000원입니다. 정수 <code class="language-plaintext highlighter-rouge">n</code>과 <code class="language-plaintext highlighter-rouge">k</code>가 매개변수로 주어졌을 때, 양꼬치 <code class="language-plaintext highlighter-rouge">n</code>인분과 음료수 개를 먹었다면 총얼마를 지불해야 하는지 return 하도록 solution 함수를 완성해보세요.</p>
+
+<hr />
+
+<h3 id="제한사항">제한사항</h3>
+
+<ul>
+  <li>0 &lt; <code class="language-plaintext highlighter-rouge">n</code> &lt; 1,000</li>
+  <li>n / 10 ≤ <code class="language-plaintext highlighter-rouge">k</code> &lt; 1,000</li>
+  <li>서비스로 받은 음료수는 모두 마십니다.</li>
+</ul>
+
+<hr />
+
+<h3 id="입출력-예">입출력 예</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>n</th>
+      <th>k</th>
+      <th>result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>10</td>
+      <td>3</td>
+      <td>124,000</td>
+    </tr>
+    <tr>
+      <td>64</td>
+      <td>6</td>
+      <td>768,000</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h3 id="입출력-설명">입출력 설명</h3>
+
+<p>입출력 예 #1</p>
+
+<ul>
+  <li>10인분을 시켜 서비스로 음료수를 하나 받아 총 10 * 12000 + 3 * 2000 - 1 * 2000 = 124,000원입니다.</li>
+</ul>
+
+<p>입출력 예 #2</p>
+
+<ul>
+  <li>64인분을 시켜 서비스로 음료수를 6개 받아 총 64 * 12000 + 6 * 2000 - 6 * 2000 =768,000원입니다.</li>
+</ul>
+
+<hr />
+
+<h3 id="나의-풀이">나의 풀이</h3>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">n</span><span class="p">,</span> <span class="nx">k</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">answer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">lamb</span> <span class="o">=</span> <span class="mi">12000</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">drink</span> <span class="o">=</span> <span class="mi">2000</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nx">lamb</span><span class="o">*</span><span class="nx">n</span><span class="o">+</span><span class="nx">k</span><span class="o">*</span><span class="nx">drink</span><span class="o">-</span><span class="nb">parseInt</span><span class="p">(</span><span class="nx">n</span><span class="o">/</span><span class="mi">10</span><span class="p">)</span><span class="o">*</span><span class="mi">2000</span>
+<span class="p">}</span>
+</code></pre></div></div>
+:ET

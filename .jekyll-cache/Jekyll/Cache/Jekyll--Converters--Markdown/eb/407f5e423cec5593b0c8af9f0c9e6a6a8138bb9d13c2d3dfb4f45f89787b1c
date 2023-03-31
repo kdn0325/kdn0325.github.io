@@ -1,0 +1,76 @@
+I"�<h3 id="code-convention-중요할까">Code convention 중요할까?</h3>
+
+<hr />
+
+<p>Code Convention을 따라야 할 이유는 뭘까?</p>
+
+<p>무엇보다도 같이 일할 팀원을 위해서이고 다른 개발자들을 배려하기 위해서이다. Convention은 일종의 관습으로 많은 개발자들이 사용하는 룰이다. Class는 대문자로 시작하고, 상수는 대문자로만 작성하고, isArray와 같이 함수는 동사형으로 시작하고, 데이터베이스를 구축할 때 외래키는 ‘테이블명_id’와 같이 일종의 룰들이다. for each문을 사용하기 보다는 for(let i=0; i&lt;length; i++)과 같이 사용하는 것도 하나의 convention이다.</p>
+
+<p>이런 convention들은 개발자들이 성능을 점검하고 협업을 했을 때 보이는 코드 구조의 일관성을 지키기 위해 존재한다.</p>
+
+<p>이러한 룰을 지키지 않는 경우에는 추후의 유지보수의 기간에 엄청난 시간을 낭비할 수도 있다.</p>
+
+<p>각 convention들은 회사마다 조금씩 다르지만 전반적으로 거의 같다고 볼 수 있다.</p>
+
+<p>또한 naming convention도 잘 따라주면 직관적으로 코드를 이해하기 수월해진다.</p>
+
+<ul>
+  <li>Java
+    <ul>
+      <li><a href="http://www.oracle.com/technetwork/java/javase/documentation/codeconvtoc-136057.html">http://www.oracle.com/technetwork/java/javase/documentation/codeconvtoc-136057.html</a></li>
+      <li><a href="http://www.oracle.com/technetwork/java/codeconventions-150003.pdf">http://www.oracle.com/technetwork/java/codeconventions-150003.pdf</a></li>
+      <li>디자인 패턴 <a href="https://www.tutorialspoint.com/design_pattern/">https://www.tutorialspoint.com/design_pattern/</a></li>
+    </ul>
+  </li>
+  <li>C
+    <ul>
+      <li><a href="https://users.ece.cmu.edu/~eno/coding/CCodingStandard.html">https://users.ece.cmu.edu/~eno/coding/CCodingStandard.html</a></li>
+    </ul>
+  </li>
+  <li>C++
+    <ul>
+      <li><a href="https://users.ece.cmu.edu/~eno/coding/CppCodingStandard.html">https://users.ece.cmu.edu/~eno/coding/CppCodingStandard.html</a></li>
+      <li><a href="https://google.github.io/styleguide/cppguide.html">Google C++ Style Guide</a></li>
+    </ul>
+  </li>
+  <li>Javascript
+    <ul>
+      <li><a href="https://www.w3schools.com/js/js_conventions.asp">https://www.w3schools.com/js/js_conventions.asp</a></li>
+      <li><a href="https://github.com/airbnb/javascript">https://github.com/airbnb/javascript</a></li>
+      <li><a href="https://google.github.io/styleguide/jsguide.html">https://google.github.io/styleguide/jsguide.html</a></li>
+    </ul>
+  </li>
+  <li>MySQL
+    <ul>
+      <li><a href="https://www.toadworld.com/platforms/mysql/w/wiki/6103.naming-conventions">https://www.toadworld.com/platforms/mysql/w/wiki/6103.naming-conventions</a></li>
+      <li><a href="https://www.toadworld.com/platforms/mysql/w/wiki/6108.naming-indexes">https://www.toadworld.com/platforms/mysql/w/wiki/6108.naming-indexes</a></li>
+      <li><a href="http://www.sqlstyle.guide/">http://www.sqlstyle.guide/</a></li>
+    </ul>
+  </li>
+  <li>Oracle
+    <ul>
+      <li><a href="https://oracle-base.com/articles/misc/naming-conventions">https://oracle-base.com/articles/misc/naming-conventions</a></li>
+    </ul>
+  </li>
+  <li>Linux kernel
+    <ul>
+      <li><a href="https://www.kernel.org/doc/html/v4.10/process/coding-style.html">https://www.kernel.org/doc/html/v4.10/process/coding-style.html</a></li>
+    </ul>
+  </li>
+  <li>Shell
+    <ul>
+      <li><a href="https://google.github.io/styleguide/shell.xml">https://google.github.io/styleguide/shell.xml</a></li>
+    </ul>
+  </li>
+  <li>MongoDB
+    <ul>
+      <li><a href="https://docs.mongodb.com/manual/meta/style-guide/">https://docs.mongodb.com/manual/meta/style-guide/</a></li>
+    </ul>
+  </li>
+  <li>HTML
+    <ul>
+      <li><a href="https://www.w3schools.com/html/html5_syntax.asp">https://www.w3schools.com/html/html5_syntax.asp</a></li>
+    </ul>
+  </li>
+</ul>
+:ET

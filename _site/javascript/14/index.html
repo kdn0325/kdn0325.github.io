@@ -1,0 +1,2011 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>#14 클래스 &amp; 프로토타입 - ABEL FRONTELIO : 개발 노트</title>
+<meta name="description" content="1.  Argument와 Rest Parameters 차이">
+
+
+  <meta name="author" content="Abel🤭">
+  
+  <meta property="article:author" content="Abel🤭">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="ABEL FRONTELIO : 개발 노트">
+<meta property="og:title" content="#14 클래스 &amp; 프로토타입">
+<meta property="og:url" content="http://localhost:4000/javascript/14/">
+
+
+  <meta property="og:description" content="1.  Argument와 Rest Parameters 차이">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2023-03-29T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2023-03-29T00:00:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/javascript/14/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Abel",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="ABEL FRONTELIO : 개발 노트 Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+<!-- end custom head snippets -->
+
+
+  </head>
+
+  <body class="layout--archive">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          ABEL FRONTELIO : 개발 노트
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/index.html">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#javascript" itemprop="item"><span itemprop="name">Javascript</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">#14 클래스 & 프로토타입</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Abel🤭</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>FRONTELIO - Software Developer.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+        
+          
+            <li><a href="mailto:dn10003@email.com" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/kdn0325" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+
+  
+    
+
+<nav class="nav__list">
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items" id="category_tag_menu">
+      <li>
+        <span>전체 글 수77개<span>
+      </li>
+      <li>
+        <span class="nav__sub-title">Programming Language</span>
+            <ul>
+                
+                    
+                
+                    
+                        <li><a href="/categories/js" class="">Javscript (16)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/ts" class="">Typescript (10)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+        </li>
+      <li>
+        <span class="nav__sub-title">Front-end</span>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/html" class="">HTML(1)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/css" class="">CSS (2)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/react" class="">React (13)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/next" class="">Next.js (3)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/rn" class="">React Native (1)</a></li>
+                    
+                
+                    
+                
+            </ul>
+        </li>
+        <li>
+          <span class="nav__sub-title">Back-end</span>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+          </li>
+        <li>
+        <li>
+          <span class="nav__sub-title">DB</span>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+          </li>
+        <li>
+        <li>
+          <span class="nav__sub-title">OS</span>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+        </li>
+        <li>
+          <span class="nav__sub-title">컴퓨터 공학</span>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                          <li><a href="/categories/codingtest" class="">Coding Test(26)</a></li>
+                      
+                  
+              </ul>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                          <li><a href="/categories/computerscience" class="">CS(1)</a></li>
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+        </li>
+        <li>
+          <span class="nav__sub-title">etc</span>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                          <li><a href="/categories/git" class="">Git(2)</a></li>
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+              <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+              <ul>
+                  
+                      
+                          <li><a href="/categories/blog" class=""> Jekyll Blog(1)</a></li>
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+        </li>
+        <li>
+          <span class="nav__sub-title">Review</span>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                          <li><a href="/categories/refer" class="">Reference(1)</a></li>
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+        </li>
+      <li>
+  </ul>
+</nav>
+
+  
+
+  </div>
+
+
+  <div class="archive">
+    
+      <h1 id="page-title" class="page__title">#14 클래스 & 프로토타입</h1>
+    
+    <h2 id="1--argument와-rest-parameters-차이">1.  Argument와 Rest Parameters 차이</h2>
+
+<p><strong><code class="language-plaintext highlighter-rouge">arguments</code></strong> 객체는 함수에 전달된 인수에 해당하는 <code class="language-plaintext highlighter-rouge">Array</code> 형태의 객체입니다.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>[arguments 객체 - JavaScript</td>
+      <td>MDN](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Functions/arguments)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>1.<a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Functions/rest_parameters">나머지 매개변수</a>(<strong>Rest Parameters)</strong> 구문을 사용해야 한다</p>
+<ol>
+  <li>Array형태”란 arguments가 <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/length">length</a><code class="language-plaintext highlighter-rouge"> 속성과 더불어 0부터 인덱스 된 다른 속성을 가지고 있지만, </code><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a><code class="language-plaintext highlighter-rouge">의 </code><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach">forEach</a>,<a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/map">map</a>과 같은 내장 메서드를 가지고 있지 않다</li>
+</ol>
+
+<p>1): Argument</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/*  Argument 출력 */</span>
+<span class="p">{</span>
+
+	
+  <span class="kd">function</span> <span class="nx">getName</span><span class="p">(</span><span class="nx">name</span><span class="p">){</span>
+		<span class="cm">/* name: argument(인자)  */</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> 
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">name</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">name</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">name</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+  <span class="p">}</span>
+  <span class="nx">getName</span><span class="p">(</span><span class="dl">"</span><span class="s2">유재석</span><span class="dl">"</span><span class="p">);</span>
+  <span class="nx">getName</span><span class="p">(</span><span class="dl">"</span><span class="s2">강호동</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">이수근</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="cm">/*
+  함수로 넘어온 모든 인수의 접근
+  함수 내 이용이 가능
+  index/length
+  Array 형태의 객체 ( 실제 배열이아님)
+  배열의 내장메서드 forEach,map 등은 사용 불가능
+  요즘은 많이 사용하지 않음
+*/</span>
+
+<span class="o">=&gt;</span><span class="nx">결과값</span>
+
+<span class="c1">// argument 출력시 string으로 출력</span>
+
+<span class="p">[</span><span class="nx">Running</span><span class="p">]</span> <span class="nx">node</span> <span class="dl">"</span><span class="s2">/workspaces/codespaces-blank/index.js</span><span class="dl">"</span>
+<span class="nx">유재석</span>
+<span class="nx">유</span>
+<span class="nx">재</span>
+<span class="nx">석</span>
+<span class="nx">강호동</span>
+<span class="nx">강</span>
+<span class="nx">호</span>
+<span class="nx">동</span>
+
+<span class="p">[</span><span class="nx">Done</span><span class="p">]</span> <span class="nx">exited</span> <span class="kd">with</span> <span class="nx">code</span><span class="o">=</span><span class="mi">0</span> <span class="k">in</span> <span class="mf">0.056</span> <span class="nx">seconds</span>
+
+</code></pre></div></div>
+
+<hr />
+
+<p>2): <strong>Rest Parameters</strong></p>
+
+<p>함수가 정해지지 않은 수의 매개변수를 배열로 받을 수 있음</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>[나머지 매개변수 - JavaScript</td>
+      <td>MDN](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Functions/rest_parameters)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>나머지 매개변수와 <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Functions/arguments">arguments</a>`객체 사이의 세 개의 주요 차이</p>
+
+<p>(1): <code class="language-plaintext highlighter-rouge">arguments</code> 객체는 <strong>실제 배열이 아닙니다</strong>. 그러나 나머지 매개변수는 <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a><code class="language-plaintext highlighter-rouge"> 인스턴스이므로 </code><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/sort">sort</a><code class="language-plaintext highlighter-rouge">, </code><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/map">map</a><code class="language-plaintext highlighter-rouge">, </code><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach">forEach</a><code class="language-plaintext highlighter-rouge">, </code><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/pop">pop</a>` 등의 메서드를 직접 적용할 수 있습니다.</p>
+
+<p>(2): <code class="language-plaintext highlighter-rouge">...restParam</code>은 후속 매개변수만 배열에 포함하므로 <code class="language-plaintext highlighter-rouge">...restParam</code> <strong>이전</strong>에 직접 정의한 매개변수는 포함하지 않습니다. 그러나 <code class="language-plaintext highlighter-rouge">arguments</code> 객체는, <code class="language-plaintext highlighter-rouge">...restParam</code>의 각 항목까지 더해 모든 매개변수를 포함합니다.</p>
+
+<p>(3): <code class="language-plaintext highlighter-rouge">arguments</code> 객체는 <code class="language-plaintext highlighter-rouge">callee</code> 속성과 같은 추가 기능을 포함합니다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">1</span><span class="p">.</span> <span class="nx">Rest</span> <span class="nx">Param</span> <span class="nx">기본</span> <span class="nx">출력</span>
+
+<span class="cm">/*  Rest Parameters 데이터 출력 */</span>
+<span class="p">{</span>
+  <span class="kd">function</span> <span class="nx">setName</span><span class="p">(...</span><span class="nx">name</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span>
+  <span class="p">}</span>
+  <span class="nx">setName</span><span class="p">(</span><span class="dl">"</span><span class="s2">강호동</span><span class="dl">"</span><span class="p">);</span>
+  <span class="nx">setName</span><span class="p">(</span><span class="dl">"</span><span class="s2">강호동</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">유재석</span><span class="dl">"</span><span class="p">);</span>
+  <span class="nx">setName</span><span class="p">(</span><span class="dl">"</span><span class="s2">강호동</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">유재석</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">김다미</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="o">=&gt;</span> <span class="nx">결과값</span>
+
+<span class="c1">// Rest Param 출력시 Array로 출력</span>
+
+<span class="p">[</span><span class="nx">Running</span><span class="p">]</span> <span class="nx">node</span> <span class="dl">"</span><span class="s2">/workspaces/codespaces-blank/index.js</span><span class="dl">"</span>
+<span class="p">[</span> <span class="dl">'</span><span class="s1">강호동</span><span class="dl">'</span> <span class="p">]</span>
+<span class="p">[</span> <span class="dl">'</span><span class="s1">강호동</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">유재석</span><span class="dl">'</span> <span class="p">]</span>
+<span class="p">[</span> <span class="dl">'</span><span class="s1">강호동</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">유재석</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">김다미</span><span class="dl">'</span> <span class="p">]</span>
+
+<span class="p">[</span><span class="nx">Done</span><span class="p">]</span> <span class="nx">exited</span> <span class="kd">with</span> <span class="nx">code</span><span class="o">=</span><span class="mi">0</span> <span class="k">in</span> <span class="mf">0.051</span> <span class="nx">seconds</span>
+</code></pre></div></div>
+
+<p>3): Argument , Rest Parameters 데이터 출력 차이</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">1</span><span class="p">.</span> <span class="nx">Arguement로</span> <span class="nx">forEach</span> <span class="nx">출력</span>
+
+<span class="p">{</span>
+	  <span class="kd">function</span> <span class="nx">sum</span><span class="p">(</span><span class="nx">numbers</span><span class="p">){</span>
+	    <span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="mi">0</span>
+	    <span class="nx">numbers</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">num</span><span class="o">=&gt;</span><span class="nx">result</span><span class="o">+=</span><span class="nx">num</span><span class="p">)</span>
+	    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+		<span class="p">}</span>
+    <span class="nx">sum</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">50</span><span class="p">)</span> 
+<span class="p">}</span>
+
+<span class="o">=&gt;</span> <span class="nx">결과값</span>
+
+<span class="cm">/* 메서드 적용이 안됌 */</span>
+
+<span class="p">[</span><span class="nx">Running</span><span class="p">]</span> <span class="nx">node</span> <span class="dl">"</span><span class="s2">/workspaces/codespaces-blank/index.js</span><span class="dl">"</span>
+<span class="nx">file</span><span class="p">:</span><span class="c1">///workspaces/codespaces-blank/index.js:5</span>
+    <span class="nx">numbers</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">num</span><span class="o">=&gt;</span><span class="nx">result</span><span class="o">+=</span><span class="nx">num</span><span class="p">)</span>
+            <span class="o">^</span>
+
+<span class="nx">TypeError</span><span class="p">:</span> <span class="nx">numbers</span><span class="p">.</span><span class="nx">forEach</span> <span class="nx">is</span> <span class="nx">not</span> <span class="nx">a</span> <span class="kd">function</span>
+    <span class="nx">at</span> <span class="nx">sum</span> <span class="p">(</span><span class="nx">file</span><span class="p">:</span><span class="c1">///workspaces/codespaces-blank/index.js:5:13)</span>
+    <span class="nx">at</span> <span class="nx">file</span><span class="p">:</span><span class="c1">///workspaces/codespaces-blank/index.js:8:5</span>
+    <span class="nx">at</span> <span class="nx">ModuleJob</span><span class="p">.</span><span class="nx">run</span> <span class="p">(</span><span class="nx">node</span><span class="p">:</span><span class="nx">internal</span><span class="o">/</span><span class="nx">modules</span><span class="o">/</span><span class="nx">esm</span><span class="o">/</span><span class="nx">module_job</span><span class="p">:</span><span class="mi">193</span><span class="p">:</span><span class="mi">25</span><span class="p">)</span>
+
+<span class="nx">Node</span><span class="p">.</span><span class="nx">js</span> <span class="nx">v19</span><span class="p">.</span><span class="mf">7.0</span>
+
+<span class="p">[</span><span class="nx">Done</span><span class="p">]</span> <span class="nx">exited</span> <span class="kd">with</span> <span class="nx">code</span><span class="o">=</span><span class="mi">1</span> <span class="k">in</span> <span class="mf">0.048</span> <span class="nx">seconds</span>
+
+<span class="o">----------------------------------------------------------------------------</span>
+
+<span class="mi">2</span><span class="p">.</span> <span class="nx">Rest</span> <span class="nx">Param으로</span> <span class="nx">reduce</span> <span class="nx">출력</span>
+
+<span class="p">{</span>
+  <span class="kd">function</span> <span class="nx">add</span><span class="p">(</span><span class="nx">numbers</span><span class="p">){</span>
+    <span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="nx">result</span><span class="o">=</span><span class="nx">numbers</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">current</span><span class="p">,</span><span class="nx">acc</span><span class="p">)</span><span class="o">=&gt;</span><span class="nx">current</span><span class="o">+</span><span class="nx">acc</span><span class="p">);</span>
+    <span class="c1">//reduce = 현재값 + 누적값</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nx">add</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">50</span><span class="p">)</span> 
+<span class="p">}</span>
+
+<span class="o">=&gt;</span> <span class="nx">결과값</span>
+
+<span class="cm">/* 메서드 적용이 안됌 */</span>
+
+<span class="p">[</span><span class="nx">Running</span><span class="p">]</span> <span class="nx">node</span> <span class="dl">"</span><span class="s2">/workspaces/codespaces-blank/index.js</span><span class="dl">"</span>
+<span class="nx">file</span><span class="p">:</span><span class="c1">///workspaces/codespaces-blank/index.js:5</span>
+    <span class="nx">result</span><span class="o">=</span><span class="nx">numbers</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">current</span><span class="p">,</span><span class="nx">acc</span><span class="p">)</span><span class="o">=&gt;</span><span class="nx">current</span><span class="o">+</span><span class="nx">acc</span><span class="p">);</span>
+                   <span class="o">^</span>
+
+<span class="nx">TypeError</span><span class="p">:</span> <span class="nx">numbers</span><span class="p">.</span><span class="nx">reduce</span> <span class="nx">is</span> <span class="nx">not</span> <span class="nx">a</span> <span class="kd">function</span>
+    <span class="nx">at</span> <span class="nx">add</span> <span class="p">(</span><span class="nx">file</span><span class="p">:</span><span class="c1">///workspaces/codespaces-blank/index.js:5:20)</span>
+    <span class="nx">at</span> <span class="nx">file</span><span class="p">:</span><span class="c1">///workspaces/codespaces-blank/index.js:9:3</span>
+    <span class="nx">at</span> <span class="nx">ModuleJob</span><span class="p">.</span><span class="nx">run</span> <span class="p">(</span><span class="nx">node</span><span class="p">:</span><span class="nx">internal</span><span class="o">/</span><span class="nx">modules</span><span class="o">/</span><span class="nx">esm</span><span class="o">/</span><span class="nx">module_job</span><span class="p">:</span><span class="mi">193</span><span class="p">:</span><span class="mi">25</span><span class="p">)</span>
+
+<span class="nx">Node</span><span class="p">.</span><span class="nx">js</span> <span class="nx">v19</span><span class="p">.</span><span class="mf">7.0</span>
+
+<span class="p">[</span><span class="nx">Done</span><span class="p">]</span> <span class="nx">exited</span> <span class="kd">with</span> <span class="nx">code</span><span class="o">=</span><span class="mi">1</span> <span class="k">in</span> <span class="mf">0.047</span> <span class="nx">seconds</span>
+
+<span class="o">----------------------------------------------------------------------------</span>
+
+<span class="mi">2</span><span class="p">.</span> <span class="nx">Rest</span> <span class="nx">Param으로</span> <span class="nx">forEach</span> <span class="nx">출력</span>
+
+<span class="p">{</span>
+  <span class="kd">function</span> <span class="nx">sum</span><span class="p">(...</span><span class="nx">numbers</span><span class="p">){</span>
+    <span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="nx">numbers</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">num</span><span class="o">=&gt;</span><span class="nx">result</span><span class="o">+=</span><span class="nx">num</span><span class="p">)</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nx">sum</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">50</span><span class="p">)</span> 
+<span class="p">}</span>
+
+<span class="o">=&gt;</span> <span class="nx">결과값</span>
+
+<span class="p">[</span><span class="nx">Running</span><span class="p">]</span> <span class="nx">node</span> <span class="dl">"</span><span class="s2">/workspaces/codespaces-blank/index.js</span><span class="dl">"</span>
+<span class="mi">150</span>
+
+<span class="p">[</span><span class="nx">Done</span><span class="p">]</span> <span class="nx">exited</span> <span class="kd">with</span> <span class="nx">code</span><span class="o">=</span><span class="mi">0</span> <span class="k">in</span> <span class="mf">0.055</span> <span class="nx">seconds</span>
+
+<span class="o">----------------------------------------------------------------------------</span>
+
+<span class="mi">4</span><span class="p">.</span> <span class="nx">Rest</span> <span class="nx">Param으로</span> <span class="nx">reduce</span> <span class="nx">출력</span>
+
+<span class="p">{</span>
+  <span class="kd">function</span> <span class="nx">add</span><span class="p">(...</span><span class="nx">numbers</span><span class="p">){</span>
+    <span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="nx">result</span><span class="o">=</span><span class="nx">numbers</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">current</span><span class="p">,</span><span class="nx">acc</span><span class="p">)</span><span class="o">=&gt;</span><span class="nx">current</span><span class="o">+</span><span class="nx">acc</span><span class="p">);</span>
+    <span class="c1">//reduce = 현재값 + 누적값</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nx">add</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">50</span><span class="p">)</span> 
+<span class="p">}</span>
+
+<span class="o">=&gt;</span> <span class="nx">결과값</span>
+
+<span class="p">[</span><span class="nx">Running</span><span class="p">]</span> <span class="nx">node</span> <span class="dl">"</span><span class="s2">/workspaces/codespaces-blank/index.js</span><span class="dl">"</span>
+<span class="mi">150</span>
+
+<span class="p">[</span><span class="nx">Done</span><span class="p">]</span> <span class="nx">exited</span> <span class="kd">with</span> <span class="nx">code</span><span class="o">=</span><span class="mi">0</span> <span class="k">in</span> <span class="mf">0.055</span> <span class="nx">seconds</span>
+
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="2--jsonstringify">2.  <strong>JSON.stringify()</strong></h2>
+
+<p><strong><code class="language-plaintext highlighter-rouge">JSON.stringify()</code></strong></p>
+
+<p>메서드는 JavaScript 값이나 객체를 JSON 문자열로 변환합니다. 선택적으로, <code class="language-plaintext highlighter-rouge">replacer</code>를 함수로 전달할 경우 변환 전 값을 변형할 수 있고, 배열로 전달할 경우 지정한 속성만 결과에 포함합니다.</p>
+
+<p><strong><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify#%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98">매개변수</a></strong></p>
+
+<p><code class="language-plaintext highlighter-rouge">value</code> : JSON 문자열로 변환할 값.</p>
+
+<p><code class="language-plaintext highlighter-rouge">replacer</code> : 문자열화 동작 방식을 변경하는 함수, 혹은 JSON 문자열에 포함될 값 객체의 속성들을 선택하기 위한 화이트리스트(whitelist)로 쓰이는 <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String">String</a><code class="language-plaintext highlighter-rouge"> 과 </code><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>` 객체들의 배열. 이 값이 null 이거나 제공되지 않으면, 객체의 모든 속성들이 JSON 문자열 결과에 포함된다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">space</code>  : 가독성을 목적으로 JSON 문자열 출력에 공백을 삽입하는데 사용되는 <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String">String</a><code class="language-plaintext highlighter-rouge"> 또는 </code><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a><code class="language-plaintext highlighter-rouge"> 객체. 이것이 </code>Number<code class="language-plaintext highlighter-rouge"> 라면, 공백으로 사용되는 스페이스(space)의 수를 나타낸다; 이 수가 10 보다 크면 10 으로 제한된다. 1 보다 작은 값은 스페이스가 사용되지 않는 것을 나타낸다. 이것이 </code>String` 이라면, 그 문자열(만약 길이가 10 보다 길다면, 첫번째 10 개의 문자)이 공백으로 사용된다. 이 매개 변수가 제공되지 않는다면(또는 null 이면), 공백이 사용되지 않는다.</p>
+
+<p>C를 제외한 모든 프로그래밍 언어는 객체 지향 패러다임을 기반으로 만들어짐.</p>
+
+<p>클래스 문법으로 객체를 효율적이고 안전하게 만듬.</p>
+
+<p>프로그램에 필요한 요소만 사용하여 객체를 표현하는 것을 추상화라고함.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>[JSON.stringify() - JavaScript</td>
+      <td>MDN](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify#매개변수)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>1): <strong>JSON.stringify 활용</strong></p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/*  객체와 배열 조합 */</span>
+<span class="p">{</span>
+
+  <span class="cm">/* 1. value (JSON 문자열로 변환할 값.) */</span>
+
+  <span class="kd">const</span> <span class="nx">students</span> <span class="o">=</span><span class="p">[]</span>
+  <span class="nx">students</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span><span class="na">이름</span><span class="p">:</span> <span class="dl">'</span><span class="s1">구름</span><span class="dl">'</span><span class="p">,</span> <span class="na">국어</span><span class="p">:</span> <span class="mi">87</span> <span class="p">,</span> <span class="na">영어</span> <span class="p">:</span> <span class="mi">98</span> <span class="p">,</span> <span class="na">수학</span> <span class="p">:</span> <span class="mi">88</span> <span class="p">,</span> <span class="na">과학</span> <span class="p">:</span> <span class="mi">90</span><span class="p">})</span>
+  <span class="nx">students</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span><span class="na">이름</span><span class="p">:</span> <span class="dl">'</span><span class="s1">별이</span><span class="dl">'</span><span class="p">,</span> <span class="na">국어</span><span class="p">:</span> <span class="mi">92</span> <span class="p">,</span> <span class="na">영어</span> <span class="p">:</span> <span class="mi">98</span> <span class="p">,</span> <span class="na">수학</span> <span class="p">:</span> <span class="mi">96</span> <span class="p">,</span> <span class="na">과학</span> <span class="p">:</span> <span class="mi">88</span><span class="p">})</span>
+  <span class="nx">students</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span><span class="na">이름</span><span class="p">:</span> <span class="dl">'</span><span class="s1">겨울</span><span class="dl">'</span><span class="p">,</span> <span class="na">국어</span><span class="p">:</span> <span class="mi">76</span> <span class="p">,</span> <span class="na">영어</span> <span class="p">:</span> <span class="mi">96</span> <span class="p">,</span> <span class="na">수학</span> <span class="p">:</span> <span class="mi">94</span> <span class="p">,</span> <span class="na">과학</span> <span class="p">:</span> <span class="mi">86</span><span class="p">})</span>
+  <span class="nx">students</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span><span class="na">이름</span><span class="p">:</span> <span class="dl">'</span><span class="s1">바다</span><span class="dl">'</span><span class="p">,</span> <span class="na">국어</span><span class="p">:</span> <span class="mi">98</span> <span class="p">,</span> <span class="na">영어</span> <span class="p">:</span> <span class="mi">52</span> <span class="p">,</span> <span class="na">수학</span> <span class="p">:</span> <span class="mi">98</span> <span class="p">,</span> <span class="na">과학</span> <span class="p">:</span> <span class="mi">92</span><span class="p">})</span>
+
+ <span class="cm">/* 2. replacer (문자열화 동작 방식을 변경하는 함수) */</span>
+
+  <span class="kd">function</span> <span class="nx">replacer</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+    <span class="cm">/* 이름이 string일때 학생으로 이름 출력 */</span>
+    <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">value</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">string</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="dl">'</span><span class="s1">학생</span><span class="dl">'</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">value</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="cm">/* 3. space (공백 스페이스 2) */</span>
+
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">students</span><span class="p">,</span><span class="nx">replacer</span><span class="p">,</span><span class="mi">2</span><span class="p">));</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="3--객체-생성-활용">3.  객체 생성 활용</h2>
+
+<p>장점</p>
+
+<p>1): 오탈자 위험 감소</p>
+
+<p>2): 코드 입력 양이 줄어듦</p>
+
+<p>3): 속성과 메소드를 한 함수 내부에서 관리할 수 있으므로 객체를 더 손쉽게 유지보수 가능</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/*  객체를 생성하는 함수 */</span>
+
+<span class="p">{</span>
+
+  <span class="kd">function</span> <span class="nx">createStudent</span><span class="p">(</span><span class="nx">이름</span><span class="p">,</span><span class="nx">국어</span><span class="p">,</span><span class="nx">영어</span><span class="p">,</span><span class="nx">수학</span><span class="p">,</span><span class="nx">과학</span><span class="p">){</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="c1">//속성 선언</span>
+        <span class="na">이름</span><span class="p">:</span> <span class="nx">이름</span><span class="p">,</span>
+        <span class="na">국어</span><span class="p">:</span> <span class="nx">국어</span><span class="p">,</span>
+        <span class="na">영어</span><span class="p">:</span> <span class="nx">영어</span><span class="p">,</span>
+        <span class="na">수학</span><span class="p">:</span> <span class="nx">수학</span><span class="p">,</span>
+        <span class="na">과학</span><span class="p">:</span> <span class="nx">과학</span><span class="p">,</span>
+        <span class="c1">//메소드를 선언</span>
+        <span class="nx">getSum</span><span class="p">(){</span>
+            <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">국어</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">영어</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">영어</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">수학</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">과학</span>
+        <span class="p">},</span>
+        <span class="nx">getAverage</span><span class="p">(){</span>
+            <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">getSum</span><span class="p">()</span><span class="o">/</span><span class="mi">4</span>
+        <span class="p">},</span>
+        <span class="nx">toString</span><span class="p">(){</span>
+            <span class="k">return</span> <span class="s2">`</span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">이름</span><span class="p">}</span><span class="s2">\t</span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">getSum</span><span class="p">()}</span><span class="s2">점\t</span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">getAverage</span><span class="p">()}</span><span class="s2">점\n`</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+    <span class="c1">//객체 선언</span>
+    <span class="kd">const</span> <span class="nx">students</span> <span class="o">=</span><span class="p">[]</span>
+    <span class="nx">students</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">createStudent</span><span class="p">(</span><span class="dl">'</span><span class="s1">구름</span><span class="dl">'</span><span class="p">,</span><span class="mi">87</span><span class="p">,</span><span class="mi">98</span><span class="p">,</span><span class="mi">88</span><span class="p">,</span><span class="mi">90</span><span class="p">))</span>
+    <span class="nx">students</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">createStudent</span><span class="p">(</span><span class="dl">'</span><span class="s1">별이</span><span class="dl">'</span><span class="p">,</span><span class="mi">92</span><span class="p">,</span><span class="mi">98</span><span class="p">,</span><span class="mi">96</span><span class="p">,</span><span class="mi">88</span><span class="p">))</span>
+    <span class="nx">students</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">createStudent</span><span class="p">(</span><span class="dl">'</span><span class="s1">겨울</span><span class="dl">'</span><span class="p">,</span><span class="mi">76</span><span class="p">,</span><span class="mi">96</span><span class="p">,</span><span class="mi">94</span><span class="p">,</span><span class="mi">86</span><span class="p">))</span>
+    <span class="nx">students</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">createStudent</span><span class="p">(</span><span class="dl">'</span><span class="s1">바다</span><span class="dl">'</span><span class="p">,</span><span class="mi">98</span><span class="p">,</span><span class="mi">52</span><span class="p">,</span><span class="mi">98</span><span class="p">,</span><span class="mi">92</span><span class="p">))</span>
+
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">students</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="o">=&gt;</span> <span class="nx">결과값</span>
+
+<span class="p">[</span><span class="nx">Running</span><span class="p">]</span> <span class="nx">node</span> <span class="dl">"</span><span class="s2">/workspaces/codespaces-blank/index.js</span><span class="dl">"</span>
+<span class="p">[</span>
+  <span class="p">{</span>
+    <span class="dl">'</span><span class="s1">이름</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">구름</span><span class="dl">'</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">국어</span><span class="dl">'</span><span class="p">:</span> <span class="mi">87</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">영어</span><span class="dl">'</span><span class="p">:</span> <span class="mi">98</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">수학</span><span class="dl">'</span><span class="p">:</span> <span class="mi">88</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">과학</span><span class="dl">'</span><span class="p">:</span> <span class="mi">90</span><span class="p">,</span>
+    <span class="na">getSum</span><span class="p">:</span> <span class="p">[</span><span class="na">Function</span><span class="p">:</span> <span class="nx">getSum</span><span class="p">],</span>
+    <span class="na">getAverage</span><span class="p">:</span> <span class="p">[</span><span class="na">Function</span><span class="p">:</span> <span class="nx">getAverage</span><span class="p">],</span>
+    <span class="na">toString</span><span class="p">:</span> <span class="p">[</span><span class="na">Function</span><span class="p">:</span> <span class="nx">toString</span><span class="p">]</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="dl">'</span><span class="s1">이름</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">별이</span><span class="dl">'</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">국어</span><span class="dl">'</span><span class="p">:</span> <span class="mi">92</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">영어</span><span class="dl">'</span><span class="p">:</span> <span class="mi">98</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">수학</span><span class="dl">'</span><span class="p">:</span> <span class="mi">96</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">과학</span><span class="dl">'</span><span class="p">:</span> <span class="mi">88</span><span class="p">,</span>
+    <span class="na">getSum</span><span class="p">:</span> <span class="p">[</span><span class="na">Function</span><span class="p">:</span> <span class="nx">getSum</span><span class="p">],</span>
+    <span class="na">getAverage</span><span class="p">:</span> <span class="p">[</span><span class="na">Function</span><span class="p">:</span> <span class="nx">getAverage</span><span class="p">],</span>
+    <span class="na">toString</span><span class="p">:</span> <span class="p">[</span><span class="na">Function</span><span class="p">:</span> <span class="nx">toString</span><span class="p">]</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="dl">'</span><span class="s1">이름</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">겨울</span><span class="dl">'</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">국어</span><span class="dl">'</span><span class="p">:</span> <span class="mi">76</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">영어</span><span class="dl">'</span><span class="p">:</span> <span class="mi">96</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">수학</span><span class="dl">'</span><span class="p">:</span> <span class="mi">94</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">과학</span><span class="dl">'</span><span class="p">:</span> <span class="mi">86</span><span class="p">,</span>
+    <span class="na">getSum</span><span class="p">:</span> <span class="p">[</span><span class="na">Function</span><span class="p">:</span> <span class="nx">getSum</span><span class="p">],</span>
+    <span class="na">getAverage</span><span class="p">:</span> <span class="p">[</span><span class="na">Function</span><span class="p">:</span> <span class="nx">getAverage</span><span class="p">],</span>
+    <span class="na">toString</span><span class="p">:</span> <span class="p">[</span><span class="na">Function</span><span class="p">:</span> <span class="nx">toString</span><span class="p">]</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="dl">'</span><span class="s1">이름</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">바다</span><span class="dl">'</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">국어</span><span class="dl">'</span><span class="p">:</span> <span class="mi">98</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">영어</span><span class="dl">'</span><span class="p">:</span> <span class="mi">52</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">수학</span><span class="dl">'</span><span class="p">:</span> <span class="mi">98</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">과학</span><span class="dl">'</span><span class="p">:</span> <span class="mi">92</span><span class="p">,</span>
+    <span class="na">getSum</span><span class="p">:</span> <span class="p">[</span><span class="na">Function</span><span class="p">:</span> <span class="nx">getSum</span><span class="p">],</span>
+    <span class="na">getAverage</span><span class="p">:</span> <span class="p">[</span><span class="na">Function</span><span class="p">:</span> <span class="nx">getAverage</span><span class="p">],</span>
+    <span class="na">toString</span><span class="p">:</span> <span class="p">[</span><span class="na">Function</span><span class="p">:</span> <span class="nx">toString</span><span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+
+<span class="p">[</span><span class="nx">Done</span><span class="p">]</span> <span class="nx">exited</span> <span class="kd">with</span> <span class="nx">code</span><span class="o">=</span><span class="mi">0</span> <span class="k">in</span> <span class="mf">0.054</span> <span class="nx">seconds</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="4-객체-지향-프로그래밍">4. 객체 지향 프로그래밍</h2>
+
+<p>객체들을 정의 , 객체를 활용해서 프로그램을 만드는것을 객체 지향 프로그래밍이라고 함
+크게 클래스,프로토타입이라는 두가지 문법으로 객체를 효율적으로 만들 수 있게 함</p>
+
+<p><strong>실제 세계를 모델링</strong>하여 소프트웨어를 개발하는 방법</p>
+
+<ol>
+  <li>캡슐화
+    <ul>
+      <li>캡슐화란 관련된 데이터와 알고리즘(코드)이 하나의 묶음으로 정리된 것으로써 개발자가 만들었으며, 관련된 코드와 데이터가 묶여있고 오류가 없어 사용이 편리합니다. 데이터를 감추고 외부 세계와의 상호작용은 메소드를 통하는 방법인데, 라이브러리로 만들어 업그레이드하면 쉽게 바꿀 수 있습니다.</li>
+    </ul>
+    <ul>
+      <li>메소드: 메시지에 따라 실행시킬 프로시저로서 객체지향 언어에서 사용되는 것. 객체지향 언어에서는 메시지를 보내 메소드를 수행시킴으로써 통신(communication)을 수행</li>
+    </ul>
+  </li>
+  <li>추상성</li>
+  <li>상속
+    <ul>
+      <li>상속은 이미 작성된 클래스를 이어 받아서 새로운 클래스를 생성하는 기법으로 위에서 말한 기존 코드를 재활용해서 사용하는 것을 의미합니다. 객체지향 방법의 큰 장점중 하나입니다.</li>
+    </ul>
+  </li>
+  <li>다형성
+    <ul>
+      <li>다형성이란 하나의 이름(방법)으로 많은 상황에 대처하는 기법입니다. 개념적으로 동일한 작업을 하는 함수들에 똑같은 이름을 부여할 수 있으므로 코드가 더 간단해지는 효과가 있습니다.</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="장점">장점</h3>
+
+<ul>
+  <li>코드의 재활용성이 높음</li>
+  <li>코딩이 절차지향보다 간편함</li>
+  <li>디버깅이 쉬움</li>
+</ul>
+
+<h3 id="단점">단점</h3>
+
+<ul>
+  <li>처리속도가 절차지향보다 느림</li>
+  <li>설계에 많은 시간소요가 들어감</li>
+</ul>
+
+<hr />
+
+<h2 id="5--클래스">5.  클래스</h2>
+
+<p>ES6 버전부터 신규로 추가된 객체 설계 문법으로 Prototype이 발전된 형태로 이해하면 됨.</p>
+
+<p>ES5까지의 Javascript는 프로토타입 기반 객체지향 언어에 해당한다.</p>
+
+<p>JSON 형식의 객체와 차이</p>
+
+<p>class나 prototype을 통해 new로 생성된 객체는 구조는 동일하지만 각각 독립적인 값을 갖는다.</p>
+
+<p>클래스의 작성 패턴</p>
+
+<ul>
+  <li>변수만 정의</li>
+  <li>메서드만 정의</li>
+  <li>변수와 메서드를 함께 정의</li>
+</ul>
+
+<ol>
+  <li>변수만 정의한 클래스</li>
+</ol>
+
+<ul>
+  <li>생성자 함수를 정의하고 생성자 함수 안에서 <strong>this</strong>키워드를 통해 객체 안에 탑제될 변수값들을 생성한다.</li>
+  <li>생성자 함수는 <strong>constructor</strong>로 이름이 미리 약속되어져 있다.</li>
+</ul>
+
+<ol>
+  <li>메서드만 정의한 클래스</li>
+</ol>
+
+<ul>
+  <li>용도나 목적이 같은 메서드들을 별도의 클래스로 묶어둔다.</li>
+</ul>
+
+<ol>
+  <li>메서드와 멤버변수를 함께 갖는 클래스
+    <ul>
+      <li>멤버변수의 스코프는 클래스 내의 모든 메서드에서 식별 가능하다. 결국 멤버변수는 모든 메서드가 공유하는 전역 변수의 개념이 된다.</li>
+      <li>같은 클래스에 속한 멤버변수나 함수끼리는 예약어 <strong>this</strong>를 통해서만 접근 가능하다.</li>
+    </ul>
+  </li>
+</ol>
+
+<p>클래스: 객체를 만들 때 수 많은 지원을 하는 대신 많은 제한을 검</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>[Classes - JavaScript</td>
+      <td>MDN](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Classes)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>프로토타입: 제한을 많이하지만 지원도 별도로 하지 않음</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>[프로토타입 기반 프로그래밍 - MDN Web Docs 용어 사전: 웹 용어 정의</td>
+      <td>MDN](https://developer.mozilla.org/ko/docs/Glossary/Prototype-based_programming)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>인스턴스: 객체를 만드는 함수</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/*  클래스를 선언 후 인스턴스 생성 */</span>
+<span class="p">{</span>
+    <span class="kd">class</span> <span class="nx">User</span> <span class="p">{</span> <span class="c1">// 클래스 첫글자는 대문자로 지정</span>
+        <span class="c1">//constructor =&gt; 객체를 만들어 주는 생성자</span>
+    <span class="kd">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span><span class="nx">age</span><span class="p">){</span>
+			<span class="cm">/* 속성을 만드는 부분 */</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="nx">age</span>
+	   <span class="p">}</span>
+			<span class="cm">/* 메서드를 만드는 부분 */</span>
+        <span class="nx">run</span><span class="p">(){</span>
+            <span class="k">if</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="o">==</span><span class="dl">'</span><span class="s1">김다미</span><span class="dl">'</span><span class="p">){</span>
+                <span class="k">return</span><span class="p">(</span><span class="s2">`</span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="s2">는 오늘도 달린다`</span><span class="p">)</span>
+            <span class="p">}</span><span class="k">else</span><span class="p">{</span><span class="nx">ㅁ</span>
+                <span class="k">return</span><span class="p">(</span><span class="s2">`</span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="s2">는 오늘은 쉰다`</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="kd">const</span> <span class="nx">profile</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">User</span><span class="p">(</span><span class="dl">"</span><span class="s2">김다미</span><span class="dl">"</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+
+    
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">profile</span><span class="p">);</span>
+
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">profile</span><span class="p">.</span><span class="nx">run</span><span class="p">());</span>
+<span class="p">}</span>
+
+<span class="o">=&gt;</span> <span class="nx">결과값</span>
+
+<span class="p">[</span><span class="nx">Running</span><span class="p">]</span> <span class="nx">node</span> <span class="dl">"</span><span class="s2">/workspaces/codespaces-blank/index.js</span><span class="dl">"</span>
+<span class="nx">User</span> <span class="p">{</span> <span class="nl">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">김다미</span><span class="dl">'</span><span class="p">,</span> <span class="nx">age</span><span class="p">:</span> <span class="mi">20</span> <span class="p">}</span>
+<span class="nx">김다미는</span> <span class="nx">오늘도</span> <span class="nx">달린다</span>
+
+<span class="p">[</span><span class="nx">Done</span><span class="p">]</span> <span class="nx">exited</span> <span class="kd">with</span> <span class="nx">code</span><span class="o">=</span><span class="mi">0</span> <span class="k">in</span> <span class="mf">5.732</span> <span class="nx">seconds</span>
+</code></pre></div></div>
+
+<hr />
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/*  클래스를 선언 후 인스턴스 생성 */</span>
+<span class="p">{</span>
+    <span class="kd">class</span> <span class="nx">Students</span> <span class="p">{</span> <span class="c1">// 클래스 첫글자는 대문자로 지정</span>
+        <span class="kd">constructor</span><span class="p">(</span><span class="nx">이름</span><span class="p">,</span><span class="nx">국어</span><span class="p">,</span><span class="nx">영어</span><span class="p">,</span><span class="nx">수학</span><span class="p">,</span><span class="nx">과학</span><span class="p">){</span>
+        <span class="cm">/* 속성을 만드는 부분 */</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">이름</span> <span class="o">=</span> <span class="nx">이름</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">국어</span> <span class="o">=</span> <span class="nx">국어</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">영어</span> <span class="o">=</span> <span class="nx">영어</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">수학</span> <span class="o">=</span> <span class="nx">수학</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">과학</span> <span class="o">=</span> <span class="nx">과학</span>
+        <span class="p">}</span>
+        <span class="cm">/* 메서드를 만드는 부분 */</span>
+        <span class="nx">getSum</span><span class="p">(){</span>
+            <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">국어</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">영어</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">수학</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">과학</span>
+        <span class="p">}</span>
+        <span class="nx">getAverage</span><span class="p">(){</span>
+            <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">getSum</span><span class="p">()</span><span class="o">/</span><span class="mi">4</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="cm">/* 학생을 선언 */</span>
+    <span class="kd">const</span> <span class="nx">students</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="k">new</span> <span class="nx">Students</span><span class="p">(</span><span class="dl">'</span><span class="s1">구름</span><span class="dl">'</span><span class="p">,</span><span class="mi">87</span><span class="p">,</span><span class="mi">98</span><span class="p">,</span><span class="mi">88</span><span class="p">,</span><span class="mi">90</span><span class="p">),</span>   <span class="c1">// 인스턴스</span>
+        <span class="k">new</span> <span class="nx">Students</span><span class="p">(</span><span class="dl">'</span><span class="s1">별이</span><span class="dl">'</span><span class="p">,</span><span class="mi">92</span><span class="p">,</span><span class="mi">98</span><span class="p">,</span><span class="mi">96</span><span class="p">,</span><span class="mi">88</span><span class="p">),</span>   <span class="c1">// 인스턴스</span>
+        <span class="k">new</span> <span class="nx">Students</span><span class="p">(</span><span class="dl">'</span><span class="s1">겨울</span><span class="dl">'</span><span class="p">,</span><span class="mi">76</span><span class="p">,</span><span class="mi">96</span><span class="p">,</span><span class="mi">94</span><span class="p">,</span><span class="mi">86</span><span class="p">),</span>   <span class="c1">// 인스턴스</span>
+        <span class="k">new</span> <span class="nx">Students</span><span class="p">(</span><span class="dl">'</span><span class="s1">바다</span><span class="dl">'</span><span class="p">,</span><span class="mi">98</span><span class="p">,</span><span class="mi">52</span><span class="p">,</span><span class="mi">98</span><span class="p">,</span><span class="mi">92</span><span class="p">)</span>   <span class="c1">// 인스턴스</span>
+    <span class="p">]</span>
+
+    <span class="cm">/* 이름,총점,평균 구하기 */</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">students</span><span class="p">)</span>
+    <span class="kd">let</span> <span class="nx">output</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">이름</span><span class="se">\t</span><span class="s1">총점</span><span class="se">\t</span><span class="s1">평균</span><span class="se">\n</span><span class="dl">'</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">const</span> <span class="nx">s</span> <span class="k">of</span> <span class="nx">students</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">output</span> <span class="o">+=</span> <span class="s2">`</span><span class="p">${</span><span class="nx">s</span><span class="p">.</span><span class="nx">이름</span><span class="p">}</span><span class="s2">\t</span><span class="p">${</span><span class="nx">s</span><span class="p">.</span><span class="nx">getSum</span><span class="p">()}</span><span class="s2">점\t</span><span class="p">${</span><span class="nx">s</span><span class="p">.</span><span class="nx">getAverage</span><span class="p">()}</span><span class="s2">점\n`</span>
+    <span class="p">}</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">output</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="o">=&gt;</span> <span class="nx">결과값</span>
+
+<span class="p">[</span><span class="nx">Done</span><span class="p">]</span> <span class="nx">exited</span> <span class="kd">with</span> <span class="nx">code</span><span class="o">=</span><span class="mi">0</span> <span class="k">in</span> <span class="mf">0.054</span> <span class="nx">seconds</span>
+
+<span class="p">[</span><span class="nx">Running</span><span class="p">]</span> <span class="nx">node</span> <span class="dl">"</span><span class="s2">/workspaces/codespaces-blank/index.js</span><span class="dl">"</span>
+<span class="nx">이름</span>	<span class="nx">총점</span>	<span class="nx">평균</span>
+<span class="nx">구름</span>	<span class="mi">363</span><span class="nx">점</span>	<span class="mf">90.75</span><span class="nx">점</span>
+<span class="nx">별이</span>	<span class="mi">374</span><span class="nx">점</span>	<span class="mf">93.5</span><span class="nx">점</span>
+<span class="nx">겨울</span>	<span class="mi">352</span><span class="nx">점</span>	<span class="mi">88</span><span class="nx">점</span>
+<span class="nx">바다</span>	<span class="mi">340</span><span class="nx">점</span>	<span class="mi">85</span><span class="nx">점</span>
+
+<span class="p">[</span><span class="nx">Done</span><span class="p">]</span> <span class="nx">exited</span> <span class="kd">with</span> <span class="nx">code</span><span class="o">=</span><span class="mi">0</span> <span class="k">in</span> <span class="mf">0.055</span> <span class="nx">seconds</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="6--클래스-고급">6.  클래스 고급</h2>
+
+<ol>
+  <li>사각형 클래스</li>
+</ol>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/*  사각형 클래스 */</span>
+<span class="p">{</span>
+    <span class="kd">class</span> <span class="nx">Rectangle</span><span class="p">{</span>
+        <span class="kd">constructor</span><span class="p">(</span><span class="nx">width</span><span class="p">,</span><span class="nx">height</span><span class="p">){</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">width</span><span class="o">=</span><span class="nx">width</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">height</span><span class="o">=</span><span class="nx">height</span>
+        <span class="p">}</span>
+    
+        <span class="c1">//사각형 둘레 구하는 메소드</span>
+        <span class="nx">getPerimeter</span><span class="p">(){</span>
+            <span class="k">return</span> <span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">width</span><span class="o">+</span><span class="k">this</span><span class="p">.</span><span class="nx">height</span><span class="p">)</span>
+        <span class="p">}</span>
+        <span class="nx">getArea</span><span class="p">(){</span>
+            <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">width</span><span class="o">*</span><span class="k">this</span><span class="p">.</span><span class="nx">height</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="c1">//클래스 사용</span>
+    <span class="kd">const</span> <span class="nx">square</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Rectangle</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span> <span class="c1">// 사각형 (가로 10cm , 세로 20cm)</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`정사각형 둘레: </span><span class="p">${</span><span class="nx">square</span><span class="p">.</span><span class="nx">getPerimeter</span><span class="p">()}</span><span class="s2">cm`</span><span class="p">)</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`정사각형 넓이: </span><span class="p">${</span><span class="nx">square</span><span class="p">.</span><span class="nx">getArea</span><span class="p">()}</span><span class="s2">cm`</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="o">=&gt;</span> <span class="nx">결과값</span>
+
+<span class="p">[</span><span class="nx">Running</span><span class="p">]</span> <span class="nx">node</span> <span class="dl">"</span><span class="s2">/workspaces/codespaces-blank/index.js</span><span class="dl">"</span>
+<span class="nx">정사각형</span> <span class="nx">둘레</span><span class="p">:</span> <span class="mi">60</span><span class="nx">cm</span>
+<span class="nx">정사각형</span> <span class="nx">넓이</span><span class="p">:</span> <span class="mi">200</span><span class="nx">cm</span>
+
+<span class="p">[</span><span class="nx">Done</span><span class="p">]</span> <span class="nx">exited</span> <span class="kd">with</span> <span class="nx">code</span><span class="o">=</span><span class="mi">0</span> <span class="k">in</span> <span class="mf">0.059</span> <span class="nx">seconds</span>
+</code></pre></div></div>
+
+<ol>
+  <li>정사각형 클래스 (private 속성)</li>
+</ol>
+
+<p>private 속성 : 클래스를 더 안전하게 사용하기 위함</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/*  정사각형 클래스 */</span>
+<span class="p">{</span>
+<span class="kd">class</span> <span class="nx">Square</span><span class="p">{</span>
+        <span class="err">#</span><span class="nx">length</span> <span class="c1">// private 속성</span>
+        <span class="kd">static</span> <span class="err">#</span><span class="nx">counter</span> <span class="o">=</span><span class="mi">0</span> <span class="c1">//만들어진 Square 객체의 개수를 알고 싶을 때</span>
+        <span class="kd">static</span> <span class="kd">get</span> <span class="nx">counter</span><span class="p">(){</span>
+            <span class="k">return</span> <span class="nx">Square</span><span class="p">.</span><span class="err">#</span><span class="nx">counter</span>
+        <span class="p">}</span>
+
+        <span class="kd">constructor</span><span class="p">(</span><span class="nx">length</span><span class="p">){</span>
+           <span class="k">this</span><span class="p">.</span><span class="nx">length</span><span class="o">=</span><span class="nx">length</span>
+           <span class="nx">Square</span><span class="p">.</span><span class="err">#</span><span class="nx">counter</span> <span class="o">+=</span><span class="mi">1</span>
+        <span class="p">}</span>
+        <span class="kd">static</span> <span class="nx">perimeterOf</span><span class="p">(</span><span class="nx">length</span><span class="p">){</span>
+            <span class="k">return</span> <span class="nx">length</span> <span class="o">*</span><span class="mi">4</span>
+        <span class="p">}</span>
+        <span class="kd">static</span> <span class="nx">areaOf</span><span class="p">(</span><span class="nx">length</span><span class="p">){</span>
+            <span class="k">return</span> <span class="nx">length</span> <span class="o">*</span> <span class="nx">length</span>
+        <span class="p">}</span>
+        <span class="kd">get</span> <span class="nx">length</span><span class="p">(){</span><span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="err">#</span><span class="nx">length</span><span class="p">}</span>
+        <span class="kd">get</span> <span class="nx">Perimeter</span><span class="p">(){</span><span class="k">return</span> <span class="mi">4</span> <span class="o">*</span> <span class="k">this</span><span class="p">.</span><span class="err">#</span><span class="nx">length</span><span class="p">}</span>
+        <span class="kd">get</span> <span class="nx">Area</span><span class="p">(){</span><span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="err">#</span><span class="nx">length</span> <span class="o">*</span> <span class="k">this</span><span class="p">.</span><span class="err">#</span><span class="nx">length</span><span class="p">}</span>
+
+        <span class="kd">set</span> <span class="nx">length</span><span class="p">(</span><span class="nx">length</span><span class="p">){</span>
+            <span class="k">if</span><span class="p">(</span><span class="nx">length</span> <span class="o">&lt;=</span><span class="mi">0</span><span class="p">){</span>
+                <span class="k">throw</span> <span class="dl">'</span><span class="s1">길이는 0보다 커야함</span><span class="dl">'</span>
+            <span class="p">}</span>
+            <span class="k">this</span><span class="p">.</span><span class="err">#</span><span class="nx">length</span> <span class="o">=</span><span class="nx">length</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="c1">//클래스 사용</span>
+    <span class="kd">const</span> <span class="nx">squareA</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Square</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+    <span class="kd">const</span> <span class="nx">squareB</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Square</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+    <span class="kd">const</span> <span class="nx">squareC</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Square</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`지금까지 생성된 Square 인스턴스는 </span><span class="p">${</span><span class="nx">Square</span><span class="p">.</span><span class="nx">counter</span><span class="p">}</span><span class="s2">개입니다.`</span><span class="p">)</span>
+
+    <span class="c1">//static 메소드 사용</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`한 변의 길이가 20인 정사각형의 둘레는 </span><span class="p">${</span><span class="nx">Square</span><span class="p">.</span><span class="nx">perimeterOf</span><span class="p">(</span><span class="mi">20</span><span class="p">)}</span><span class="s2">입니다`</span><span class="p">)</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`한 변의 길이가 30인 정사각형의 둘레는 </span><span class="p">${</span><span class="nx">Square</span><span class="p">.</span><span class="nx">areaOf</span><span class="p">(</span><span class="mi">30</span><span class="p">)}</span><span class="s2">입니다`</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="o">=&gt;</span><span class="nx">결과값</span> 
+
+<span class="p">[</span><span class="nx">Running</span><span class="p">]</span> <span class="nx">node</span> <span class="dl">"</span><span class="s2">/workspaces/codespaces-blank/index.js</span><span class="dl">"</span>
+<span class="nx">정사각형</span> <span class="nx">둘레</span><span class="p">:</span> <span class="mi">40</span><span class="nx">cm</span>
+<span class="nx">정사각형</span> <span class="nx">넓이</span><span class="p">:</span> <span class="mi">100</span><span class="nx">cm</span>
+
+<span class="p">[</span><span class="nx">Done</span><span class="p">]</span> <span class="nx">exited</span> <span class="kd">with</span> <span class="nx">code</span><span class="o">=</span><span class="mi">0</span> <span class="k">in</span> <span class="mf">0.053</span> <span class="nx">seconds</span>
+</code></pre></div></div>
+
+<ol>
+  <li>정사각형 클래스 응용 (static 속성)</li>
+</ol>
+
+<table>
+  <tbody>
+    <tr>
+      <td>[static - JavaScript</td>
+      <td>MDN](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Classes/static)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>static</strong> 속성 : 클래스의 정적 메서드를 정의</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class 클래스 이름 {
+   static 속성 = 값
+   static 메소드 (){}
+}
+</code></pre></div></div>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/*  정사각형 클래스 */</span>
+<span class="p">{</span>
+		<span class="kd">class</span> <span class="nx">Square</span><span class="p">{</span>
+        <span class="err">#</span><span class="nx">length</span> <span class="c1">// private 속성</span>
+        <span class="kd">static</span> <span class="err">#</span><span class="nx">counter</span> <span class="o">=</span><span class="mi">0</span> <span class="c1">//만들어진 Square 객체의 개수를 알고 싶을 때</span>
+        <span class="kd">static</span> <span class="kd">get</span> <span class="nx">counter</span><span class="p">(){</span>
+            <span class="k">return</span> <span class="nx">Square</span><span class="p">.</span><span class="err">#</span><span class="nx">counter</span>
+        <span class="p">}</span>
+
+        <span class="kd">constructor</span><span class="p">(</span><span class="nx">length</span><span class="p">){</span>
+           <span class="k">this</span><span class="p">.</span><span class="nx">length</span><span class="o">=</span><span class="nx">length</span>
+           <span class="nx">Square</span><span class="p">.</span><span class="err">#</span><span class="nx">counter</span> <span class="o">+=</span><span class="mi">1</span>
+        <span class="p">}</span>
+        <span class="kd">static</span> <span class="nx">perimeterOf</span><span class="p">(</span><span class="nx">length</span><span class="p">){</span>
+            <span class="k">return</span> <span class="nx">length</span> <span class="o">*</span><span class="mi">4</span>
+        <span class="p">}</span>
+        <span class="kd">static</span> <span class="nx">areaOf</span><span class="p">(</span><span class="nx">length</span><span class="p">){</span>
+            <span class="k">return</span> <span class="nx">length</span> <span class="o">*</span> <span class="nx">length</span>
+        <span class="p">}</span>
+        <span class="kd">get</span> <span class="nx">length</span><span class="p">(){</span><span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="err">#</span><span class="nx">length</span><span class="p">}</span>
+        <span class="kd">get</span> <span class="nx">Perimeter</span><span class="p">(){</span><span class="k">return</span> <span class="mi">4</span> <span class="o">*</span> <span class="k">this</span><span class="p">.</span><span class="err">#</span><span class="nx">length</span><span class="p">}</span>
+        <span class="kd">get</span> <span class="nx">Area</span><span class="p">(){</span><span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="err">#</span><span class="nx">length</span> <span class="o">*</span> <span class="k">this</span><span class="p">.</span><span class="err">#</span><span class="nx">length</span><span class="p">}</span>
+
+        <span class="kd">set</span> <span class="nx">length</span><span class="p">(</span><span class="nx">length</span><span class="p">){</span>
+            <span class="k">if</span><span class="p">(</span><span class="nx">length</span> <span class="o">&lt;=</span><span class="mi">0</span><span class="p">){</span>
+                <span class="k">throw</span> <span class="dl">'</span><span class="s1">길이는 0보다 커야함</span><span class="dl">'</span>
+            <span class="p">}</span>
+            <span class="k">this</span><span class="p">.</span><span class="err">#</span><span class="nx">length</span> <span class="o">=</span><span class="nx">length</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="c1">//클래스 사용</span>
+    <span class="kd">const</span> <span class="nx">squareA</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Square</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+    <span class="kd">const</span> <span class="nx">squareB</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Square</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+    <span class="kd">const</span> <span class="nx">squareC</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Square</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`지금까지 생성된 Square 인스턴스는 </span><span class="p">${</span><span class="nx">Square</span><span class="p">.</span><span class="nx">counter</span><span class="p">}</span><span class="s2">개입니다.`</span><span class="p">)</span>
+
+    <span class="c1">//static 메소드 사용</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`한 변의 길이가 20인 정사각형의 둘레는 </span><span class="p">${</span><span class="nx">Square</span><span class="p">.</span><span class="nx">perimeterOf</span><span class="p">(</span><span class="mi">20</span><span class="p">)}</span><span class="s2">입니다`</span><span class="p">)</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`한 변의 길이가 30인 정사각형의 둘레는 </span><span class="p">${</span><span class="nx">Square</span><span class="p">.</span><span class="nx">areaOf</span><span class="p">(</span><span class="mi">30</span><span class="p">)}</span><span class="s2">입니다`</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="o">=&gt;</span><span class="nx">결과값</span> 
+
+<span class="p">[</span><span class="nx">Running</span><span class="p">]</span> <span class="nx">node</span> <span class="dl">"</span><span class="s2">/workspaces/codespaces-blank/index.js</span><span class="dl">"</span>
+<span class="nx">지금까지</span> <span class="nx">생성된</span> <span class="nx">Square</span> <span class="nx">인스턴스는</span> <span class="mi">3</span><span class="nx">개입니다</span><span class="p">.</span>
+<span class="nx">한</span> <span class="nx">변의</span> <span class="nx">길이가</span> <span class="mi">20</span><span class="nx">인</span> <span class="nx">정사각형의</span> <span class="nx">둘레는</span> <span class="mi">80</span><span class="nx">입니다</span>
+<span class="nx">한</span> <span class="nx">변의</span> <span class="nx">길이가</span> <span class="mi">30</span><span class="nx">인</span> <span class="nx">정사각형의</span> <span class="nx">둘레는</span> <span class="mi">900</span><span class="nx">입니다</span>
+
+<span class="p">[</span><span class="nx">Done</span><span class="p">]</span> <span class="nx">exited</span> <span class="kd">with</span> <span class="nx">code</span><span class="o">=</span><span class="mi">0</span> <span class="k">in</span> <span class="mf">0.057</span> <span class="nx">seconds</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="7--상속-및-오버라이드">7.  상속 및 오버라이드</h2>
+
+<ol>
+  <li>상속: 어떤 클래스의 기능을 다른 클래스에 상속시킨 후 추가적인 기능을 명시하여 원래의 기능을 확장하는 방법.
+    <ul>
+      <li>기능의 확장으로서의 상속</li>
+      <li>여러 클래스간의 공통 기능을 모아 놓는 의미로서의 상속</li>
+    </ul>
+  </li>
+</ol>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">extends는</span> <span class="nx">클래스를</span> <span class="nx">상속받을수있음</span>
+         
+ <span class="cm">/*
+   ...생략
+   constructor(...args){
+       super(...args)
+       부모
+   }
+ */</span>
+</code></pre></div></div>
+
+<p>1) extends를 이용하여 클래스 상속하기</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* 부모에 있던 내용 가져오기 */</span>
+<span class="p">{</span>
+    <span class="kd">class</span> <span class="nx">LifeStyle</span><span class="p">{</span>
+        <span class="nx">call</span><span class="p">(){</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">a</span><span class="p">()</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">b</span><span class="p">()</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">c</span><span class="p">()</span>
+        <span class="p">}</span>
+        <span class="nx">a</span><span class="p">(){</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">a() 메소드를 호출</span><span class="dl">'</span><span class="p">)}</span>
+        <span class="nx">b</span><span class="p">(){</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">b() 메소드를 호출</span><span class="dl">'</span><span class="p">)}</span>
+        <span class="nx">c</span><span class="p">(){</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">c() 메소드를 호출</span><span class="dl">'</span><span class="p">)}</span>
+    <span class="p">}</span>
+    <span class="kd">class</span> <span class="nx">Child</span> <span class="kd">extends</span> <span class="nx">LifeStyle</span><span class="p">{</span>
+        <span class="nx">a</span><span class="p">(){</span>
+            <span class="k">super</span><span class="p">.</span><span class="nx">a</span><span class="p">()</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">자식의 a()메소드</span><span class="dl">'</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">new</span> <span class="nx">Child</span><span class="p">().</span><span class="nx">call</span><span class="p">()</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ol>
+  <li>메서드 오버라이드(Override)</li>
+</ol>
+
+<p>클래스 간에 부모-자식 관계가 형성되었을 때 자식 클래스에서 부모 클래스가 갖는 메서드와 동일한 이름의 메서드를 정의하는 기법.</p>
+
+<p>super 키워드</p>
+
+<p>Override 이전의 원본 기능 호출하기</p>
+
+<ul>
+  <li><strong>this</strong> 키워드가 현재 클래스나 부모로부터 상속 받은 자원을 가리키는 예약어인 반면, <strong>super</strong> 키워드는 부모의 메서드를 Override 하고 있는 자식 클래스 안에서 부모의 원래 기능을 호출하고자 하는 경우에 사용한다.</li>
+</ul>
+
+<p>부모 클래스의 생성자</p>
+
+<ul>
+  <li><strong>super</strong> 키워드를 메서드처럼 사용할 경우 부모 클래스의 생성자를 의미한다.</li>
+  <li>자신의 생성자를 통해 전달받은 파라미터와 추가적으로 가공된 파라미터를 부모의 생성자로 전달하여 객체를
+생성하는 방법에 변화를 주고자 할 경우 사용한다.</li>
+</ul>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* 부모 클래스 ,슈퍼 클래스 , 자식클래스 ,서브 클래스 */</span>
+
+<span class="p">{</span>
+    <span class="c1">// 부모 클래스 ,슈퍼 클래스</span>
+    <span class="kd">class</span> <span class="nx">Rectangle</span><span class="p">{</span>
+        <span class="kd">constructor</span><span class="p">(</span><span class="nx">width</span><span class="p">,</span><span class="nx">height</span><span class="p">){</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">width</span><span class="o">=</span><span class="nx">width</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">height</span><span class="o">=</span><span class="nx">height</span>
+        <span class="p">}</span>
+    
+        <span class="c1">//사각형 둘레 구하는 메소드</span>
+        <span class="nx">getPerimeter</span><span class="p">(){</span>
+            <span class="k">return</span> <span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">width</span><span class="o">+</span><span class="k">this</span><span class="p">.</span><span class="nx">height</span><span class="p">)</span>
+        <span class="p">}</span>
+        <span class="nx">getArea</span><span class="p">(){</span>
+            <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">width</span><span class="o">*</span><span class="k">this</span><span class="p">.</span><span class="nx">height</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="c1">//자식클래스 ,서브 클래스</span>
+    <span class="c1">//** 상속 기본문법 **</span>
+    <span class="kd">class</span> <span class="nx">Square</span> <span class="kd">extends</span> <span class="nx">Rectangle</span> <span class="p">{</span>
+        <span class="kd">constructor</span> <span class="p">(</span><span class="nx">width</span><span class="p">){</span> <span class="c1">// 속성 변경하는 법</span>
+            <span class="k">super</span><span class="p">(</span><span class="nx">width</span><span class="p">,</span><span class="nx">width</span><span class="p">)</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">width</span> <span class="o">=</span> <span class="nx">width</span>  
+            <span class="k">this</span><span class="p">.</span><span class="nx">height</span> <span class="o">=</span> <span class="nx">width</span>
+            <span class="p">}</span>
+            <span class="c1">// super로 생성자 정의를 하면 아래 코드는 안써도 됌</span>
+            <span class="cm">/*  
+            }
+            constructor(width){
+                this.width=width
+            }
+            getPerimeter(){
+                return 4*this.width
+            }
+            getArea(){
+                return this.width*this.width
+            }
+        */</span>
+        <span class="p">}</span>
+        <span class="c1">//클래스 사용</span>
+        <span class="kd">const</span> <span class="nx">rect</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Rectangle</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`사각형 둘레: </span><span class="p">${</span><span class="nx">rect</span><span class="p">.</span><span class="nx">getPerimeter</span><span class="p">()}</span><span class="s2">`</span><span class="p">)</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`사각형 넓이: </span><span class="p">${</span><span class="nx">rect</span><span class="p">.</span><span class="nx">getArea</span><span class="p">()}</span><span class="s2">`</span><span class="p">)</span>
+        <span class="kd">const</span> <span class="nx">square</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Square</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`사각형 둘레: </span><span class="p">${</span><span class="nx">square</span><span class="p">.</span><span class="nx">getPerimeter</span><span class="p">()}</span><span class="s2">`</span><span class="p">)</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`사각형 넓이: </span><span class="p">${</span><span class="nx">square</span><span class="p">.</span><span class="nx">getArea</span><span class="p">()}</span><span class="s2">`</span><span class="p">)</span>
+    
+<span class="p">}</span>
+
+<span class="o">=&gt;</span><span class="nx">결과값</span>
+
+<span class="p">[</span><span class="nx">Running</span><span class="p">]</span> <span class="nx">node</span> <span class="dl">"</span><span class="s2">/workspaces/codespaces-blank/index.js</span><span class="dl">"</span>
+<span class="nx">사각형</span> <span class="nx">둘레</span><span class="p">:</span> <span class="mi">60</span>
+<span class="nx">사각형</span> <span class="nx">넓이</span><span class="p">:</span> <span class="mi">200</span>
+<span class="nx">사각형</span> <span class="nx">둘레</span><span class="p">:</span> <span class="mi">40</span>
+<span class="nx">사각형</span> <span class="nx">넓이</span><span class="p">:</span> <span class="mi">100</span>
+
+<span class="p">[</span><span class="nx">Done</span><span class="p">]</span> <span class="nx">exited</span> <span class="kd">with</span> <span class="nx">code</span><span class="o">=</span><span class="mi">0</span> <span class="k">in</span> <span class="mf">0.055</span> <span class="nx">seconds</span>
+
+</code></pre></div></div>
+
+<hr />
+
+  </div>
+</div>
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/kdn0325" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 Abel. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    <script>
+  'use strict';
+
+  (function() {
+    var commentContainer = document.querySelector('#utterances-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.setAttribute('src', 'https://utteranc.es/client.js');
+    script.setAttribute('repo', 'kdn0325/comments');
+    script.setAttribute('issue-term', 'pathname');
+    script.setAttribute('theme', 'photon-dark');
+    script.setAttribute('crossorigin', 'anonymous');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+
+  
+
+
+
+
+
+  </body>
+</html>

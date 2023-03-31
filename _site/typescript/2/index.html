@@ -1,0 +1,1378 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>#2 Typescript Overview - ABEL FRONTELIO : 개발 노트</title>
+<meta name="description" content="프로그래밍 언어   Complied Language            Transpile       JS ⇒ Interpreted Language">
+
+
+  <meta name="author" content="Abel🤭">
+  
+  <meta property="article:author" content="Abel🤭">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="ABEL FRONTELIO : 개발 노트">
+<meta property="og:title" content="#2 Typescript Overview">
+<meta property="og:url" content="http://localhost:4000/typescript/2/">
+
+
+  <meta property="og:description" content="프로그래밍 언어   Complied Language            Transpile       JS ⇒ Interpreted Language">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2022-08-21T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2022-08-21T00:00:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/typescript/2/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Abel",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="ABEL FRONTELIO : 개발 노트 Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+<!-- end custom head snippets -->
+
+
+  </head>
+
+  <body class="layout--archive">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          ABEL FRONTELIO : 개발 노트
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/index.html">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#typescript" itemprop="item"><span itemprop="name">Typescript</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">#2 Typescript Overview</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Abel🤭</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>FRONTELIO - Software Developer.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+        
+          
+            <li><a href="mailto:dn10003@email.com" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/kdn0325" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+
+  
+    
+
+<nav class="nav__list">
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items" id="category_tag_menu">
+      <li>
+        <span>전체 글 수77개<span>
+      </li>
+      <li>
+        <span class="nav__sub-title">Programming Language</span>
+            <ul>
+                
+                    
+                
+                    
+                        <li><a href="/categories/js" class="">Javscript (16)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/ts" class="">Typescript (10)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+        </li>
+      <li>
+        <span class="nav__sub-title">Front-end</span>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/html" class="">HTML(1)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/css" class="">CSS (2)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/react" class="">React (13)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/next" class="">Next.js (3)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/rn" class="">React Native (1)</a></li>
+                    
+                
+                    
+                
+            </ul>
+        </li>
+        <li>
+          <span class="nav__sub-title">Back-end</span>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+          </li>
+        <li>
+        <li>
+          <span class="nav__sub-title">DB</span>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+          </li>
+        <li>
+        <li>
+          <span class="nav__sub-title">OS</span>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+        </li>
+        <li>
+          <span class="nav__sub-title">컴퓨터 공학</span>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                          <li><a href="/categories/codingtest" class="">Coding Test(26)</a></li>
+                      
+                  
+              </ul>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                          <li><a href="/categories/computerscience" class="">CS(1)</a></li>
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+        </li>
+        <li>
+          <span class="nav__sub-title">etc</span>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                          <li><a href="/categories/git" class="">Git(2)</a></li>
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+              <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+              <ul>
+                  
+                      
+                          <li><a href="/categories/blog" class=""> Jekyll Blog(1)</a></li>
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+        </li>
+        <li>
+          <span class="nav__sub-title">Review</span>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                          <li><a href="/categories/refer" class="">Reference(1)</a></li>
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+              <ul>
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+              </ul>
+        </li>
+      <li>
+  </ul>
+</nav>
+
+  
+
+  </div>
+
+
+  <div class="archive">
+    
+      <h1 id="page-title" class="page__title">#2 Typescript Overview</h1>
+    
+    <ol>
+  <li>프로그래밍 언어</li>
+  <li>Complied Language
+    <ul>
+      <li>Transpile</li>
+      <li>JS ⇒ Interpreted Language</li>
+    </ul>
+  </li>
+</ol>
+
+<table>
+  <thead>
+    <tr>
+      <th>Compiled</th>
+      <th>Interpreted</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>컴파일 필요 O</td>
+      <td>컴파일 필요 X</td>
+    </tr>
+    <tr>
+      <td>컴파일러가 필요 O</td>
+      <td>컴파일러가 필요 X</td>
+    </tr>
+    <tr>
+      <td>컴파일하는 시점 O</td>
+      <td>컴파일하는 시점 X</td>
+    </tr>
+    <tr>
+      <td>컴파일된 결과물 실행</td>
+      <td>코드 자체를 실행</td>
+    </tr>
+    <tr>
+      <td>컴파일된 결과물을 실행하는 시점</td>
+      <td>코드를 실행하는 시점 O = 런타임</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Traditional Compiled Language</p>
+
+<ul>
+  <li>컴파일 언어</li>
+  <li>C , C++ , Go, C#</li>
+  <li>프로그래머가 작성한 Source Code를 기계어로 변환하는 과정을 Compile이라고함</li>
+  <li>기계어로 바꾸는 방식(인터프리터 언어) 보다 빠름</li>
+</ul>
+
+<p>tsc—init ⇒ tsconfig.json file 생성</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"target": "es2016" =&gt; 컴파일 시킬 ES버전
+"module": "commonjs" =&gt; 결과의 모듈을 변환
+
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="ide-활용">IDE 활용</h2>
+
+<p>Compiler</p>
+
+<ul>
+  <li>VS Code에 컴파일러 내장</li>
+</ul>
+
+<p>tslint ⇒ Typescript code 규약</p>
+
+<ul>
+  <li>npm i typescript tslint(로컬)</li>
+  <li>tslint —int</li>
+  <li>tslint 플러그인 설치</li>
+</ul>
+
+<hr />
+
+<h2 id="super-property">Super Property</h2>
+
+<ul>
+  <li>compileOnSave - true/false(default false) ⇒</li>
+  <li>extends - 파일 경로명:string (잘안쓰임)</li>
+  <li>CompilerOptions</li>
+  <li>files ⇒ 상대 혹은 절대 경로의 리스트 배열 (설정없으면 모두 compile)</li>
+  <li>glob패턴</li>
+  <li>include ⇒  (설정없으면 모두 compile)</li>
+  <li>exclude ⇒  (설정없으면 모두 compile)</li>
+</ul>
+
+<h3 id="compileroptions">CompilerOptions</h3>
+
+<div class="language-tsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">@</span><span class="nd">types</span> <span class="c1">//node_modules/@types 라는 모든 경로를 찾아서 사용 / [] 빈 배열 설정시 시스템이용 X</span>
+
+<span class="nx">target</span> <span class="p">:</span> <span class="nx">빌드</span> <span class="nx">결과물을</span> <span class="nx">어떤</span> <span class="nx">버전으로</span> <span class="nx">할</span> <span class="nx">것인지</span> <span class="nx">설정</span> <span class="p">(</span><span class="nx">지정</span> <span class="nx">안할</span> <span class="nx">시</span> <span class="nx">es3</span><span class="p">)</span>
+
+<span class="nx">lib</span> <span class="p">:</span> <span class="kd">type</span> <span class="nx">definition</span> <span class="nx">라이브러리를</span> <span class="nx">어떤</span> <span class="nx">것을</span> <span class="nx">사용할지</span>  <span class="nx">설정</span>
+
+<span class="nx">target</span> <span class="p">:</span> <span class="nx">TypeScript는</span> <span class="nx">JS</span> <span class="nx">API</span><span class="p">(</span><span class="nb">Math</span> <span class="nx">와</span> <span class="nx">같은</span><span class="p">)</span><span class="nx">에</span> <span class="nx">대한</span> <span class="nx">기본적인</span> <span class="nx">타입</span> <span class="nx">정의와</span> <span class="nx">브라우저</span> <span class="nx">환경</span>
+
+<span class="kr">module</span> <span class="p">:</span> <span class="nx">컴파일</span> <span class="nx">된</span> <span class="nx">모듈의</span> <span class="nx">결과물을</span> <span class="nx">어떤</span> <span class="nx">모듈</span> <span class="nx">시스템으로</span> <span class="nx">할지를</span> <span class="nx">결정</span> <span class="nx">target이</span> <span class="dl">'</span><span class="s1">es6</span><span class="dl">'</span><span class="nx">면</span> <span class="nx">es6가</span> <span class="nx">디폴트값</span>
+
+</code></pre></div></div>
+
+<h1 id="typescript-basic">Typescript Basic</h1>
+
+<hr />
+
+<p>Primitive Type : 실제 값을 저장하는 자료형</p>
+
+<p>literal : 값자체가 변하지 않는 값</p>
+
+<p>Boolean : true/false</p>
+
+<p>Number : 숫자</p>
+
+<p>String : 문자</p>
+
+<p>Template String : 행에 걸쳐 있거나 표현식을 넣을 수 있는 문자열</p>
+
+<p>Undefined &amp; Null : 고유값</p>
+
+<p>*Void : 타입이 없는 상태 , 주로 함수의 리턴이 없을 때 사용</p>
+
+<p>*Any : 어떤 타입이어도 상관없는 타입 , 최대한 쓰지 않는게 핵심</p>
+
+<p>Never : 리턴에 주로 사용 (자주 안쓰임)</p>
+
+<p>Array : 배열 객체</p>
+
+<p>*Tuple : 배열인데 타입이 한가지가 아닌 경우 (객체임)</p>
+
+<p>*Enum : 비슷한 값들끼리 묶어줄 때 임의의 값을 순차적으로 할당해줌 ⇒ Enum 원소의 결과값은 string</p>
+
+<p>*Symbol : 고유하고 수정 불가능한 값으로 만듬</p>
+
+<h1 id="type-assertion">Type Assertion</h1>
+
+<hr />
+
+<p>형 변환과 다름</p>
+
+<p>‘타입이 이것이다’라고 컴파일러에게 알려주는 것을 의미함</p>
+
+<ul>
+  <li>변수 as 강제할 타입 (주로사용)</li>
+  <li>
+    <강제할 타입=""> 변수
+
+</강제할>
+  </li>
+</ul>
+<h1 id="type-alias">Type Alias</h1>
+
+<hr />
+
+<p>타입 별칭을 지어줌</p>
+
+<h1 id="interface">Interface</h1>
+
+<hr />
+
+<h3 id="class-implements-interface">class implements interface</h3>
+
+<div class="language-tsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">interface</span> <span class="nx">IPerson</span> <span class="p">{</span>
+    <span class="nl">name</span><span class="p">:</span><span class="kr">string</span><span class="p">;</span>
+    <span class="nx">hello</span><span class="p">():</span><span class="k">void</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nx">Person</span> <span class="k">implements</span> <span class="nx">IPerson</span><span class="p">{</span>
+    <span class="nl">name</span><span class="p">:</span> <span class="kr">string</span>
+
+    <span class="kd">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">:</span><span class="kr">string</span><span class="p">){</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span>
+    <span class="p">}</span>
+    <span class="nx">hello</span><span class="p">():</span><span class="k">void</span><span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`hello </span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="s2"> 입니다`</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="k">public</span> <span class="nx">hi</span><span class="p">():</span> <span class="k">void</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`현지 </span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="s2"> 입니다`</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">person</span> <span class="p">:</span> <span class="nx">IPerson</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Person</span><span class="p">(</span><span class="dl">"</span><span class="s2">Mark</span><span class="dl">"</span><span class="p">)</span>
+
+<span class="nx">person</span><span class="p">.</span><span class="nx">hi</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="interface-extends-interface">interface extends interface</h3>
+
+<div class="language-tsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">interface</span> <span class="nx">Person</span> <span class="p">{</span>
+    <span class="nl">name</span><span class="p">:</span><span class="kr">string</span><span class="p">;</span>
+    <span class="nl">age</span><span class="p">?:</span><span class="kr">number</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">interface</span> <span class="nx">Korean</span> <span class="kd">extends</span> <span class="nx">Person</span><span class="p">{</span>
+    <span class="nl">city</span> <span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Person interface를 상속 받고 Korean interface에 city의 타입 추가 </span>
+
+<span class="kd">const</span> <span class="nx">k</span> <span class="p">:</span> <span class="nx">Korean</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Kdn</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">city</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Seoul</span><span class="dl">'</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<h3 id="function-interface">function interface</h3>
+
+<div class="language-tsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">interface</span> <span class="nx">HelloPerson</span> <span class="p">{</span>
+    <span class="p">(</span><span class="nx">name</span><span class="p">:</span><span class="kr">string</span> <span class="p">,</span> <span class="nx">age</span><span class="p">?:</span> <span class="kr">number</span><span class="p">):</span> <span class="k">void</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">helloPerson</span><span class="p">:</span> <span class="nx">HelloPerson</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">name</span><span class="p">:</span><span class="kr">string</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nx">helloPerson</span><span class="p">(</span><span class="dl">"</span><span class="s2">Mark</span><span class="dl">"</span><span class="p">)</span>
+
+<span class="c1">//함수의 타입 체크는 할당할때가 아니라 사용할때 합니다</span>
+</code></pre></div></div>
+
+<h3 id="class">Class</h3>
+
+<div class="language-tsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Person</span> <span class="p">{</span>
+	<span class="nl">name</span><span class="p">:</span><span class="kr">string</span><span class="p">;</span>
+	<span class="nl">age</span><span class="p">:</span><span class="kr">number</span><span class="p">;</span>
+	<span class="kd">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">:</span> <span class="kr">string</span> <span class="p">){</span>
+		<span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+<span class="kd">const</span> <span class="nx">person</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Person</span><span class="p">(</span><span class="dl">"</span><span class="s2">Mark</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span>
+
+<span class="c1">//1. 생성자 함수가 없으면 디폴트 생성자가 불림</span>
+<span class="c1">//2. 클래스의 프로퍼티 혹은 멤버 변수가 정의되어 있지만</span>
+ <span class="nx">값을</span> <span class="nx">대입하지</span> <span class="nx">않으면</span> <span class="nx">undefined임</span>
+
+<span class="c1">//3. 접근제어자는 public이 디폴트값</span>
+</code></pre></div></div>
+
+  </div>
+</div>
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/kdn0325" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 Abel. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    <script>
+  'use strict';
+
+  (function() {
+    var commentContainer = document.querySelector('#utterances-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.setAttribute('src', 'https://utteranc.es/client.js');
+    script.setAttribute('repo', 'kdn0325/comments');
+    script.setAttribute('issue-term', 'pathname');
+    script.setAttribute('theme', 'photon-dark');
+    script.setAttribute('crossorigin', 'anonymous');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+
+  
+
+
+
+
+
+  </body>
+</html>

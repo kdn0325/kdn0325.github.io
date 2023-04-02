@@ -1,9 +1,0 @@
-I"�<p><a href="https://ko.reactjs.org/docs/faq-internals.html">Virtual DOM과 Internals</a></p>
-
-<p><a href="https://ko.reactjs.org/docs/faq-internals.html">A JavaScript library for building user interfaces
-ko.reactjs.org</a></p>
-
-<ul>
-  <li>Virtual DOM : DOM과 유사한 객체를 메모리 상에서 구현하여 변경 사항이 생기면 메모리가 올라간 Virtual DOM을 수정하고 DOM과 비교하여 변경 사항만 DOM에 반영함</li>
-</ul>
-:ET

@@ -1,6 +1,6 @@
 ---
 title: "Jekyll/Github 블로그 R&D"
-
+layout: archive
 permalink: categories/buildtools
 author_profile: true
 sidebar_main: true

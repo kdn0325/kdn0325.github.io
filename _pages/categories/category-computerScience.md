@@ -1,6 +1,6 @@
 ---
 title: "컴퓨터 공학"
-
+layout: archive
 permalink: categories/computerscience
 author_profile: true
 sidebar_main: true

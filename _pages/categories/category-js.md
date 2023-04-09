@@ -1,6 +1,6 @@
 ---
 title: "Javascript"
-
+layout: archive
 permalink: categories/js
 author_profile: true
 sidebar_main: true

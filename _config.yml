@@ -16,7 +16,7 @@ minimal_mistakes_skin    : "dark" # "default"  "air", "aqua", "contrast", "dirt"
 
 # Site Settings
 locale                   : "ko-KR"
-title                    : "ABEL FRONTELIO : 개발 노트"
+title                    : "ABEL FRONTELIO : 노트"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Abel"

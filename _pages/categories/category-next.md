@@ -1,6 +1,6 @@
 ---
 title: "Next.js"
-
+layout: archive
 permalink: categories/next
 author_profile: true
 sidebar_main: true

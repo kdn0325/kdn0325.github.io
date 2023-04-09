@@ -1,6 +1,6 @@
 ---
 title: "React Native"
-layout: archive
+
 permalink: categories/rn
 author_profile: true
 sidebar_main: true

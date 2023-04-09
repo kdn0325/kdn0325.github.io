@@ -1,6 +1,6 @@
 ---
 title: "CSS - Cascading Style Sheet"
-layout: archive
+
 permalink: categories/css
 author_profile: true
 sidebar_main: true

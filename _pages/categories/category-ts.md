@@ -1,6 +1,6 @@
 ---
 title: "Typescript"
-layout: archive
+
 permalink: categories/ts
 author_profile: true
 sidebar_main: true

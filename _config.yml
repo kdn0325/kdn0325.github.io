@@ -41,8 +41,8 @@ comments:
     num_posts            : # 5 (default)
     colorscheme          : # "light" (default), "dark"
   utterances:
-    theme                : "photon-dark" # "github-light" (default), 
-    issue_term           : "pathname" # "pathname" (default)
+    theme                : # "photon-dark" # "github-light" (default), 
+    issue_term           : # "pathname" # "pathname" (default)
   giscus:
     repo_id              : "R_kgDOH2Mv2Q" # Shown during giscus setup at https://giscus.app
     category_name        : "General" # Full text name of the category

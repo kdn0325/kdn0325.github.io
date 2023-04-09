@@ -1,6 +1,6 @@
 ---
 title: "Node.js"
-
+layout: archive
 permalink: categories/node
 author_profile: true
 sidebar_main: true

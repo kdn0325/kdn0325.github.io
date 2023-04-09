@@ -23,14 +23,14 @@ name                     : "Abel"
 description              : "Developer & Issue."
 url                      : "https://kdn0325.github.io/"
 baseurl                  : # the subpath of your site, e.g. "/blog"
-repository               : "kdn0325/comments" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+repository               : "kdn0325/kdn0325.github.io/" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
 breadcrumbs              : true # true, false (default)
 words_per_minute         : 200
 comments:
-  provider               : "utterances" # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "giscus", "custom"
+  provider               : giscus # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "giscus", "custom"
   disqus:
     shortname            : # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
   discourse:
@@ -44,15 +44,21 @@ comments:
     theme                : "photon-dark" # "github-light" (default), 
     issue_term           : "pathname" # "pathname" (default)
   giscus:
-    repo_id              : # Shown during giscus setup at https://giscus.app
-    category_name        : # Full text name of the category
-    category_id          : # Shown during giscus setup at https://giscus.app
-    discussion_term      : # "pathname" (default), "url", "title", "og:title"
-    reactions_enabled    : # '1' for enabled (default), '0' for disabled
-    theme                : # "light" (default), "dark", "dark_dimmed", "transparent_dark", "preferred_color_scheme"
+    repo:                : "kdn0325/kdn0325.github.io"
+    repo_id              : "R_kgDOH2Mv2Q"
+    category             : "General"
+    category-id          : "DIC_kwDOH2Mv2c4CVpHQ"
+    mapping              : "pathname"
+    reaction-enabled     : "1"
+    data-emit-metadata   : "0"
+    position             : "bottom"
+    theme                : "dark"
+    data-lang            : "ko"
+    crossorigin          : "anonymous"
   staticman:
     branch               : # "master"
     endpoint             : # "https://{your Staticman v3 API}/v3/entry/github/"
+    
 reCaptcha:
   siteKey                :
   secret                 :

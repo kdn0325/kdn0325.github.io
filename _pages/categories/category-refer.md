@@ -1,6 +1,6 @@
 ---
 title: "Reference"
-
+layout: archive
 permalink: categories/refer
 author_profile: true
 sidebar_main: true

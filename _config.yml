@@ -185,6 +185,11 @@ markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 
 # Conversion
 markdown: kramdown
+kramdown:
+  highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: true
 highlighter: rouge
 lsi: false
 excerpt_separator: "\n\n"

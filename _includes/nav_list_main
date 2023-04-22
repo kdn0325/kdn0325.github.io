@@ -165,7 +165,7 @@
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "Cypress" %}
-                        <li><a href="/categories/cypress" class="">Cypress ({{category[1].size}})</a></li>
+                        <li><a href="/categories/cypress" class="">Cypress({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>

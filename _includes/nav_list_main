@@ -154,7 +154,7 @@
               </ul>
         </li>
         <li>
-          <span class="nav__sub-title">etc</span>
+          <span class="nav__sub-title">CI/CD</span>
               <ul>
                   {% for category in site.categories %}
                       {% if category[0] == "Git" %}
@@ -162,17 +162,10 @@
                       {% endif %}
                   {% endfor %}
               </ul>
-              <ul>
-                {% for category in site.categories %}
-                    {% if category[0] == "CI/CD" %}
-                        <li><a href="/categories/ci&cd" class="">CI/CD ({{category[1].size}})</a></li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "Testing" %}
-                        <li><a href="/categories/testing" class="">Testing ({{category[1].size}})</a></li>
+                    {% if category[0] == "Cypress" %}
+                        <li><a href="/categories/cypress" class="">Cypress ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>

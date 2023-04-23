@@ -8,5 +8,5 @@ sidebar_main: true
 
 ***
 
-{% assign posts = site.categories.Refer %}
+{% assign posts = site.categories.refer %}
 {% for post in posts %} {% include archive-single2.html type=page.entries_layout %} {% endfor %}

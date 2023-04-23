@@ -18,8 +18,8 @@
             </ul>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "Typescript" %}
-                        <li><a href="/categories/ts" class="">Typescript ({{category[1].size}})</a></li>
+                    {% if category[0] == "typescript" %}
+                        <li><a href="/categories/typescript" class="">Typescript ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
@@ -35,14 +35,14 @@
         <span class="nav__sub-title">Front-end</span>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "HTML" %}
+                    {% if category[0] == "html" %}
                         <li><a href="/categories/html" class="">HTML({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "CSS" %}
+                    {% if category[0] == "css" %}
                         <li><a href="/categories/css" class="">CSS ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
@@ -63,22 +63,22 @@
             </ul>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "React" %}
+                    {% if category[0] == "react" %}
                         <li><a href="/categories/react" class="">React ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "Next" %}
+                    {% if category[0] == "next" %}
                         <li><a href="/categories/next" class="">Next.js ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "rn" %}
-                        <li><a href="/categories/rn" class="">React Native ({{category[1].size}})</a></li>
+                    {% if category[0] == "react-native" %}
+                        <li><a href="/categories/react-native" class="">React Native ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
@@ -87,14 +87,14 @@
           <span class="nav__sub-title">Back-end</span>
               <ul>
                   {% for category in site.categories %}
-                      {% if category[0] == "Node" %}
+                      {% if category[0] == "node" %}
                           <li><a href="/categories/node" class="">Node.js ({{category[1].size}})</a></li>
                       {% endif %}
                   {% endfor %}
               </ul>
               <ul>
                   {% for category in site.categories %}
-                      {% if category[0] == "Django" %}
+                      {% if category[0] == "django" %}
                           <li><a href="/categories/django" class="">Django ({{category[1].size}})</a></li>
                       {% endif %}
                   {% endfor %}
@@ -116,7 +116,7 @@
           <span class="nav__sub-title">OS</span>
               <ul>
                   {% for category in site.categories %}
-                      {% if category[0] == "Linux" %}
+                      {% if category[0] == "linux" %}
                           <li><a href="/categories/linux" class="">Linux({{category[1].size}})</a></li>
                       {% endif %}
                   {% endfor %}
@@ -157,7 +157,7 @@
           <span class="nav__sub-title">CI/CD</span>
               <ul>
                   {% for category in site.categories %}
-                      {% if category[0] == "Git" %}
+                      {% if category[0] == "git" %}
                           <li><a href="/categories/git" class="">Git({{category[1].size}})</a></li>
                       {% endif %}
                   {% endfor %}
@@ -171,21 +171,21 @@
             </ul>
               <ul>
                   {% for category in site.categories %}
-                      {% if category[0] == "Docker" %}
+                      {% if category[0] == "docker" %}
                           <li><a href="/categories/docker" class="">Docker ({{category[1].size}})</a></li>
                       {% endif %}
                   {% endfor %}
               </ul>
               <ul>
                   {% for category in site.categories %}
-                      {% if category[0] == "Vscode" %}
+                      {% if category[0] == "vscode" %}
                           <li><a href="/categories/vscode" class=""> 비주얼 스튜디오({{category[1].size}})</a></li>
                       {% endif %}
                   {% endfor %}
               </ul>
               <ul>
                   {% for category in site.categories %}
-                      {% if category[0] == "Blog" %}
+                      {% if category[0] == "blog" %}
                           <li><a href="/categories/blog" class=""> Jekyll Blog({{category[1].size}})</a></li>
                       {% endif %}
                   {% endfor %}
@@ -195,14 +195,14 @@
           <span class="nav__sub-title">Review</span>
               <ul>
                   {% for category in site.categories %}
-                      {% if category[0] == "Refer" %}
+                      {% if category[0] == "refer" %}
                           <li><a href="/categories/refer" class="">Reference({{category[1].size}})</a></li>
                       {% endif %}
                   {% endfor %}
               </ul>
               <ul>
                   {% for category in site.categories %}
-                      {% if category[0] == "Issue" %}
+                      {% if category[0] == "issue" %}
                           <li><a href="/categories/issue" class="">Issue({{category[1].size}})</a></li>
                       {% endif %}
                   {% endfor %}

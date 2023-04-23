@@ -1,7 +1,7 @@
 ---
 title: "Typescript"
 layout: archive
-permalink: categories/ts
+permalink: categories/typescript
 author_profile: true
 sidebar_main: true
 ---
@@ -9,5 +9,5 @@ sidebar_main: true
 
 ***
 
-{% assign posts = site.categories.Typescript %}
+{% assign posts = site.categories.typescript %}
 {% for post in posts %} {% include archive-single2.html type=page.entries_layout %} {% endfor %}

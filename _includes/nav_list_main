@@ -11,8 +11,8 @@
         <span class="nav__sub-title">Programming Language</span>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "Javascript" %}
-                        <li><a href="/categories/js" class="">Javscript ({{category[1].size}})</a></li>
+                    {% if category[0] == "javascript" %}
+                        <li><a href="/categories/javascript" class="">Javscript ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
@@ -164,7 +164,7 @@
               </ul>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "Cypress" %}
+                    {% if category[0] == "cypress" %}
                         <li><a href="/categories/cypress" class="">Cypress({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}

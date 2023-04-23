@@ -8,5 +8,5 @@ sidebar_main: true
 
 ***
 
-{% assign posts = site.categories.React %}
+{% assign posts = site.categories.react %}
 {% for post in posts %} {% include archive-single2.html type=page.entries_layout %} {% endfor %}

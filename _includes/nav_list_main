@@ -12,7 +12,7 @@
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "javascript" %}
-                        <li><a href="/categories/javascript" class="">Javscript ({{category[1].size}})</a></li>
+                        <li><a href="/categories/javascript" class="">Javascript ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>

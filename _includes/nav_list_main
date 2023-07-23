@@ -70,6 +70,13 @@
             </ul>
             <ul>
                 {% for category in site.categories %}
+                    {% if category[0] == "dart" %}
+                        <li><a href="/categories/dart" class="">Dart({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
                     {% if category[0] == "next" %}
                         <li><a href="/categories/next" class="">Next.js ({{category[1].size}})</a></li>
                     {% endif %}

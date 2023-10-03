@@ -16,11 +16,11 @@ minimal_mistakes_skin    : "dark" # "default"  "air", "aqua", "contrast", "dirt"
 
 # Site Settings
 locale                   : "ko-KR"
-title                    : "ABEL FRONTELIO : 노트"
+title                    : "ABEL FRONTELIO : Lifelong Discovery Dispatch 📖"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
-name                     : "Abel"
-description              : "Developer & Issue."
+name                     : "ABEL"
+description              : "지속적인 지식 여정 🌍"
 url                      : "https://kdn0325.github.io/"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "kdn0325/comments" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"

@@ -24,6 +24,7 @@
   a {
     position: relative;
     z-index: 10;
+    font-size: $type-size-6;
   }
 
   a[rel="permalink"] {
@@ -34,7 +35,7 @@
 .archive__subtitle {
   margin: 0.8em 0 0;
   padding-bottom: 0.5em;
-  font-size: $type-size-3;
+  font-size: $type-size-4;
   color: mix(#fff, $primary-color, 40%);
   border-bottom: 1px solid $border-color;
   font-family: $serif;
@@ -51,7 +52,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   font-family: $cute;
-  font-size: $type-size-6;
+  font-size: $type-size-3;
 
   a[rel="permalink"]::before {
     content: "";

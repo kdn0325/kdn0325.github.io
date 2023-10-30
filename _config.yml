@@ -20,7 +20,7 @@ title                    : "ABEL FRONTELIO : Lifelong Discovery Dispatch 📖"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "ABEL"
-description              : "지속적인 지식 여정 🌍"
+description              : "I am always beginner"
 url                      : "https://kdn0325.github.io/"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "kdn0325/comments" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -97,7 +97,7 @@ analytics:
 
 # Site Author
 author:
-  name             : "Abel🤭"
+  name             : "ABEL🤭"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "FRONTELIO - Software Developer."
   location         : "Seoul, South Korea"

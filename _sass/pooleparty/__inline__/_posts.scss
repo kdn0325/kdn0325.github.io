@@ -22,12 +22,11 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-
 .page {
   margin-bottom: 3em;
 
   li + li {
-    margin-top: .25rem;
+    margin-top: 0.25rem;
   }
 
   > header {
@@ -56,25 +55,34 @@ body:not(.no-third-column) {
 }
 
 // Blog post or page title
-.page-title, .post-title { margin-top: 0; }
+.page-title,
+.post-title {
+  margin-top: 0;
+}
 
 // Meta data line below post title
+// .post-date {
+//   @extend .h4;
+//   display: flex;
+//   justify-content: space-between;
+//   margin-top: -.6rem;
+//   height: 2rem;
+//   margin-bottom: .85rem;
+//   color: var(--gray);
+
+//   > .ellipsis {
+//     cursor: pointer;
+//   }
+
+//   [class^="icon-"] {
+//     display: inline-block;
+//     font-size: smaller;
+//     margin-right: .25rem;
+//   }
+// }
 .post-date {
-  @extend .h4;
-  display: flex;
-  justify-content: space-between;
-  margin-top: -.6rem;
-  height: 2rem;
-  margin-bottom: .85rem;
+  display: block;
+  margin-top: -0.5rem;
+  margin-bottom: 1rem;
   color: var(--gray);
-
-  > .ellipsis {
-    cursor: pointer;
-  }
-
-  [class^="icon-"] {
-    display: inline-block;
-    font-size: smaller;
-    margin-right: .25rem;
-  }
 }

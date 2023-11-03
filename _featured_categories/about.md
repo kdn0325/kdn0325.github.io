@@ -1,4 +1,4 @@
-<!-- ---
+---
 layout: about
 title: About
 permalink: /about/
@@ -9,4 +9,4 @@ order: 1
 
 <!--about -->
 
-## Hello, Guys! 🙋‍♂️ -->
+현재 프로그래머스 문제 다시 풀기 및 React Native에 초점을 두어 학습중 입니다.

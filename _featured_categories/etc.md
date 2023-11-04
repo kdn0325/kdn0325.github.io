@@ -6,5 +6,5 @@ slug: etc
 sidebar: true
 order: 7
 description: >
-  what did i encounter about issues
+  참조하면 좋은것 , 협업에 좋은것
 ---

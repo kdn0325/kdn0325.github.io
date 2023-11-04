@@ -1,11 +1,11 @@
 ---
 layout: tag-list
 type: tag
-title: Programmers
+title: 프로그래머스
 slug: programmers
-category: computersciense
-order: 1
+category: computerscience
+order: 2
 sidebar: true
 description: >
-  Anything about Network
+  JavaScript 프로그래머스 코딩 테스트
 ---

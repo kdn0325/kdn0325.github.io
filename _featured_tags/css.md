@@ -1,11 +1,11 @@
 ---
 layout: tag-list
 type: tag
-title: css
+title: CSS
 slug: css
 category: programming
-order: 1
+order: 2
 sidebar: true
 description: >
-  Anything about Network
+  CSS 개념 정리
 ---

@@ -7,5 +7,5 @@ category: issues
 order: 1
 sidebar: false
 description: >
-  Anything about Network
+  삽질 기록
 ---

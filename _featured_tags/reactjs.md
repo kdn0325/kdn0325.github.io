@@ -7,5 +7,5 @@ category: frontend
 order: 1
 sidebar: true
 description: >
-  Anything about Network
+  React.js 개념 정리
 ---

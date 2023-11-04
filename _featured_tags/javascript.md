@@ -4,8 +4,8 @@ type: tag
 title: JavaScript
 slug: javascript
 category: programming
-order: 1
+order: 3
 sidebar: true
 description: >
-  Anything about Network
+  JavaScript 개념 정리
 ---

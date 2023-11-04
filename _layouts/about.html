@@ -1,23 +1,8 @@
 ---
-# Copyright (c) 2018 Florian Klampfer <https://qwtel.com/>
-#
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-#
-# You should have received a copy of the GNU General Public License
-# along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
 layout: base
 ---
 
-<article class="page mb6" role="article">
+<article class="page" role="article">
   {% if content contains "<!--author-->" %} {% assign plugins = site.plugins |
   default:site.gems %} {% assign author = site.data.authors[page.author] |
   default:site.data.authors.first[1] | default:site.author %} {% capture
@@ -25,8 +10,20 @@ layout: base
   class="avatar" img=author.picture alt=author.name %} {% elsif plugins contains
   'jekyll-avatar' %} {% assign avatar = author.social.github |
   default:author.github.username | default:author.github %} {% include
-  components/avatar-tag.html user=avatar %} {% endif %} {{ author.about |
-  markdownify }} {% endcapture %} {% assign content = content | replace:"<!--author-->",
+  components/avatar-tag.html user=avatar %} {% endif %}
+
+  <div
+    class="author-body-description"
+    style="margin-left: 200px; margin-top: 40px"
+  >
+    <span style="font-size: 1.4em"
+      ><strong>{{ author.name | markdownify }}</strong></span
+    >
+    <b style="font-size: 0.8em; color: rgb(141, 141, 141)"
+      >{{ author.about | markdownify }}</b
+    >
+  </div>
+  {% endcapture %} {% assign content = content | replace:"<!--author-->",
   author_x %} {% endif %}
 
   <header>
@@ -34,8 +31,5 @@ layout: base
     {% include components/message.html text=page.description
     hide=page.hide_description %}
   </header>
-
-  {{ content }}
+  <div class="markdown-body">{{ content }}</div>
 </article>
-
-{% include components/dingbat.html %} {% include body/comments.html %}

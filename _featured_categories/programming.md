@@ -6,5 +6,5 @@ slug: programming
 sidebar: true
 order: 4
 description: >
-  what did i encounter about issues
+  다양한 프로그래밍 언어 개념 정리
 ---

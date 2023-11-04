@@ -7,5 +7,5 @@ category: etc
 order: 1
 sidebar: true
 description: >
-  Anything about Network
+  Git 개념 정리
 ---

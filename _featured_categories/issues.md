@@ -6,5 +6,5 @@ slug: issues
 sidebar: true
 order: 6
 description: >
-  what did i encounter about issues
+  삽질 해결 과정
 ---

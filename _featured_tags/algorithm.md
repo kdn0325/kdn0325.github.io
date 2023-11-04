@@ -3,9 +3,9 @@ layout: tag-list
 type: tag
 title: 알고리즘
 slug: algorithm
-category: computersciense
+category: computerscience
 order: 1
 sidebar: true
 description: >
-  알고리즘
+  JavaScript 알고리즘 스터디
 ---

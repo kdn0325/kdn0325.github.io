@@ -7,5 +7,5 @@ category: etc
 order: 1
 sidebar: true
 description: >
-  Anything about Network
+  참조하면 좋은 것
 ---

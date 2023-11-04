@@ -1,14 +1,7 @@
 {% assign plugins = site.plugins | default:site.gems %}
 
-<div class="author mt4">
+<div class="author mt4" style="margin: 10px;">
   {% assign author = include.author %}
-
-  {% if author.picture %}
-    {% include_cached components/hy-img.html class="avatar" img=author.picture alt=author.name width="120" height="120" %}
-  {% elsif plugins contains 'jekyll-avatar' %}
-    {% assign avatar = author.social.github | default:author.github.username | default:author.github  %}
-    {% include components/avatar-tag.html user=avatar %}
-  {% endif %}
 
   {% assign heading_tag = include.heading_tag | default:'h2' %}
   {% assign heading_id = include.heading_id %}
@@ -16,9 +9,19 @@
     {{ include.heading | default:author.name }}
   </{{ heading_tag }}>
 
-  {{ author.about | markdownify }}
 
-  <div class="sidebar-social">
-    {% include components/social.html author=author %}
-  </div>
+        {% if author.picture %}
+            {% include_cached components/hy-img.html class="avatar" img=author.picture alt=author.name width="180" height="180" %}
+        {% endif %}
+
+
+    <div class="author-body-description" style="margin-left: 200px; margin-top: 40px;" >
+        <span style = " font-size:1.4em;  color: rgb(0, 0, 0);"><strong>{{ author.name | markdownify }}</strong></span>
+        <b style = "font-size:0.8em; color: rgb(141, 141, 141);">{{ author.about | markdownify }}</b>
+    </div>
+       <!--소셜-->
+    <!-- <div class="sidebar-social" style="margin-top: 30px; margin-left: 15px;">
+        {% include components/social.html author=author %}
+    </div> -->
+
 </div>

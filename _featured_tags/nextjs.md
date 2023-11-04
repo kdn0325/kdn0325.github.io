@@ -4,8 +4,8 @@ type: tag
 title: Next.js
 slug: nextjs
 category: frontend
-order: 1
+order: 3
 sidebar: true
 description: >
-  Anything about Network
+  Next.js 개념 정리
 ---

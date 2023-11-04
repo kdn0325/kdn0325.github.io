@@ -1,11 +1,11 @@
 ---
 layout: tag-list
 type: tag
-title: html
+title: HTML
 slug: html
 category: programming
 order: 1
 sidebar: true
 description: >
-  Anything about Network
+  HTML 개념 정리
 ---

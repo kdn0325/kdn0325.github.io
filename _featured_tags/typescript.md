@@ -1,11 +1,11 @@
 ---
 layout: tag-list
 type: tag
-title: Typescript
+title: TypeScript
 slug: typescript
 category: programming
-order: 1
+order: 4
 sidebar: true
 description: >
-  Anything about Network
+  TypeScript 개념 정리
 ---

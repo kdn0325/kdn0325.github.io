@@ -9,11 +9,11 @@ include.hide_image %} {% assign hide_description = include.hide_description %}
 >
   <header>
     <h1 class="post-title flip-project-title">
-      {% unless no_link_title %}
-      <a href="{{ post.url | relative_url }}" class="flip-title"
-        >{{ post.title }}</a
-      >
-      {% endunless %}
+      {% unless no_link_title %}<a
+        href="{{ post.url | relative_url }}"
+        class="flip-title"
+        >{% endunless %} {{ post.title }} {% unless no_link_title %}</a
+      >{% endunless %}
     </h1>
 
     <!-- Post Date and Tags 카테고리 형식 -->
@@ -33,9 +33,7 @@ include.hide_image %} {% assign hide_description = include.hide_description %}
         target="_blank"
         >{{ tag }}</a
       >
-
       {% unless forloop.last %} &middot; {% endunless %} {% endfor %}
-
       <br />
 
       <!-- 등록일 -->
@@ -43,7 +41,6 @@ include.hide_image %} {% assign hide_description = include.hide_description %}
       <time datetime="{{ post.date | date_to_xmlschema }}">
         {{ post.date | date: post_format }}
       </time>
-
       <br />
 
       <!-- 최신 업데이트 일자 -->

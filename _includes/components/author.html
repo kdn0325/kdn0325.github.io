@@ -1,0 +1,27 @@
+{% assign plugins = site.plugins | default:site.gems %}
+
+<div class="author mt4" style="margin: 10px;">
+  {% assign author = include.author %}
+
+  {% assign heading_tag = include.heading_tag | default:'h2' %}
+  {% assign heading_id = include.heading_id %}
+  <{{ heading_tag }} {% if heading_id %}id="{{ heading_id }}"{% endif %} class="page-title hr-bottom">
+    {{ include.heading | default:author.name }}
+  </{{ heading_tag }}>
+
+
+        {% if author.picture %}
+            {% include_cached components/hy-img.html class="avatar" img=author.picture alt=author.name width="180" height="180" %}
+        {% endif %}
+
+
+    <div class="author-body-description" style="margin-left: 200px; margin-top: 40px;" >
+        <span style = "font-size:1.4em"><strong>{{ author.name | markdownify }}</strong></span>
+        <b style = "font-size:0.8em; color: rgb(141, 141, 141);">{{ author.about | markdownify }}</b>
+    </div>
+       <!--소셜-->
+    <!-- <div class="sidebar-social" style="margin-top: 30px; margin-left: 15px;">
+        {% include components/social.html author=author %}
+    </div> -->
+
+</div>

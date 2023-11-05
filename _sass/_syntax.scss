@@ -1,0 +1,161 @@
+@mixin lightmode-syntax() {
+  .highlight,
+  pre.highlight {
+    // background: #fafafa;
+    color: #383a42;
+    // color: #abb2bf;
+  }
+  // .highlight pre {
+  //   background: #fafafa;
+  // }
+  .highlight .ge {
+    font-style: italic;
+  }
+  .highlight .gs {
+    font-weight: 700;
+  }
+  .highlight .ow {
+    font-weight: 700;
+  }
+  .highlight .n,
+  .highlight .nn {
+    color: #8d939f;
+  }
+  .highlight .p,
+  .highlight .o {
+    color: #c678dd;
+  }
+  .highlight .c,
+  .highlight .c1,
+  .highlight .cm,
+  .highlight .cp,
+  .highlight .cs {
+    color: #5c6370;
+    font-style: italic;
+  }
+  .highlight .sr,
+  .highlight .ss {
+    color: #56b6c2;
+  }
+
+  .highlight .k,
+  .highlight .kc,
+  .highlight .kd,
+  .highlight .kn,
+  .highlight .kp,
+  .highlight .kr,
+  .highlight .kt {
+    color: #c678dd;
+  }
+
+  .highlight .l,
+  .highlight .ld,
+  .highlight .s,
+  .highlight .s1,
+  .highlight .s2,
+  .highlight .sb,
+  .highlight .sc,
+  .highlight .sd,
+  .highlight .se,
+  .highlight .sh,
+  .highlight .si,
+  .highlight .sx {
+    color: #98c379;
+  }
+  .highlight .nt {
+    color: #e06c75;
+  }
+  .highlight .nx {
+    color: #abb2bf;
+  }
+  .highlight .vi {
+    // color: #e45649;
+    color: #e06c75;
+  }
+  .highlight .il,
+  .highlight .m,
+  .highlight .mf,
+  .highlight .mh,
+  .highlight .mi,
+  .highlight .mo {
+    color: #d19a66;
+  }
+  .highlight .bp,
+  .highlight .nb,
+  .highlight .nc,
+  .highlight .nd,
+  .highlight .ne,
+  .highlight .ni,
+  .highlight .nl,
+  .highlight .no,
+  .highlight .nv,
+  .highlight .py,
+  .highlight .vc,
+  .highlight .vg {
+    color: #e5c07b;
+  }
+  .highlight .na,
+  .highlight .nf {
+    color: #0184bc;
+  }
+  // .highlight .err {
+  //   color: #fff;
+  //   background-color: #ff1414;
+  // }
+
+  // .highlight .err {
+  //   color: #960050;
+  //   background-color: #1e0010;
+  // }
+
+  .highlight .gd {
+    color: #f92672;
+  }
+  .highlight .gi {
+    color: #a6e22e;
+  }
+  .highlight .w {
+    color: #f8f8f2;
+  }
+  .highlight .cpf {
+    color: navy;
+  }
+  .highlight .gu {
+    color: #75715e;
+  }
+  .highlight .lineno {
+    color: #9d9d9f;
+    user-select: none;
+  }
+  .highlight .ln {
+    color: #9d9d9f;
+    user-select: none;
+  }
+  .highlight .ln:after {
+    content: ' ';
+  }
+  .highlight .hll {
+    color: #383a42;
+    background-color: #e5e5e6;
+  }
+  .highlight .hl {
+    color: #383a42;
+    background-color: #e5e5e6;
+  }
+  .highlight .language-json .w + .s2 {
+    color: #e45649;
+  }
+  .highlight .language-json .kc {
+    color: #0184bc;
+  }
+}
+
+body {
+  @include lightmode-syntax();
+}
+
+@media screen {
+  body.light-mode {
+    @include lightmode-syntax();
+  }
+}

@@ -1,0 +1,19 @@
+{% assign post = include.post %} {% assign updated_format = include.format |
+default: site.data.date_formats.updated_format | default: %Y.%m.%d" %}
+
+<li class="h4">
+  <a href="{{ post.url | relative_url }}" class="flip-title">
+    <span>{{ post.title }}</span>
+  </a>
+  {% unless site.hydejack.hide_dates %}
+  <time
+    class="faded fine"
+    datetime="{{ post.last_modified_at | date_to_xmlschema }}"
+    style="font-size: 10px"
+  >
+    {{ post.last_modified_at | date: "%Y년 %m월 %d일" }}
+  </time>
+  {% endunless %} {% if post.applause_button %}
+  <span class="clap-count" data-url="{{ post.url | absolute_url }}"></span>
+  {% endif %}
+</li>

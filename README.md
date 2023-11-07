@@ -1,20 +1,21 @@
-# Hydejack Starter Kit
+# 안녕하세요! 👋
 
-A quicker, cleaner way to get started blogging with [Hydejack](https://hydejack.com/).
+## ABEL FRONTELIO : 지속적인 지식의 여정 📖.
 
-## Quick Start
-### Running locally
-1. Clone repository (git users), or [download] and unzip.
-2. Open terminal, `cd` into root directory (where `_config.yml` is located)
-3. Run `bundle install` [^1]
-4. Run `bundle exec jekyll serve`
-5. Open <http://localhost:4000/hydejack-starter-kit/>
+웹 개발, 프론트엔드, 백엔드, 그래픽 디자인, 개발 도구, 또는 다른 기술 관련 주제에 대해 공유하고자 만든 블로그입니다.
 
-## What's next?
-* Open files and read the comments
-* Read the [docs](https://hydejack.com/docs/)
-* Buy the [PRO version](https://hydejack.com/download/) to get the project and resume layout, newsletter subscription box, custom forms, and more.
+- 웹 개발 , 모바일 개발
+- 프론트엔드 및 백엔드 기술
+- 개인 프로젝트와 경험 공유
 
-[^1]: Requires Bundler. Install with `gem install bundler`.
+## 📝 주요 주제
 
-[download]: https://github.com/hydecorp/hydejack-starter-kit/archive/master.zip
+- 효율적인 라이브러리나 방법 등을 다루며 웹사이트 성능 향상 방법
+- 프로젝트를 통해 얻은 경험
+- 앱을 만드는 과정과 주요 기술
+
+## 🌍 소셜 미디어
+
+- 🙂Portfolio : [PORTFOLIO](https://nextjs-abel-frontelio.vercel.app/)
+- 📧E-Mail : dn10003@gmail.com
+- 🌟Blog : [ABEL-FRONTELIO](https://kdn0325.github.io/)

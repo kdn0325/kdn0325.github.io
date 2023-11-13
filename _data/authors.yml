@@ -8,11 +8,11 @@ author1:
   # Used at the bottom of each page and at the top of the `about` layout
   # Markdown enabled, can use multiple paragraphs (enabled by `|`)
   about: |
-    효율적인 라이브러리나 방법 등을 다루며 웹사이트 성능 향상 방법  🎶 
+    프로그래머스 복습 & 프로그래머스 문제 풀기  🎶 
 
-    주요 기술에 대해 학습한 과정을 공유합니다.
+    Core JavaScript 복습하기. 📖
 
-    프로젝트를 통해 얻은 경험을 작성합니다.
+    기초를 단단히 다져 나가자. 📖
 
   # This photo will be used in the about section
   picture:

@@ -10,4 +10,4 @@ order: 1
 
 <!-- about -->
 
-현재 프로그래머스 문제 다시 풀기 및 React Native에 초점을 두어 학습.
+현재 JavaScript 복습 및 React Native에 초점을 두어 학습.

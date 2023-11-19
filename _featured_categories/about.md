@@ -10,4 +10,10 @@ order: 1
 
 <!-- about -->
 
-현재 JavaScript 복습 및 React Native에 초점을 두어 학습.
+    알고리즘 자료구조 학습 & 프로그래머스 문제 풀이 🎶
+
+    Core JavaScript. 📖
+
+    기초를 단단히 📖
+
+    For programmers, not coders. 💻

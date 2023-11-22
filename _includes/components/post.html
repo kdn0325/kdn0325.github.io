@@ -49,9 +49,9 @@ include.hide_image %} {% assign hide_description = include.hide_description %}
       <time datetime="{{ page.last_modified_at | date_to_xmlschema }}">
         {{ page.last_modified_at | date: updated_format }}
       </time>
-
       {% endif %}
     </div>
+
     {% assign alt = false %} {% unless hide_image %} {% if post.image %} {%
     unless no_link_title %}
     <a

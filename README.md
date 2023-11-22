@@ -10,7 +10,7 @@
 
 ## 📝 주요 주제
 
-- 효율적인 라이브러리나 방법 등을 다루며 웹사이트 성능 향상 방법
+- 효율적인 라이브러리나 방법 등을 다루며 웹사이트 성능 향상 방법 공유
 - 프로젝트를 통해 얻은 경험
 - 앱을 만드는 과정과 주요 기술
 
@@ -19,7 +19,3 @@
 - 🙂Portfolio : [PORTFOLIO](https://nextjs-abel-frontelio.vercel.app/)
 - 📧E-Mail : dn10003@gmail.com
 - 🌟Blog : [ABEL-FRONTELIO](https://kdn0325.github.io/)
-
-## 💬 연락해주세요!
-
-소셜 미디어나 이메일을 통해 연락해 주세요. 감사합니다! 😊

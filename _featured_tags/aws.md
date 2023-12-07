@@ -3,9 +3,9 @@ layout: tag-list
 type: tag
 title: AWS
 slug: aws
-category: devops
-order: 1
+category: etc
+order: 3
 sidebar: true
 description: >
-  AWS 사용
+  AWS 환경
 ---

@@ -16,6 +16,6 @@
 
 ## 🌍 소셜 미디어
 
-- 🙂Portfolio : [PORTFOLIO](https://nextjs-abel-frontelio.vercel.app/)
+- 🙂Portfolio : [PORTFOLIO](https://www.dongnyeong.world/)
 - 📧E-Mail : dn10003@gmail.com
 - 🌟Blog : [ABEL-FRONTELIO](https://kdn0325.github.io/)

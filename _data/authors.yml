@@ -2,17 +2,15 @@
 # Must be the same as `author` in `_config.yml`.
 # Change `author1` to your shortname.
 author1:
-  name: ABEL
+  name: DongNyeong Kim
   email: dn10003@gmail.com
 
   # Used at the bottom of each page and at the top of the `about` layout
   # Markdown enabled, can use multiple paragraphs (enabled by `|`)
   about: |
-    알고리즘 자료구조 학습 & 프로그래머스 문제 풀이 🎶 
+    React Native Developer 📱
 
     Core JavaScript. 📖 
-
-    기초를 단단히 📖 
 
     For programmers, not coders. 💻
 

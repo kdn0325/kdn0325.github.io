@@ -19,14 +19,14 @@
 lang: ko-KR, en-US
 
 # The title of your blog. Used in the sidebar and the browser tab.
-title: "ABEL FRONTELIO"
+title: "DONGNYEONG FRONTELIO"
 
 # A short description (~150 chars) of the page used for the meta description tag.
 # Can use markdown, but no more than one paragraph (enforced by `>`)
 description: Lifelong Discovery Dispatch 📖
 
 # A shorter description for the sidebar.
-tagline: 프로 삽질러
+tagline: React Native Developer
 
 # A list of keywords for your blog
 keywords: [blog, frontend, backend, computer science]
@@ -39,7 +39,7 @@ logo: /assets/img/logo.png
 # This should be the same author as first entry in `_data/authors.yml`.
 author:
   # Used by `jekyll-feed`:
-  name: ABEL
+  name: DONGNYEONG
   email: dn10003@gmail.com
   # # Used by `jekyll-seo-tag`:
   # twitter:             <username>

@@ -1,21 +1,18 @@
-# 안녕하세요! 👋
+# 👋!
 
-## ABEL FRONTELIO : 지속적인 지식의 여정 📖.
+## DN-FRONTELIO
 
-웹 개발, 프론트엔드, 백엔드, 그래픽 디자인, 개발 도구, 또는 다른 기술 관련 주제에 대해 공유하고자 만든 블로그입니다.
-
-- 웹 개발 , 모바일 개발
-- 프론트엔드 및 백엔드 기술
-- 개인 프로젝트와 경험 공유
+겪은 이슈를 다시 겪지 않으려고 만든 블로그 입니다.
 
 ## 📝 주요 주제
 
-- 효율적인 라이브러리나 방법 등을 다루며 웹사이트 성능 향상 방법 공유
-- 프로젝트를 통해 얻은 경험
+- React Native 개발 기록
+- 엔지니어를 위한 성장 기록 및 공유
 - 앱을 만드는 과정과 주요 기술
+- 겪은 삽질 기록
 
 ## 🌍 소셜 미디어
 
 - 🙂Portfolio : [PORTFOLIO](https://www.dongnyeong.world/)
 - 📧E-Mail : dn10003@gmail.com
-- 🌟Blog : [ABEL-FRONTELIO](https://kdn0325.github.io/)
+- 🌟Blog : [DN-FRONTELIO](https://kdn0325.github.io/)

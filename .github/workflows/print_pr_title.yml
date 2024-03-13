@@ -1,0 +1,15 @@
+name: Print PR Title
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  print_title_of_pr:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Print Title of PR
+        run: echo The Title of your PR is ${{ github.event.pull_request.title }}

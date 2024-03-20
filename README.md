@@ -1,6 +1,6 @@
-# 👋!
+가# 👋
 
-## DN-FRONTELIO
+## DONGNYEONG-FRONTELIO
 
 겪은 이슈를 다시 겪지 않으려고 만든 블로그 입니다.
 
@@ -13,6 +13,6 @@
 
 ## 🌍 소셜 미디어
 
-- 🙂Portfolio : [PORTFOLIO](https://www.dongnyeong.world/)
+- 🙂Portfolio : [DONGNYEONG_WORLD](https://www.dongnyeong.world/)
 - 📧E-Mail : dn10003@gmail.com
-- 🌟Blog : [DN-FRONTELIO](https://kdn0325.github.io/)
+- 🌟Blog : [DONGNYEONG-FRONTELIO](https://kdn0325.github.io/)

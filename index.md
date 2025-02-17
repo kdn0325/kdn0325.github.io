@@ -26,10 +26,6 @@ cover: true
 
 - [kdn0325](https://github.com/kdn0325)
 
-### ✏️ PORTFOLIO
-
-- [ABEL FORTPOLIO](https://www.dongnyeong.world/)
-
 ## Tech Stack
 
 ---

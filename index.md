@@ -10,14 +10,6 @@ cover: true
 
 ---
 
-## Personal Data
-
----
-
-### 👶 Profile
-
-- 1996년 03월 09일
-
 ### 📧 Email
 
 - dn10003@gmail.com

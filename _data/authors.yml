@@ -2,17 +2,15 @@
 # Must be the same as `author` in `_config.yml`.
 # Change `author1` to your shortname.
 author1:
-  name: DongNyeong Kim
+  name: DONGNYEONG KIM
   email: dn10003@gmail.com
 
   # Used at the bottom of each page and at the top of the `about` layout
   # Markdown enabled, can use multiple paragraphs (enabled by `|`)
   about: |
-    Mobile Engineer / React Native Developer / Developer experience(DX) Engineer 📱
+    Mobile Engineer / React Native Developer / Developer Experience(DX) Engineer 📱
 
-    Core JavaScript. 📖 
-
-    For programmers, not coders. 💻
+    단순히 내가 배운걸 다시 잊어버리지 않기 위해 그냥 적어놓습니다.
 
   # This photo will be used in the about section
   picture:

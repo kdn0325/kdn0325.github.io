@@ -28,7 +28,7 @@ cover: true
 
 ### ✏️ PORTFOLIO
 
-- [ABEL FORTPOLIO : 지속적인 지식의 여정📖](https://www.dongnyeong.world/)
+- [ABEL FORTPOLIO](https://www.dongnyeong.world/)
 
 ## Skills and Certification
 

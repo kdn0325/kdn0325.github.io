@@ -30,54 +30,28 @@ cover: true
 
 - [ABEL FORTPOLIO](https://www.dongnyeong.world/)
 
-## Skills and Certification
+## Tech Stack
 
 ---
 
-**Web Applications**
+**Languages**
 
-- **HTML5**
-- **CSS3**
-- **JavsScript(ES6)**
-- **TypeScript**
-- **React.js**
-- **Next.js**
+- **Cpp**
+- **Typescript**
+- **Python**
 
-**Mobile Applications**
+**Frameworks**
 
+- **React.**
 - **React Native**
-
-**State management**
-
-- **ContextAPI**
-- **Recoil**
-- **React Query**
-- **Redux**
-
-**CSS**
-
-- **Styled-components**
-- **SCSS**
-- **Emotion**
-- **TailwindCSS**
-
-**Backend**
-
-- **Node.js**
+- **Next.js**
 - **Django**
+- **Nest.js**
+- **supabase**
 
-**DevOps**
+**ETC**
 
 - **MySQL**
 - **AWS EC2**
 - **AWS S3**
-
-**Build Tools**
-
-- **ESLint**
-- **Prettier**
-- **Webpack**
-
-**Version System**
-
-- **GitHub**
+- **Figma**

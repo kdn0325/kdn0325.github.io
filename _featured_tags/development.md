@@ -1,11 +1,11 @@
 ---
 layout: tag-list
 type: tag
-title: React Native
-slug: reactnative
+title: Development
+slug: Development
 category: development
-order: 2
+order: 1
 sidebar: true
 description: >
-  React Native 개념 정리
+  공부한거 모아두기
 ---

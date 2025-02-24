@@ -7,5 +7,5 @@ category: development
 order: 3
 sidebar: true
 description: >
-  React Native 개념 정리
+  Android
 ---

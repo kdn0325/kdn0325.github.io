@@ -3,7 +3,7 @@ layout: tag-list
 type: tag
 title: React-Query
 slug: reactquery
-category: frontend
+category: development
 order: 5
 sidebar: true
 description: >

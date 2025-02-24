@@ -3,7 +3,7 @@ layout: tag-list
 type: tag
 title: Cypress
 slug: cypress
-category: frontend
+category: development
 order: 4
 sidebar: true
 description: >

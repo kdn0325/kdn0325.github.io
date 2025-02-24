@@ -3,7 +3,7 @@ layout: tag-list
 type: tag
 title: React Native
 slug: reactnative
-category: frontend
+category: development
 order: 2
 sidebar: true
 description: >

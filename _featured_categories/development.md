@@ -2,7 +2,7 @@
 layout: list
 type: category
 title: Development
-slug: frontend
+slug: development
 sidebar: true
 order: 2
 description: >

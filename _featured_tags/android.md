@@ -1,11 +1,11 @@
 ---
 layout: tag-list
 type: tag
-title: Next.js
-slug: nextjs
+title: Android
+slug: android
 category: development
-order: 5
+order: 3
 sidebar: true
 description: >
-  Next.js 개념 정리
+  React Native 개념 정리
 ---

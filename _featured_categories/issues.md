@@ -6,5 +6,5 @@ slug: issues
 sidebar: true
 order: 3
 description: >
-  삽질 해결 과정
+  삽질 해결 과정 끄적인것들
 ---

@@ -6,5 +6,5 @@ slug: development
 sidebar: true
 order: 1
 description: >
-  끄적인것들
+  개발하면서 끄적인것들
 ---

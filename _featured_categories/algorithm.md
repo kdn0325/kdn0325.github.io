@@ -1,7 +1,7 @@
 ---
 layout: list
 type: category
-title: 컴퓨터 공학
+title: 알고리즘
 slug: algorithm
 sidebar: true
 order: 2

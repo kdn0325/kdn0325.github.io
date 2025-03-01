@@ -6,5 +6,5 @@ slug: etc
 sidebar: true
 order: 4
 description: >
-  참조하면 좋은것 , 협업에 좋은것
+  참조하거나 협업 생산성을 위해 끄적인것들
 ---
